@@ -54,7 +54,7 @@ bool CApp::onInit()
 		return false;
 	}
 
-	tex=CTexture::onLoad(render,"../Res/jon.bmp");
+	tex=CTexture::onLoad(render,"../Res/player.tga");
 	if(tex==nullptr)
 	{
 		logError(cout,"CTexture::onLoad");
