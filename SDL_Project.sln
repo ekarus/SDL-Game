@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL_Project", "SDL_Project\SDL_Project.vcxproj", "{62D3DCBC-7692-45A8-B6C4-E38CB0D307B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62D3DCBC-7692-45A8-B6C4-E38CB0D307B8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{62D3DCBC-7692-45A8-B6C4-E38CB0D307B8}.Debug|Win32.Build.0 = Debug|Win32
+		{62D3DCBC-7692-45A8-B6C4-E38CB0D307B8}.Release|Win32.ActiveCfg = Release|Win32
+		{62D3DCBC-7692-45A8-B6C4-E38CB0D307B8}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
