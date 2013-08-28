@@ -9,6 +9,10 @@ void CTexture::onDraw(SDL_Texture* tex,SDL_Renderer* render,SDL_Rect* rect)
 {
 	SDL_RenderCopy(render,tex,NULL,rect);
 }
+void CTexture::onDraw(SDL_Texture* tex,SDL_Renderer* render,SDL_Rect* src_rect,SDL_Rect* dst_rect)
+{
+	SDL_RenderCopy(render,tex,src_rect,dst_rect);
+}
 void CTexture::onDraw(SDL_Texture* tex,SDL_Renderer* render,int x,int y)
 {
 	SDL_Rect rect;

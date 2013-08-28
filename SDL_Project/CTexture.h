@@ -1,3 +1,4 @@
+#pragma once
 #include <SDL.h>
 #include <SDL_image.h>
 #include <string>
@@ -8,4 +9,5 @@ public:
 	static SDL_Texture* onLoad(SDL_Renderer* render, std::string file);
 	static void onDraw(SDL_Texture* tex,SDL_Renderer* render,SDL_Rect* rect);
 	static void onDraw(SDL_Texture* tex,SDL_Renderer* render,int x,int y);
+	static void onDraw(SDL_Texture* tex,SDL_Renderer* render,SDL_Rect* src_rect,SDL_Rect* dst_rect);
 };

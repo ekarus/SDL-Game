@@ -11,11 +11,13 @@ CApp::CApp():run(true)
 	render=nullptr;
 	SCREEEN_WIDTH=800;
 	SCREEN_HEIGHT=600;
+
+	x=0;y=0;
 }
 
 int CApp::onExecute()
 {
-	if(onInit()==false)
+	if(OnInit()==false)
 	{
 		logError(cout,"onInit");
 		return -1;
@@ -25,16 +27,16 @@ int CApp::onExecute()
 	{
 		while(SDL_PollEvent(&event))
 		{
-			onEvent(event);
+			OnEvent(&event);
 		}
-		onUpdate();
-		onRender();
+		OnUpdate();
+		OnRender();
 	}
-	onCleanUp();
+	OnCleanUp();
 	return 0;
 }
 
-bool CApp::onInit()
+bool CApp::OnInit()
 {
 	if(SDL_Init(SDL_INIT_EVERYTHING)== -1)
 	{
@@ -63,31 +65,24 @@ bool CApp::onInit()
 	return true;
 }
 
-void CApp::onEvent( SDL_Event& event )
+void CApp::OnEvent( SDL_Event* event )
 {
-	switch (event.type)
-	{
-	case SDL_QUIT: Run(false);break;
-	case SDL_MOUSEBUTTONDOWN: ;break;
-	case SDL_KEYDOWN: ;break;
-	default:
-		break;
-	}
+	CEvent::onEvent(event);
 }
 
-void CApp::onUpdate()
+void CApp::OnUpdate()
 {
 
 }
 
-void CApp::onRender()
+void CApp::OnRender()
 {
 	SDL_RenderClear(render);
-	CTexture::onDraw(tex,render,0,0);
+	CTexture::onDraw(tex,render,x,y);
 	SDL_RenderPresent(render);
 }
 
-void CApp::onCleanUp()
+void CApp::OnCleanUp()
 {
 	SDL_DestroyTexture(tex);
 	SDL_DestroyRenderer(render);
@@ -98,4 +93,38 @@ void CApp::onCleanUp()
 void CApp::logError( std::ostream& os,std::string msg )
 {
 	os<<"["<<msg<<"] : "<<SDL_GetError()<<endl;
+}
+
+void CApp::OnExit()
+{
+	Run(false);
+}
+
+void CApp::OnKeyDown( SDL_Keysym key )
+{
+	cout<<"OnKeyDown "<<key.sym<<" "<<key.mod<<" "<<key.scancode<<endl;
+	if(key.scancode==SDL_Scancode::SDL_SCANCODE_ESCAPE)
+		OnExit();
+}
+
+void CApp::OnMouseMove( int mX, int mY, int relX, int relY, bool Left,bool Right,bool Middle )
+{
+	//cout<<mX<<" "<<mY<<" ; "<<relX<<" "<<relY<<" ; "<<Left<<Right<<Middle<<endl;
+	x=mX;
+	y=mY;
+}
+
+void CApp::OnLButtonDown( int mX, int mY )
+{
+	cout<<"OnLButtonDown "<<mX<<" "<<mY<<endl;
+}
+
+void CApp::OnRButtonDown( int mX, int mY )
+{
+	cout<<"OnRButtonDown "<<mX<<" "<<mY<<endl;
+}
+
+void CApp::OnResize( int w,int h )
+{
+	cout<<"OnResize "<<w<<" "<<h<<endl;
 }
