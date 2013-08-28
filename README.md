@@ -1,2 +1,2 @@
-SDL-Game
+SDL-Life-Game
 ========
