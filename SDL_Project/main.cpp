@@ -1,8 +1,9 @@
 #include "CApp.h"
+#include "CGame.h"
 
 int main(int argc, char** argv)
 {
-	CApp game;
+	CGame game;
 	game.onExecute();
 	return 0;
 }

@@ -2,17 +2,16 @@
 #include <iostream>
 #include "CSurface.h"
 #include "CTexture.h"
+#include "CFPS.h"
+#include "CCollision.h"
 using namespace std;
 
 CApp::CApp():run(true)
 {
-	tex=nullptr;
 	win=nullptr;
 	render=nullptr;
-	SCREEEN_WIDTH=800;
+	SCREEN_WIDTH=800;
 	SCREEN_HEIGHT=600;
-
-	x=0;y=0;
 }
 
 int CApp::onExecute()
@@ -23,13 +22,16 @@ int CApp::onExecute()
 		return -1;
 	}
 	SDL_Event event;
+	CFPS* fps=CFPS::getInstance();
 	while(isRun())
 	{
 		while(SDL_PollEvent(&event))
 		{
 			OnEvent(&event);
 		}
-		OnUpdate();
+		fps->onUpdate();
+		//cout<<"FPS="<<fps->getFPS()<<" SPEED="<<fps->getSpeedFactor()<<endl;
+		OnUpdate(fps->getSpeedFactor());
 		OnRender();
 	}
 	OnCleanUp();
@@ -43,7 +45,7 @@ bool CApp::OnInit()
 		logError(cout,"SDL_Init");
 		return false;
 	}
-	win=SDL_CreateWindow("SDL_Project",100,100,SCREEEN_WIDTH,SCREEN_HEIGHT,SDL_WINDOW_SHOWN|SDL_WINDOW_RESIZABLE);
+	win=SDL_CreateWindow("SDL_Project",100,100,SCREEN_WIDTH,SCREEN_HEIGHT,SDL_WINDOW_SHOWN|SDL_WINDOW_RESIZABLE);
 	if(win==nullptr)
 	{
 		logError(cout,"SDL_CreateWindow");
@@ -56,12 +58,6 @@ bool CApp::OnInit()
 		return false;
 	}
 
-	tex=CTexture::onLoad(render,"../Res/player.tga");
-	if(tex==nullptr)
-	{
-		logError(cout,"CTexture::onLoad");
-		return false;
-	}
 	return true;
 }
 
@@ -70,21 +66,59 @@ void CApp::OnEvent( SDL_Event* event )
 	CEvent::onEvent(event);
 }
 
-void CApp::OnUpdate()
+void CApp::OnUpdate( float time )
 {
+	for(int i=0;i<CEntity::entity_list.size();++i)
+	{
+		if(CEntity::entity_list[i]!=nullptr)
+		{
+			CEntity::entity_list[i]->OnUpdate(time);
+		}
+	}
+	for (int i = 0; i < CCollision::collision_list.size(); i++)
+	{
+		CEntity* A=CCollision::collision_list[i].entityA;
+		CEntity* B=CCollision::collision_list[i].entityB;
 
+		if(A==nullptr || B==nullptr)
+			continue;
+		else
+		{
+			//cout<<A<<" with "<<B<<endl;
+			if(A->OnCollision(B))
+			{
+				B->OnCollision(A);
+			}
+		}
+	}
+	CCollision::collision_list.clear();
 }
 
 void CApp::OnRender()
 {
-	SDL_RenderClear(render);
-	CTexture::onDraw(tex,render,x,y);
-	SDL_RenderPresent(render);
+	for(int i=0;i<CEntity::entity_list.size();++i)
+	{
+		if(CEntity::entity_list[i]!=nullptr)
+		{
+			if(CEntity::entity_list[i]->getIsVisible())
+			{
+				CEntity::entity_list[i]->OnRender(render);
+			}
+		}
+	}
 }
 
 void CApp::OnCleanUp()
 {
-	SDL_DestroyTexture(tex);
+	for(auto i=CEntity::entity_list.begin();i!=CEntity::entity_list.end();++i)
+	{
+		if(*i!=nullptr)
+		{
+			(*i)->OnCleanUp();
+			delete *i;
+		}
+	}
+	CEntity::entity_list.clear();
 	SDL_DestroyRenderer(render);
 	SDL_DestroyWindow(win);
 	SDL_Quit();
@@ -109,9 +143,7 @@ void CApp::OnKeyDown( SDL_Keysym key )
 
 void CApp::OnMouseMove( int mX, int mY, int relX, int relY, bool Left,bool Right,bool Middle )
 {
-	//cout<<mX<<" "<<mY<<" ; "<<relX<<" "<<relY<<" ; "<<Left<<Right<<Middle<<endl;
-	x=mX;
-	y=mY;
+
 }
 
 void CApp::OnLButtonDown( int mX, int mY )
@@ -127,4 +159,6 @@ void CApp::OnRButtonDown( int mX, int mY )
 void CApp::OnResize( int w,int h )
 {
 	cout<<"OnResize "<<w<<" "<<h<<endl;
+	SCREEN_WIDTH=w;
+	SCREEN_HEIGHT=h;
 }
