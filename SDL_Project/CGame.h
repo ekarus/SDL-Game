@@ -1,7 +1,6 @@
 #pragma once
 
 #include "timer.h"
-#include "GameObject.h"
 #include "CApp.h"
 #include "CEntity.h"
 #include "CPlayer.h"

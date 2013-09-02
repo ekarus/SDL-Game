@@ -62,7 +62,7 @@ void CMoveObject::stopMove()
 	}
 }
 
-bool CMoveObject::eat( CEntity* entity )
+bool CMoveObject::onEat( CEntity* entity )
 {
 	if(entity->isLive())
 	{
@@ -78,7 +78,7 @@ bool CMoveObject::OnCollision( CEntity* entity )
 	CEntity::OnCollision(entity);
 	if(entity->getSize().getLenght()<=size.getLenght() && entity->getColor()!=color)
 	{
-		eat(entity);
+		onEat(entity);
 		return false;
 	}
 	return true;

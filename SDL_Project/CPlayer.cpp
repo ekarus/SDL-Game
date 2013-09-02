@@ -62,25 +62,15 @@ void CPlayer::OnCleanUp()
 bool CPlayer::OnCollision( CEntity* entity )
 {
 	return CMoveObject::OnCollision(entity);
-	/*if(entity->getSize().getLenght()<=size.getLenght())
-	{
-		if(entity->isLive() && entity->getColor()!=color)
-		{
-			eat(entity);
-			std::cout<<"eat "<<entity<<std::endl;
-		}		
-		return false;
-	}
-	return true;*/
 }
 
 
 void CPlayer::onMove( Vector2d dir )
 {
-	hasGoal=true;
 	Vector2d v;
-	v.x=(pos.x+dir.x*10);
-	v.y=(pos.y+dir.y*10);
+	dir=dir.normalize();
+	v.x=(getCenter().x+dir.x*size.x);
+	v.y=(getCenter().y+dir.y*size.y);
 	setGoalPoint(v);
 	CMoveObject::onMove(dir);
 }

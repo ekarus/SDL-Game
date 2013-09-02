@@ -13,7 +13,6 @@ public:
 	virtual void OnRender( SDL_Renderer* render );
 
 	virtual bool OnLoad( std::string file,SDL_Renderer* render );
-	virtual bool OnLoad( SDL_Renderer* render );
 
 	virtual void OnCleanUp();
 
@@ -26,10 +25,15 @@ public:
 
 	virtual void OnEntityNear( CEntity* entity );
 
+	virtual bool onEat( CEntity* entity );
+
 protected:
+
+	
 
 private:
 
 	CEntity* goal;
+	SDL_Texture* target_tex;
 	
 };

@@ -12,7 +12,7 @@ public:
 	virtual void onMove(Vector2d dir);
 	virtual void stopMove();
 
-	virtual bool eat(CEntity* entity);
+	virtual bool onEat(CEntity* entity);
 
 	virtual void onDanger(Vector2d point);
 

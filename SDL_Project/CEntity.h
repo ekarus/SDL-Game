@@ -55,6 +55,7 @@
 	 bool isCollide(CEntity* entity,float x,float y);
 	 bool postValid(float newX, float newY);
 	 bool checkEntityCollide(CEntity*, float x,float y);
+	 bool checkMapCollide(CEntity* entity, float x,float y);
 
 	 bool live;
 	 

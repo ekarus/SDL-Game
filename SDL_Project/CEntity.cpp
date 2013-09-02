@@ -68,15 +68,7 @@ bool CEntity::isCollide( CEntity* entity, float x, float y )
 bool CEntity::postValid( float newX, float newY )
 {
 	bool res=true;
-	int w=800,h=600;
-	if(newX+size.x>w || newX<0)
-	{
-		res=false;
-	}
-	if(newY+size.y>h || newY<0)
-	{
-		res=false;
-	}
+	res=checkMapCollide(this,newX,newY);
 	for (int i = 0; i < entity_list.size(); i++)
 	{
 		if(checkEntityCollide(entity_list[i],newX,newY)==false)
@@ -115,5 +107,32 @@ void CEntity::OnRestart()
 void CEntity::OnEntityNear(CEntity* entity)
 {
 
+}
+
+bool CEntity::checkMapCollide(CEntity* entity, float x,float y )
+{
+	bool res=true;
+	int w=800,h=600;
+	if(x+size.x>w)
+	{
+		entity->setX(w-entity->getSize().x);
+		res=false;
+	}
+	else if(x<0)
+	{
+		entity->setX(0);
+		res=false;
+	}
+	if(y+size.y>h)
+	{
+		entity->setY(h-entity->getSize().y);
+		res=false;
+	}
+	else if(y<0)
+	{
+		entity->setY(0);
+		res=false;
+	}
+	return res;
 }
 

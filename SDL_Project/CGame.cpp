@@ -48,7 +48,7 @@ void CGame::Restart()
 	for(int i=0;i<CEntity::entity_list.size();i++)
 	{
 		CEntity* e=CEntity::entity_list[i];
-		int s=5+rand()%20;
+		int s=8+rand()%20;
 		e->OnRestart();
 		e->setSize(Vector2d(s,s));
 		e->setPos(Vector2d(rand()%(SCREEN_WIDTH-s),rand()%(SCREEN_HEIGHT-s)));
@@ -73,9 +73,9 @@ bool CGame::OnInit()
 	player=new CPlayer();
 	player->OnLoad("../Res/circle_a.png",render);
 	CEntity::entity_list.push_back(player);
-	AddNPC(3);
+	srand(time(nullptr));
+	AddNPC(6);
 	pause=false;
-	GameObject::load_image(render);
 	Restart();
 	return true;
 
@@ -131,8 +131,7 @@ void CGame::OnLButtonUp( int mX, int mY )
 
 void CGame::OnRButtonDown( int mX, int mY )
 {
-//	objects.push_back(GameObject());
-//	objects.back().setPos(Vector2d(mX,SCREEN_HEIGHT-mY));
+
 }
 
 void CGame::OnKeyDown( SDL_Keysym key )
@@ -144,7 +143,11 @@ void CGame::OnKeyDown( SDL_Keysym key )
 	}
 	if(key.sym=='q')
 	{
-		//objects[0].runBoost();
+		player->setSize(player->getSize()*1.1f);
+	}
+	if(key.sym=='e')
+	{
+		player->setSize(player->getSize()*0.9f);
 	}
 	if(key.sym=='p')
 	{
@@ -155,22 +158,18 @@ void CGame::OnKeyDown( SDL_Keysym key )
 	}
 	if(key.sym=='w')
 	{
-		//objects[0].setVelocity(Vector2d(0,-1).normalize()*objects[0].getSpeed());
 		player->onMove(Vector2d(0,-1));
 	}
 	if(key.sym=='s')
 	{
-		//objects[0].setVelocity(Vector2d(0,1).normalize()*objects[0].getSpeed());
 		player->onMove(Vector2d(0,1));
 	}
 	if(key.sym=='a')
 	{
-		//objects[0].setVelocity(Vector2d(-1,0).normalize()*objects[0].getSpeed());
 		player->onMove(Vector2d(-1,0));
 	}
 	if(key.sym=='d')
 	{
-		//objects[0].setVelocity(Vector2d(1,0).normalize()*objects[0].getSpeed());
 		player->onMove(Vector2d(1,0));
 	}
 }

@@ -3,7 +3,7 @@
 CNpc::CNpc()
 {
 	live=true;
-	speed=250;
+	speed=500;
 	maxVel=Vector2d(100,100);
 }
 
@@ -19,7 +19,17 @@ void CNpc::OnUpdate( float time )
 		if(goal!=nullptr)
 		{
 			//vel=(goal->getCenter()-getCenter()).normalize()*speed;
-			acc=(goal->getCenter()-getCenter()).normalize()*speed;
+
+			//перепроверям подходит ли нам цель
+			if(!goal->isLive() || goal->getSize().getLenght()>=size.getLenght())
+			{
+				goal=nullptr;
+			}
+			else
+			{
+				//если подходит то движемся к цели
+				acc=(goal->getCenter()-getCenter()).normalize()*speed;
+			}
 		}
 		else
 		{
@@ -36,22 +46,23 @@ void CNpc::OnRender( SDL_Renderer* render )
 		CMoveObject::OnRender(render);
 		CTexture::setColor(tex,color);
 		if(goal!=nullptr)
-		CTexture::onDraw(tex,render,goal->getPos().x-2,goal->getPos().y-2,goal->getSize().x+4,goal->getSize().y+4);
+		{
+			CTexture::setColor(target_tex,color);
+			CTexture::onDraw(target_tex,render,goal->getPos().x-10,goal->getPos().y-10,goal->getSize().x+20,goal->getSize().y+20);
+		}
 	}
 }
 
 bool CNpc::OnLoad( std::string file,SDL_Renderer* render )
 {
+	target_tex=CTexture::onLoad(render,"../Res/target.png");
 	return CMoveObject::OnLoad(file,render);
 }
 
-bool CNpc::OnLoad( SDL_Renderer* render )
-{
-	return CMoveObject::OnLoad("../Res/circle_a.png",render);
-}
 
 void CNpc::OnCleanUp()
 {
+	SDL_DestroyTexture(target_tex);
 	CMoveObject::OnCleanUp();
 }
 
@@ -71,6 +82,7 @@ bool CNpc::OnCollision( CEntity* entity )
 
 void CNpc::OnRestart()
 {
+	CMoveObject::OnRestart();
 	goal=nullptr;
 }
 
@@ -94,4 +106,11 @@ void CNpc::OnEntityNear( CEntity* entity )
 			}
 		}
 	}
+}
+
+bool CNpc::onEat( CEntity* entity )
+{
+	goal=nullptr;
+	return CMoveObject::onEat(entity);
+	
 }
