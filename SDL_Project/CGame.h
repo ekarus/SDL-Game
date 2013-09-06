@@ -13,26 +13,33 @@ using namespace std;
 class CGame: public CApp
 {
 public:
+
     CGame();
-    ~CGame();
+    virtual ~CGame();
+
+	enum GameState{ PLAY, PAUSE, MENU};
+	enum RoundState{ };
+
 private:
 
 	CPlayer* player;
+	vector<CMoveObject*> npcs;
 
 	bool pause;
-	bool mouse_press;
 	bool fail;
 	int live_obj;
 	int obj_count;
 	int obj_incr;
-	vector<CMoveObject*> npcs;
-
-	void Restart();
-	void NextLevel();
 
 	void AddNPC(int count);
 
 	void ObjectsCheck();
+
+protected:
+
+	virtual void Restart();
+
+	virtual void NextLevel();
 
 	virtual bool OnInit();
 

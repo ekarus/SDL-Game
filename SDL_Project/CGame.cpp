@@ -6,7 +6,6 @@
 CGame::CGame() 
 {
 	pause=false;
-	mouse_press=false;
 	fail=false;
 	live_obj=0;
 	obj_count=0;
@@ -74,7 +73,7 @@ bool CGame::OnInit()
 	player->OnLoad("../Res/circle_a.png",render);
 	CEntity::entity_list.push_back(player);
 	srand(time(nullptr));
-	AddNPC(6);
+	AddNPC(3);
 	pause=false;
 	Restart();
 	return true;
@@ -121,12 +120,12 @@ void CGame::OnCleanUp()
 
 void CGame::OnLButtonDown( int mX, int mY )
 {
-	mouse_press=true;
+
 }
 
 void CGame::OnLButtonUp( int mX, int mY )
 {
-	mouse_press=false;
+
 }
 
 void CGame::OnRButtonDown( int mX, int mY )
@@ -178,14 +177,7 @@ void CGame::OnMouseMove( int x, int y, int relX, int relY, bool Left,bool Right,
 {
 	if (Left)
 	{
-		/*Vector2d v=Vector2d(x,y)-objects[0].getCenter();
-		objects[0].setVelocity(v.normalize()*objects[0].getSpeed());*/
 		player->setGoalPoint(Vector2d(x,y));
-		//player->onMove(Vector2d(x,y));
-	}
-	else
-	{
-		//player->stopMove();
 	}
 }
 

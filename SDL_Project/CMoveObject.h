@@ -29,6 +29,8 @@ public:
 
 	virtual void OnEntityNear(CEntity* entity);
 
+	virtual void OnMapCollide(float x, float y);
+
 protected:
 	Vector2d vel;
 	Vector2d acc;

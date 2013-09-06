@@ -77,6 +77,7 @@
     <ClCompile Include="CEvent.cpp" />
     <ClCompile Include="CFPS.cpp" />
     <ClCompile Include="CGame.cpp" />
+    <ClCompile Include="CGameState.cpp" />
     <ClCompile Include="CMoveObject.cpp" />
     <ClCompile Include="CNpc.cpp" />
     <ClCompile Include="CPlayer.cpp" />
@@ -94,6 +95,7 @@
     <ClInclude Include="CEvent.h" />
     <ClInclude Include="CFPS.h" />
     <ClInclude Include="CGame.h" />
+    <ClInclude Include="CGameState.h" />
     <ClInclude Include="CMoveObject.h" />
     <ClInclude Include="CNpc.h" />
     <ClInclude Include="CPlayer.h" />

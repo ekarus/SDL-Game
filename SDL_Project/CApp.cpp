@@ -6,21 +6,29 @@
 #include "CCollision.h"
 using namespace std;
 
-CApp::CApp():run(true)
+CApp::CApp()
 {
+	run=false;
 	win=nullptr;
 	render=nullptr;
 	SCREEN_WIDTH=800;
 	SCREEN_HEIGHT=600;
 }
 
+CApp::~CApp()
+{
+
+}
+
 int CApp::onExecute()
 {
+	
 	if(OnInit()==false)
 	{
 		logError(cout,"onInit");
 		return -1;
 	}
+	Run(true);
 	SDL_Event event;
 	CFPS* fps=CFPS::getInstance();
 	while(isRun())
@@ -30,7 +38,6 @@ int CApp::onExecute()
 			OnEvent(&event);
 		}
 		fps->onUpdate();
-		//cout<<"FPS="<<fps->getFPS()<<" SPEED="<<fps->getSpeedFactor()<<endl;
 		OnUpdate(fps->getSpeedFactor());
 		OnRender();
 	}
@@ -84,7 +91,6 @@ void CApp::OnUpdate( float time )
 			continue;
 		else
 		{
-			//cout<<A<<" with "<<B<<endl;
 			if(A->OnCollision(B))
 			{
 				B->OnCollision(A);

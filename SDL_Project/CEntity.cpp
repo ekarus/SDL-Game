@@ -68,7 +68,10 @@ bool CEntity::isCollide( CEntity* entity, float x, float y )
 bool CEntity::postValid( float newX, float newY )
 {
 	bool res=true;
-	res=checkMapCollide(this,newX,newY);
+	if((res=checkMapCollide(this,newX,newY))==false)
+	{
+		OnMapCollide(newX,newY);
+	}
 	for (int i = 0; i < entity_list.size(); i++)
 	{
 		if(checkEntityCollide(entity_list[i],newX,newY)==false)
@@ -134,5 +137,10 @@ bool CEntity::checkMapCollide(CEntity* entity, float x,float y )
 		res=false;
 	}
 	return res;
+}
+
+void CEntity::OnMapCollide( float x, float y )
+{
+
 }
 
