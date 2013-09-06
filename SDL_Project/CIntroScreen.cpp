@@ -6,7 +6,7 @@
 bool CIntroScreen::OnInit()
 {
 	app=CApp::getInstance();
-	bg=CTexture::onLoad(app->getRender(),"../Res/intro.bmp");
+	bg=CTexture::onLoad(app->getRender(),"../Res/intro.png");
 	return true;
 }
 

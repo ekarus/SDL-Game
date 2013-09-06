@@ -81,29 +81,6 @@ void CApp::OnEvent( SDL_Event* event )
 
 void CApp::OnUpdate( float time )
 {
-	/*for(int i=0;i<CEntity::entity_list.size();++i)
-	{
-		if(CEntity::entity_list[i]!=nullptr)
-		{
-			CEntity::entity_list[i]->OnUpdate(time);
-		}
-	}
-	for (int i = 0; i < CCollision::collision_list.size(); i++)
-	{
-		CEntity* A=CCollision::collision_list[i].entityA;
-		CEntity* B=CCollision::collision_list[i].entityB;
-
-		if(A==nullptr || B==nullptr)
-			continue;
-		else
-		{
-			if(A->OnCollision(B))
-			{
-				B->OnCollision(A);
-			}
-		}
-	}
-	CCollision::collision_list.clear();*/
 
 	states.back()->OnUpdate(CFPS::getInstance()->getSpeedFactor());
 }
@@ -112,17 +89,6 @@ void CApp::OnRender()
 {
 	SDL_RenderClear(render);
 
-	/*for(int i=0;i<CEntity::entity_list.size();++i)
-	{
-		if(CEntity::entity_list[i]!=nullptr)
-		{
-			if(CEntity::entity_list[i]->getIsVisible())
-			{
-				CEntity::entity_list[i]->OnRender(render);
-			}
-		}
-	}*/
-
 	states.back()->OnRender();
 
 	SDL_RenderPresent(render);
@@ -130,15 +96,6 @@ void CApp::OnRender()
 
 void CApp::OnCleanUp()
 {
-	/*for(auto i=CEntity::entity_list.begin();i!=CEntity::entity_list.end();++i)
-	{
-		if(*i!=nullptr)
-		{
-			(*i)->OnCleanUp();
-			delete *i;
-		}
-	}
-	CEntity::entity_list.clear();*/
 
 	while ( !states.empty() ) {
 		states.back()->OnCleanUp();
