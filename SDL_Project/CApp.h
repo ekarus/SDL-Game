@@ -3,12 +3,14 @@
 #include "CEntity.h"
 #include <SDL.h>
 #include <string>
+#include "IGameState.h"
+#include <vector>
 
 class CApp: public IEventHandler
 {
 public:
 
-	CApp();
+	static CApp* getInstance(){return &inst;}
 	virtual ~CApp();
 
 	virtual int onExecute();
@@ -16,14 +18,30 @@ public:
 	bool isRun(){return run;}
 	void Run(bool val){run=val;}
 
-	int ScreenWidth() const { return SCREEN_WIDTH; }
-	void ScreenWidth(int val) { SCREEN_WIDTH = val; }
-	int ScreenHeight() const { return SCREEN_HEIGHT; }
-	void ScreenHeight(int val) { SCREEN_HEIGHT = val; }
+	int getScrWidth() const { return SCREEN_WIDTH; }
+	int getScrHeight() const { return SCREEN_HEIGHT; }
+	SDL_Renderer* getRender() const { return render; }
+	SDL_Window* getWindow() const { return win; }
+
+	void PushState(IGameState* state);
+	void PopState();
+	void ChangeState(IGameState* state);
+
+	virtual void OnRender();
+	virtual void OnExit();
+	virtual bool OnInit();
+	virtual void OnEvent(SDL_Event* event);
+	virtual void OnUpdate(float time);
+	virtual void OnCleanUp();
 
 private:
 
+	IGameState* state;
 	bool run;
+	static CApp inst;
+	CApp();
+
+	std::vector<IGameState*> states;
 
 protected:
 
@@ -32,19 +50,13 @@ protected:
 	SDL_Window* win;
 	SDL_Renderer* render;
 
-	virtual bool OnInit();
-	virtual void OnEvent(SDL_Event* event);
-	virtual void OnUpdate(float time);
-	virtual void OnRender();
-	virtual void OnCleanUp();
-	virtual void OnExit();
+	
+	
+	
+
 
 	virtual void logError(std::ostream& os,std::string msg);
 
-	virtual void OnLButtonDown( int mX, int mY );
-	virtual void OnRButtonDown( int mX, int mY );
 	virtual void OnResize( int w,int h );
-	virtual void OnKeyDown(SDL_Keysym key);
-	virtual void OnMouseMove( int mX, int mY, int relX, int relY, bool Left,bool Right,bool Middle );
 
 };

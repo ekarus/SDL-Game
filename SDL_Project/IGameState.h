@@ -1,10 +1,12 @@
 #pragma once
 
-class CGameState
+#include "IEventHandler.h"
+
+class IGameState: public IEventHandler
 {
 public:
-	CGameState();
-	virtual ~CGameState();
+	IGameState();
+	virtual ~IGameState();
 
 	virtual bool OnInit() = 0;
 

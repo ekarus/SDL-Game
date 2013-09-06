@@ -3,7 +3,6 @@
 
 int main(int argc, char** argv)
 {
-	CGame game;
-	game.onExecute();
+	CApp::getInstance()->onExecute();
 	return 0;
 }

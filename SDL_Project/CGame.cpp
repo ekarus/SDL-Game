@@ -1,16 +1,19 @@
 #include "CGame.h"
 #include <stdlib.h>
 #include <iostream>
+#include "CGameMenu.h"
+#include "CCollision.h"
 
 
 CGame::CGame() 
 {
-	pause=false;
 	fail=false;
 	live_obj=0;
 	obj_count=0;
 	obj_incr=5;
 	player=nullptr;
+
+	app=CApp::getInstance();
 }
 
 
@@ -50,10 +53,9 @@ void CGame::Restart()
 		int s=8+rand()%20;
 		e->OnRestart();
 		e->setSize(Vector2d(s,s));
-		e->setPos(Vector2d(rand()%(SCREEN_WIDTH-s),rand()%(SCREEN_HEIGHT-s)));
+		e->setPos(Vector2d(rand()%(app->getScrWidth()-s),rand()%(app->getScrHeight()-s)));
 		e->setColor(Colors(rand()%4));
 	}
-	//player->OnRestart();
 	player->setColor(red);
 	player->setSize(Vector2d(15,15));
 	player->setGoalPoint(player->getCenter());
@@ -68,13 +70,12 @@ void CGame::NextLevel()
 
 bool CGame::OnInit()
 {
-	CApp::OnInit();
+	cout<<"GAME --- INIT"<<endl;
 	player=new CPlayer();
-	player->OnLoad("../Res/circle_a.png",render);
+	player->OnLoad("../Res/circle_a.png",app->getRender());
 	CEntity::entity_list.push_back(player);
 	srand(time(nullptr));
 	AddNPC(3);
-	pause=false;
 	Restart();
 	return true;
 
@@ -82,9 +83,30 @@ bool CGame::OnInit()
 
 void CGame::OnUpdate(float time)
 {
-	CApp::OnUpdate(time);
-	if(!pause)
+	for(int i=0;i<CEntity::entity_list.size();++i)
 	{
+		if(CEntity::entity_list[i]!=nullptr)
+		{
+			CEntity::entity_list[i]->OnUpdate(time);
+		}
+	}
+	for (int i = 0; i < CCollision::collision_list.size(); i++)
+	{
+		CEntity* A=CCollision::collision_list[i].entityA;
+		CEntity* B=CCollision::collision_list[i].entityB;
+
+		if(A==nullptr || B==nullptr)
+			continue;
+		else
+		{
+			if(A->OnCollision(B))
+			{
+				B->OnCollision(A);
+			}
+		}
+	}
+	CCollision::collision_list.clear();
+
 		live_obj=0;
 
 		for(int i=0;i<npcs.size();i++)
@@ -103,19 +125,35 @@ void CGame::OnUpdate(float time)
 		{
 			Restart();
 		}
-	}
 }
 
 void CGame::OnRender()
 {
-	SDL_RenderClear(render);
-	CApp::OnRender();
-	SDL_RenderPresent(render);
+	for(int i=0;i<CEntity::entity_list.size();++i)
+	{
+		if(CEntity::entity_list[i]!=nullptr)
+		{
+			if(CEntity::entity_list[i]->getIsVisible())
+			{
+				CEntity::entity_list[i]->OnRender(app->getRender());
+			}
+		}
+	}
+	/*SDL_RenderClear(app->getRender());
+	SDL_RenderPresent(app->getRender());*/
 }
 
 void CGame::OnCleanUp()
 {
-	CApp::OnCleanUp();
+	for(auto i=CEntity::entity_list.begin();i!=CEntity::entity_list.end();++i)
+	{
+		if(*i!=nullptr)
+		{
+			(*i)->OnCleanUp();
+			delete *i;
+		}
+	}
+	CEntity::entity_list.clear();
 }
 
 void CGame::OnLButtonDown( int mX, int mY )
@@ -135,7 +173,7 @@ void CGame::OnRButtonDown( int mX, int mY )
 
 void CGame::OnKeyDown( SDL_Keysym key )
 {
-	CApp::OnKeyDown(key);
+
 	if(key.sym=='r')
 	{
 		Restart();
@@ -147,13 +185,6 @@ void CGame::OnKeyDown( SDL_Keysym key )
 	if(key.sym=='e')
 	{
 		player->setSize(player->getSize()*0.9f);
-	}
-	if(key.sym=='p')
-	{
-		if(pause)
-			pause=false;
-		else
-			pause=true;
 	}
 	if(key.sym=='w')
 	{
@@ -171,6 +202,10 @@ void CGame::OnKeyDown( SDL_Keysym key )
 	{
 		player->onMove(Vector2d(1,0));
 	}
+	if(key.scancode==SDL_SCANCODE_ESCAPE)
+	{
+		app->PushState(CGameMenu::getInstance());
+	}
 }
 
 void CGame::OnMouseMove( int x, int y, int relX, int relY, bool Left,bool Right,bool Middle )
@@ -187,10 +222,22 @@ void CGame::AddNPC( int count )
 	for(int i=0;i<count;i++)
 	{
 		CMoveObject* e=new CNpc();
-		e->OnLoad("../Res/circle_a.png",render);
+		e->OnLoad("../Res/circle_a.png",app->getRender());
 		CEntity::entity_list.push_back(e);
 		npcs.push_back(e);
 	}
 }
+
+void CGame::OnPause()
+{
+	cout<<"GAME --- PAUSE"<<endl;
+}
+
+void CGame::OnResume()
+{
+	cout<<"GAME --- RESUME"<<endl;
+}
+
+CGame CGame::inst;
 
 

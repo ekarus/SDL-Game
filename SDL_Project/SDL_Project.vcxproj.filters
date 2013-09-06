@@ -57,10 +57,16 @@
     <ClCompile Include="CCollision.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
-    <ClCompile Include="CGameState.cpp">
+    <ClCompile Include="IEventHandler.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
-    <ClCompile Include="IEventHandler.cpp">
+    <ClCompile Include="IGameState.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="CIntroScreen.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="CGameMenu.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
   </ItemGroup>
@@ -104,10 +110,16 @@
     <ClInclude Include="CCollision.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="CGameState.h">
+    <ClInclude Include="IEventHandler.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="IEventHandler.h">
+    <ClInclude Include="IGameState.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="CIntroScreen.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="CGameMenu.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
   </ItemGroup>

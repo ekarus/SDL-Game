@@ -5,27 +5,28 @@
 #include "CEntity.h"
 #include "CPlayer.h"
 #include "CNpc.h"
+#include "IGameState.h"
 #include <stdlib.h>
 #include <vector>
 
 using namespace std;
 
-class CGame: public CApp
+class CGame: public IGameState
 {
 public:
 
-    CGame();
+    
     virtual ~CGame();
 
-	enum GameState{ PLAY, PAUSE, MENU};
-	enum RoundState{ };
-
+	static CGame* getInstance(){return &inst;}
 private:
+	CGame();
+	static CGame inst;
+	CApp* app;
 
 	CPlayer* player;
 	vector<CMoveObject*> npcs;
 
-	bool pause;
 	bool fail;
 	int live_obj;
 	int obj_count;
@@ -58,5 +59,9 @@ protected:
 	virtual void OnKeyDown(SDL_Keysym key);
 
 	virtual void OnMouseMove( int mX, int mY, int relX, int relY, bool Left,bool Right,bool Middle );
+
+	virtual void OnPause();
+
+	virtual void OnResume();
 
 };

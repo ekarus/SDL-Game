@@ -4,7 +4,11 @@
 #include "CTexture.h"
 #include "CFPS.h"
 #include "CCollision.h"
+#include "CIntroScreen.h"
+#include "CGameMenu.h"
 using namespace std;
+
+CApp CApp::inst;
 
 CApp::CApp()
 {
@@ -65,17 +69,19 @@ bool CApp::OnInit()
 		return false;
 	}
 
+	PushState(CIntroScreen::getInstance());
 	return true;
 }
 
 void CApp::OnEvent( SDL_Event* event )
 {
 	IEventHandler::onEvent(event);
+	states.back()->onEvent(event);
 }
 
 void CApp::OnUpdate( float time )
 {
-	for(int i=0;i<CEntity::entity_list.size();++i)
+	/*for(int i=0;i<CEntity::entity_list.size();++i)
 	{
 		if(CEntity::entity_list[i]!=nullptr)
 		{
@@ -97,12 +103,16 @@ void CApp::OnUpdate( float time )
 			}
 		}
 	}
-	CCollision::collision_list.clear();
+	CCollision::collision_list.clear();*/
+
+	states.back()->OnUpdate(CFPS::getInstance()->getSpeedFactor());
 }
 
 void CApp::OnRender()
 {
-	for(int i=0;i<CEntity::entity_list.size();++i)
+	SDL_RenderClear(render);
+
+	/*for(int i=0;i<CEntity::entity_list.size();++i)
 	{
 		if(CEntity::entity_list[i]!=nullptr)
 		{
@@ -111,12 +121,16 @@ void CApp::OnRender()
 				CEntity::entity_list[i]->OnRender(render);
 			}
 		}
-	}
+	}*/
+
+	states.back()->OnRender();
+
+	SDL_RenderPresent(render);
 }
 
 void CApp::OnCleanUp()
 {
-	for(auto i=CEntity::entity_list.begin();i!=CEntity::entity_list.end();++i)
+	/*for(auto i=CEntity::entity_list.begin();i!=CEntity::entity_list.end();++i)
 	{
 		if(*i!=nullptr)
 		{
@@ -124,7 +138,13 @@ void CApp::OnCleanUp()
 			delete *i;
 		}
 	}
-	CEntity::entity_list.clear();
+	CEntity::entity_list.clear();*/
+
+	while ( !states.empty() ) {
+		states.back()->OnCleanUp();
+		states.pop_back();
+	}
+
 	SDL_DestroyRenderer(render);
 	SDL_DestroyWindow(win);
 	SDL_Quit();
@@ -140,31 +160,45 @@ void CApp::OnExit()
 	Run(false);
 }
 
-void CApp::OnKeyDown( SDL_Keysym key )
-{
-	cout<<"OnKeyDown "<<key.sym<<" "<<key.mod<<" "<<key.scancode<<endl;
-	if(key.scancode==SDL_Scancode::SDL_SCANCODE_ESCAPE)
-		OnExit();
-}
-
-void CApp::OnMouseMove( int mX, int mY, int relX, int relY, bool Left,bool Right,bool Middle )
-{
-
-}
-
-void CApp::OnLButtonDown( int mX, int mY )
-{
-	cout<<"OnLButtonDown "<<mX<<" "<<mY<<endl;
-}
-
-void CApp::OnRButtonDown( int mX, int mY )
-{
-	cout<<"OnRButtonDown "<<mX<<" "<<mY<<endl;
-}
-
 void CApp::OnResize( int w,int h )
 {
 	cout<<"OnResize "<<w<<" "<<h<<endl;
 	SCREEN_WIDTH=w;
 	SCREEN_HEIGHT=h;
 }
+
+void CApp::PushState( IGameState* state )
+{
+	if(!states.empty())
+	{
+		states.back()->OnPause();
+	}
+	states.push_back(state);
+	state->OnInit();
+}
+
+void CApp::PopState()
+{
+	if(!states.empty())
+	{
+		states.back()->OnCleanUp();
+		states.pop_back();
+		if(!states.empty())
+		{
+			states.back()->OnResume();
+		}
+	}
+}
+
+void CApp::ChangeState( IGameState* state )
+{
+	if(!states.empty())
+	{
+		states.back()->OnCleanUp();
+		states.pop_back();
+	}
+	states.push_back(state);
+	state->OnInit();
+}
+
+

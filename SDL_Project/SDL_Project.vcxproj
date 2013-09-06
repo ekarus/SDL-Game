@@ -74,10 +74,12 @@
     <ClCompile Include="CApp.cpp" />
     <ClCompile Include="CCollision.cpp" />
     <ClCompile Include="CEntity.cpp" />
+    <ClCompile Include="CGameMenu.cpp" />
+    <ClCompile Include="CIntroScreen.cpp" />
     <ClCompile Include="IEventHandler.cpp" />
     <ClCompile Include="CFPS.cpp" />
     <ClCompile Include="CGame.cpp" />
-    <ClCompile Include="CGameState.cpp" />
+    <ClCompile Include="IGameState.cpp" />
     <ClCompile Include="CMoveObject.cpp" />
     <ClCompile Include="CNpc.cpp" />
     <ClCompile Include="CPlayer.cpp" />
@@ -92,10 +94,12 @@
     <ClInclude Include="CApp.h" />
     <ClInclude Include="CCollision.h" />
     <ClInclude Include="CEntity.h" />
+    <ClInclude Include="CGameMenu.h" />
+    <ClInclude Include="CIntroScreen.h" />
     <ClInclude Include="IEventHandler.h" />
     <ClInclude Include="CFPS.h" />
     <ClInclude Include="CGame.h" />
-    <ClInclude Include="CGameState.h" />
+    <ClInclude Include="IGameState.h" />
     <ClInclude Include="CMoveObject.h" />
     <ClInclude Include="CNpc.h" />
     <ClInclude Include="CPlayer.h" />
