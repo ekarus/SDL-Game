@@ -1,10 +1,11 @@
 #pragma once
 #include <SDL.h>
 
-class CEvent
+class IEventHandler
 {
 public:
 	void onEvent(SDL_Event* event);
+
 	virtual void OnInputFocus();
 
 	virtual void OnInputBlur();
@@ -32,16 +33,6 @@ public:
 	virtual void OnMButtonDown(int mX, int mY);
 
 	virtual void OnMButtonUp(int mX, int mY);
-
-	virtual void OnJoyAxis(Uint8 which, Uint8 axis, Sint16 value);
-
-	virtual void OnJoyButtonDown(Uint8 which, Uint8 button);
-
-	virtual void OnJoyButtonUp(Uint8 which, Uint8 button);
-
-	virtual void OnJoyHat(Uint8 which, Uint8 hat, Uint8 value);
-
-	virtual void OnJoyBall(Uint8 which, Uint8 ball, Sint16 xrel, Sint16 yrel);
 
 	virtual void OnMinimize();
 

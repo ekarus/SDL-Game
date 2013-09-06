@@ -70,7 +70,7 @@ bool CApp::OnInit()
 
 void CApp::OnEvent( SDL_Event* event )
 {
-	CEvent::onEvent(event);
+	IEventHandler::onEvent(event);
 }
 
 void CApp::OnUpdate( float time )

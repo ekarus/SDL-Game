@@ -74,7 +74,7 @@
     <ClCompile Include="CApp.cpp" />
     <ClCompile Include="CCollision.cpp" />
     <ClCompile Include="CEntity.cpp" />
-    <ClCompile Include="CEvent.cpp" />
+    <ClCompile Include="IEventHandler.cpp" />
     <ClCompile Include="CFPS.cpp" />
     <ClCompile Include="CGame.cpp" />
     <ClCompile Include="CGameState.cpp" />
@@ -92,7 +92,7 @@
     <ClInclude Include="CApp.h" />
     <ClInclude Include="CCollision.h" />
     <ClInclude Include="CEntity.h" />
-    <ClInclude Include="CEvent.h" />
+    <ClInclude Include="IEventHandler.h" />
     <ClInclude Include="CFPS.h" />
     <ClInclude Include="CGame.h" />
     <ClInclude Include="CGameState.h" />

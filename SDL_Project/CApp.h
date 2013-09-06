@@ -1,10 +1,10 @@
 #pragma once
-#include "CEvent.h"
+#include "IEventHandler.h"
 #include "CEntity.h"
 #include <SDL.h>
 #include <string>
 
-class CApp: public CEvent
+class CApp: public IEventHandler
 {
 public:
 
