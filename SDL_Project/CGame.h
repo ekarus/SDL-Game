@@ -35,8 +35,12 @@ public:
 
 	virtual void NextLevel();
 
-private:
+protected:
+
 	CGame();
+
+private:
+
 	static CGame inst;
 	CApp* app;
 

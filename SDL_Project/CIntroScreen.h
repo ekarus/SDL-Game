@@ -20,12 +20,14 @@ public:
 
 	virtual void OnResume();
 
-	virtual void OnEvent(SDL_Event* event);
-
 	static CIntroScreen* getInstance(){return &inst;}
 
-private:
+
+protected:
+
 	CIntroScreen();
+
+private:
 
 	static CIntroScreen inst;
 	CApp* app;

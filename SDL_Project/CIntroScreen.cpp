@@ -57,9 +57,4 @@ CIntroScreen::CIntroScreen()
 	bg=nullptr;
 }
 
-void CIntroScreen::OnEvent( SDL_Event* event )
-{
-	IEventHandler::onEvent(event);
-}
-
 CIntroScreen CIntroScreen::inst;

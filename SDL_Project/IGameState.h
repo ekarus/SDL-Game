@@ -2,6 +2,7 @@
 
 #include "IEventHandler.h"
 
+//Состояние игры
 class IGameState: public IEventHandler
 {
 public:
@@ -10,6 +11,14 @@ public:
 
 	virtual bool OnInit() = 0;
 
+	//************************************
+	// Method:    OnUpdate
+	// FullName:  IGameState::OnUpdate
+	// Access:    virtual public 
+	// Returns:   void
+	// Qualifier:
+	// Parameter: float time-врямя прошедшее после предыдущего апдейта в секундах
+	//************************************
 	virtual void OnUpdate(float time) = 0;
 
 	virtual void OnRender() = 0;

@@ -20,17 +20,20 @@ public:
 
 	virtual void OnResume();
 
-	virtual void OnEvent(SDL_Event* event);
-
 	static CGameMenu* getInstance(){return &inst;}
 
-private:
+protected:
+
 	CGameMenu();
+
+	virtual void OnKeyDown( SDL_Keysym key );
+
+private:
 
 	static CGameMenu inst;
 	CApp* app;
 	SDL_Texture* bg;
 
-	virtual void OnKeyDown( SDL_Keysym key );
+	
 
 };

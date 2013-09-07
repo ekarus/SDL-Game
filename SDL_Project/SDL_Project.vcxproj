@@ -96,6 +96,7 @@
     <ClInclude Include="CEntity.h" />
     <ClInclude Include="CGameMenu.h" />
     <ClInclude Include="CIntroScreen.h" />
+    <ClInclude Include="CTextureManager.h" />
     <ClInclude Include="IEventHandler.h" />
     <ClInclude Include="CFPS.h" />
     <ClInclude Include="CGame.h" />

@@ -16,7 +16,6 @@ public:
 	virtual int onExecute();
 	
 	bool isRun(){return run;}
-	void Run(bool val){run=val;}
 
 	int getScrWidth() const { return SCREEN_WIDTH; }
 	int getScrHeight() const { return SCREEN_HEIGHT; }
@@ -38,6 +37,12 @@ public:
 
 private:
 
+	int SCREEN_WIDTH;
+	int SCREEN_HEIGHT;
+
+	SDL_Window* win;
+	SDL_Renderer* render;
+
 	IGameState* state;
 	bool run;
 	static CApp inst;
@@ -46,18 +51,6 @@ private:
 	std::vector<IGameState*> states;
 
 protected:
-
-	int SCREEN_WIDTH;
-	int SCREEN_HEIGHT;
-	SDL_Window* win;
-	SDL_Renderer* render;
-
-	
-	
-	
-
-
-	
 
 	virtual void OnResize( int w,int h );
 

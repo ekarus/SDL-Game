@@ -32,7 +32,7 @@ int CApp::onExecute()
 		logError(cout,"onInit");
 		return -1;
 	}
-	Run(true);
+	run=true;
 	SDL_Event event;
 	CFPS* fps=CFPS::getInstance();
 	while(isRun())
@@ -114,7 +114,7 @@ void CApp::logError( std::ostream& os,std::string msg )
 
 void CApp::OnExit()
 {
-	Run(false);
+	run=false;
 }
 
 void CApp::OnResize( int w,int h )

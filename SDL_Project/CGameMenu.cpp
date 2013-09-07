@@ -43,11 +43,6 @@ void CGameMenu::OnResume()
 
 }
 
-void CGameMenu::OnEvent( SDL_Event* event )
-{
-	IEventHandler::onEvent(event);
-}
-
 CGameMenu::CGameMenu()
 {
 	bg=nullptr;
