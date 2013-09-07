@@ -1,10 +1,16 @@
 #include "CGameMenu.h"
-
+#include "CGame.h"
+#include <iostream>
 
 bool CGameMenu::OnInit()
 {
 	app=CApp::getInstance();
 	bg=CTexture::onLoad(app->getRender(),"../Res/menu.bmp");
+	if(bg==nullptr)
+	{
+		app->logError(cerr,"CGameMenu::OnInit");
+		return false;
+	}
 	return true;
 }
 
@@ -15,9 +21,11 @@ void CGameMenu::OnUpdate( float time )
 
 void CGameMenu::OnRender()
 {
-	SDL_RenderClear(app->getRender());
-	CTexture::onDraw(bg,app->getRender(),0,0,app->getScrWidth(),app->getScrHeight());
-	SDL_RenderPresent(app->getRender());
+	//SDL_RenderClear(app->getRender());
+	CGame::getInstance()->OnRender();
+	SDL_SetTextureAlphaMod(bg,10);
+	CTexture::onDraw(bg,app->getRender(),50,50,app->getScrWidth()-100,app->getScrHeight()-100);
+	//SDL_RenderPresent(app->getRender());
 }
 
 void CGameMenu::OnCleanUp()
@@ -42,7 +50,7 @@ void CGameMenu::OnEvent( SDL_Event* event )
 
 CGameMenu::CGameMenu()
 {
-
+	bg=nullptr;
 }
 
 void CGameMenu::OnKeyDown( SDL_Keysym key )

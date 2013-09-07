@@ -7,6 +7,11 @@ bool CIntroScreen::OnInit()
 {
 	app=CApp::getInstance();
 	bg=CTexture::onLoad(app->getRender(),"../Res/intro.png");
+	if(bg==nullptr)
+	{
+		app->logError(cerr,"CIntroScreen::OnInit");
+		return false;
+	}
 	return true;
 }
 
@@ -49,7 +54,7 @@ void CIntroScreen::OnKeyDown( SDL_Keysym key )
 
 CIntroScreen::CIntroScreen()
 {
-
+	bg=nullptr;
 }
 
 void CIntroScreen::OnEvent( SDL_Event* event )

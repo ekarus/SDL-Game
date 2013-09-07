@@ -14,11 +14,27 @@ using namespace std;
 class CGame: public IGameState
 {
 public:
-
     
     virtual ~CGame();
 
 	static CGame* getInstance(){return &inst;}
+
+	virtual bool OnInit();
+
+	virtual void OnUpdate(float time);
+
+	virtual void OnRender();
+
+	virtual void OnCleanUp();
+
+	virtual void OnPause();
+
+	virtual void OnResume();
+
+	virtual void Restart();
+
+	virtual void NextLevel();
+
 private:
 	CGame();
 	static CGame inst;
@@ -38,18 +54,6 @@ private:
 
 protected:
 
-	virtual void Restart();
-
-	virtual void NextLevel();
-
-	virtual bool OnInit();
-
-	virtual void OnUpdate(float time);
-
-	virtual void OnRender();
-
-	virtual void OnCleanUp();
-
 	virtual void OnLButtonDown( int mX, int mY );
 
 	virtual void OnLButtonUp( int mX, int mY );
@@ -59,9 +63,5 @@ protected:
 	virtual void OnKeyDown(SDL_Keysym key);
 
 	virtual void OnMouseMove( int mX, int mY, int relX, int relY, bool Left,bool Right,bool Middle );
-
-	virtual void OnPause();
-
-	virtual void OnResume();
 
 };

@@ -34,6 +34,8 @@ public:
 	virtual void OnUpdate(float time);
 	virtual void OnCleanUp();
 
+	void logError(std::ostream& os,std::string msg);
+
 private:
 
 	IGameState* state;
@@ -55,7 +57,7 @@ protected:
 	
 
 
-	virtual void logError(std::ostream& os,std::string msg);
+	
 
 	virtual void OnResize( int w,int h );
 

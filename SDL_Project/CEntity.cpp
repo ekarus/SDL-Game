@@ -1,5 +1,7 @@
 #include "CEntity.h"
 #include "CCollision.h"
+#include "CApp.h"
+#include <iostream>
 
 std::vector<CEntity*> CEntity::entity_list;
 
@@ -47,6 +49,8 @@ bool CEntity::OnLoad( std::string file,SDL_Renderer* render )
 		animator.setFrameCount(CTexture::getFrameCount(tex));
 		return true;
 	}
+	else
+		CApp::getInstance()->logError(std::cerr,"CEntity::OnLoad");
 	return false;
 }
 

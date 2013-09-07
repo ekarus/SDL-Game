@@ -36,6 +36,7 @@ void CTexture::onDraw( SDL_Texture* tex,SDL_Renderer* render,int currFrame,int f
 {
 	SDL_Rect rect;
 	SDL_QueryTexture(tex,NULL,NULL,&rect.w,&rect.h);
+	if(frameCount==0)frameCount=1;
 	int slide_width=rect.w/frameCount;
 	rect.x=slide_width*currFrame;
 	rect.y=0;

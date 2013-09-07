@@ -109,7 +109,7 @@ void CApp::OnCleanUp()
 
 void CApp::logError( std::ostream& os,std::string msg )
 {
-	os<<"["<<msg<<"] : "<<SDL_GetError()<<endl;
+	os<<""<<msg<<" : "<<SDL_GetError()<<endl;
 }
 
 void CApp::OnExit()
