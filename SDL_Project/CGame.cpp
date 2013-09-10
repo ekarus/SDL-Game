@@ -139,8 +139,6 @@ void CGame::OnRender()
 			}
 		}
 	}
-	/*SDL_RenderClear(app->getRender());
-	SDL_RenderPresent(app->getRender());*/
 }
 
 void CGame::OnCleanUp()

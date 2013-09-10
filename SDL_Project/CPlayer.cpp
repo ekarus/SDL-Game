@@ -19,7 +19,6 @@ void CPlayer::OnUpdate( float time )
 {
 	if (live)
 	{
-		//vel=(goalPoint-getCenter()).normalize()*speed;
 		if((goalPoint-getCenter()).getLenght()<size.x/2)
 		{
 			hasGoal=false;

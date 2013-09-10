@@ -103,8 +103,5 @@ void CMoveObject::OnEntityNear(CEntity* entity)
 
 void CMoveObject::OnMapCollide( float x, float y )
 {
-	std::cout<<"Map COLLIDE"<<std::endl;
 	CEntity::OnMapCollide(x,y);
-	//acc=acc*(-1);
-	//acc=Vector2d(-1,0).normalize()*speed;
 }

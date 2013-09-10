@@ -69,15 +69,6 @@ void CNpc::OnCleanUp()
 bool CNpc::OnCollision( CEntity* entity )
 {
 	return CMoveObject::OnCollision(entity);
-	/*if(entity->getSize().getLenght()<=size.getLenght())
-	{
-	if(entity->getColor()!=color)
-	{
-	eat(entity);
-	}
-	return false;
-	}
-	return true;*/
 }
 
 void CNpc::OnRestart()
