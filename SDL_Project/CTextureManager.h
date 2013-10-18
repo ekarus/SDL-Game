@@ -2,43 +2,68 @@
 #include <string>
 #include <SDL.h>
 #include <map>
+#include "Singleton.h"
 
-class CTextureManager
+typedef Uint32 TextureId;
+
+struct Color
+{
+	enum Enum
+	{
+		green,
+		blue,
+		gray,
+		orange,
+		red,
+		dark_gray,
+		white,
+		black
+	};
+};
+
+class CTextureManager : public Singleton<CTextureManager>
 {
 public:
-	//возвращает указатель на экземпляр синглтона
-	static CTextureManager* getInst()
-	{
-		static CTextureManager inst;
-		return &inst;
-	}
 	//загружает текстуру из файла и возвращает ид, 0 - если ошибка
-	Uint32 LoadTexture(std::string file);
+	TextureId LoadTexture(const std::string& file);
 	//удаляет указанную текстуру
-	void DeleteTexture(Uint32 id);
+	void DeleteTexture(TextureId id);
 	//рисует текстуру в точке х,у с шириной w, высотой h и углом поворота angle
-	void DrawTexture(Uint32 id,int x,int y,int w,int h, int angle=0);
+	void DrawTexture(TextureId id,int x,int y,int w,int h, int angle=0);
 	//рисует текстуру часть текстуры (x2,y2,w2,h2) в точке х,у с шириной w, высотой h и углом поворота angle
-	void DrawTexture(Uint32 id,int x,int y,int w,int h, int x2,int y2, int w2,int h2 ,int angle=0);
+	void DrawTexture(TextureId id,int x,int y,int w,int h, int x2,int y2, int w2,int h2 ,int angle=0);
 	//устанавливает цвет для указанной текстуры в формате RGBA
-	void SetTextureColor(Uint8 r,Uint8 g, Uint8 b, Uint8 a);
+	void SetTextureColor(TextureId id, Uint8 r,Uint8 g, Uint8 b, Uint8 a);
+	void SetTextureColor(TextureId id, Color::Enum color);
 	//возвращает ширину текстуры
-	int getTextureWidth(Uint32 id);
+	int getTextureWidth(TextureId id);
 	//возвращает высоту текстуры
-	int getTextureHeight(Uint32 id);
+	int getTextureHeight(TextureId id);
 	//удаляет все текстуры
 	void DeleteAllTexture();
 
 private:
+	friend class Singleton<CTextureManager>;
 
-	class Texture
+	struct Texture
 	{
-	public:
 		int w;
 		int h;
 		SDL_Texture* tex;
 		std::string file;
+		TextureId id;
 	};
 
-	std::map< Uint32, Texture > m_Textures;
+	typedef std::map< std::string, Texture > TexturesContainerByPath;
+	typedef std::map< TextureId, Texture > TexturesContainerByID;
+	TexturesContainerByPath textures_by_path_;
+	TexturesContainerByID textures_by_id_;
+	size_t last_id;
+
+	void InsertTexture(Texture& texture);
+
+protected:
+
+	CTextureManager();
+	virtual ~CTextureManager();
 };
