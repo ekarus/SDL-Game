@@ -9,7 +9,6 @@ CNpc::CNpc()
 
 CNpc::~CNpc()
 {
-
 }
 
 void CNpc::OnUpdate( float time )
@@ -44,25 +43,24 @@ void CNpc::OnRender( SDL_Renderer* render )
 	if(live)
 	{
 		CMoveObject::OnRender(render);
-		CTexture::setColor(tex,color);
+		tex->setColor(color);
 		if(goal!=nullptr)
 		{
-			CTexture::setColor(target_tex,color);
-			CTexture::onDraw(target_tex,render,goal->getPos().x-10,goal->getPos().y-10,goal->getSize().x+20,goal->getSize().y+20);
+			target_tex->setColor(color);
+			target_tex->Draw(goal->getPos().x-10,goal->getPos().y-10,goal->getSize().x+20,goal->getSize().y+20);
 		}
 	}
 }
 
 bool CNpc::OnLoad( std::string file,SDL_Renderer* render )
 {
-	target_tex=CTexture::onLoad(render,"../Res/target.png");
+	if(!(target_tex=CTextureManager::Instance()->LoadTexturePtr("../Res/target.png")))
+		return false;
 	return CMoveObject::OnLoad(file,render);
 }
 
-
 void CNpc::OnCleanUp()
 {
-	SDL_DestroyTexture(target_tex);
 	CMoveObject::OnCleanUp();
 }
 
@@ -90,7 +88,7 @@ void CNpc::OnEntityNear( CEntity* entity )
 		}
 		else
 		{
-			if(dist.getLenght()<size.getLenght()*8 && 
+			if(dist.getLenght()<size.getLenght()*8 &&
 				(goal==nullptr || goal->getSize().getLenght()<entity->getSize().getLenght()))
 			{
 				setGoal(entity);
@@ -103,5 +101,4 @@ bool CNpc::onEat( CEntity* entity )
 {
 	goal=nullptr;
 	return CMoveObject::onEat(entity);
-	
 }

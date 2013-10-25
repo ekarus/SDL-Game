@@ -3,8 +3,24 @@
 #include <SDL.h>
 #include <map>
 #include "Singleton.h"
+#include <memory>
+#include "CRender.h"
+#include "CLogger.h"
+#include "CAnimation.h"
 
 typedef Uint32 TextureId;
+typedef SDL_Rect Rect;
+typedef SDL_Texture RawTexture;
+
+namespace Detail
+{
+	class Texture;
+	class AnimatedTexture;
+};
+typedef std::shared_ptr<Detail::Texture> TextureSharedPtr;
+typedef std::weak_ptr<Detail::Texture> TextureWeakPtr;
+typedef std::shared_ptr<Detail::AnimatedTexture> AnimTextureSharedPtr;
+typedef std::weak_ptr<Detail::AnimatedTexture> AnimTextureWeakPtr;
 
 struct Color
 {
@@ -24,46 +40,103 @@ struct Color
 class CTextureManager : public Singleton<CTextureManager>
 {
 public:
-	//загружает текстуру из файла и возвращает ид, 0 - если ошибка
-	TextureId LoadTexture(const std::string& file);
-	//удаляет указанную текстуру
+
+	TextureSharedPtr LoadTexturePtr(const std::string& file);
+	TextureSharedPtr LoadAnimTexturePtr(const std::string& file);
 	void DeleteTexture(TextureId id);
-	//рисует текстуру в точке х,у с шириной w, высотой h и углом поворота angle
-	void DrawTexture(TextureId id,int x,int y,int w,int h, int angle=0);
-	//рисует текстуру часть текстуры (x2,y2,w2,h2) в точке х,у с шириной w, высотой h и углом поворота angle
-	void DrawTexture(TextureId id,int x,int y,int w,int h, int x2,int y2, int w2,int h2 ,int angle=0);
-	//устанавливает цвет для указанной текстуры в формате RGBA
-	void SetTextureColor(TextureId id, Uint8 r,Uint8 g, Uint8 b, Uint8 a);
-	void SetTextureColor(TextureId id, Color::Enum color);
-	//возвращает ширину текстуры
-	int getTextureWidth(TextureId id);
-	//возвращает высоту текстуры
-	int getTextureHeight(TextureId id);
-	//удаляет все текстуры
 	void DeleteAllTexture();
 
 private:
 	friend class Singleton<CTextureManager>;
+	typedef std::map< TextureId, RawTexture* > TexturesContainerByID;
+	typedef std::map< std::string, TextureWeakPtr > TextureWeakPtrContainer;
 
-	struct Texture
-	{
-		int w;
-		int h;
-		SDL_Texture* tex;
-		std::string file;
-		TextureId id;
-	};
+	bool isAlreadyLoaded(const std::string& file);
 
-	typedef std::map< std::string, Texture > TexturesContainerByPath;
-	typedef std::map< TextureId, Texture > TexturesContainerByID;
-	TexturesContainerByPath textures_by_path_;
+	TextureWeakPtrContainer textures_;
 	TexturesContainerByID textures_by_id_;
 	size_t last_id;
-
-	void InsertTexture(Texture& texture);
 
 protected:
 
 	CTextureManager();
 	virtual ~CTextureManager();
 };
+
+namespace Detail
+{
+	class Texture
+	{
+	public:
+		Texture():id_(0),file_(""),tex_(nullptr),width_(0),height_(0)
+		{
+		}
+		Texture(const std::string& file, RawTexture* tex, TextureId id, size_t width, size_t height):
+		file_(file), id_(id), tex_(tex), width_(width), height_(height)
+		{
+		}
+		virtual void Draw(int x,int y,int w,int h, int angle = 0 );
+
+		virtual void Draw(Rect dst_rect );
+
+		virtual void Draw(int x,int y,int w,int h, int x2,int y2, int w2,int h2 ,int angle/*=0*/ );
+
+		virtual void Draw(const Rect* src_rect,const Rect* dst_rect );
+
+		virtual ~Texture()
+		{
+			CTextureManager::Instance()->DeleteTexture(id_);
+		}
+		virtual bool isValid()
+		{
+			return (id_ != 0) && (tex_ != nullptr);
+		}
+
+		std::string getFileName() const
+		{
+			return file_;
+		}
+
+		size_t getWidth() const
+		{
+			return width_;
+		}
+
+		size_t getHeight() const
+		{
+			return height_;
+		}
+
+		void setColor(Color::Enum color);
+
+	protected:
+		TextureId id_;
+		int width_;
+		int height_;
+		SDL_Texture* tex_;
+		std::string file_;
+		Color::Enum color_;
+	};
+
+	class AnimatedTexture: public Texture
+	{
+	public:
+		AnimatedTexture(const std::string& file, RawTexture* tex, TextureId id, size_t width, size_t height, size_t row_count, size_t column_count):
+		  Texture(file, tex, id, width, height),row_count_(row_count),column_count_(column_count)
+		  {
+			  animator.setFrameCount(row_count_);
+		  }
+
+		  void Draw(size_t currFrame, size_t frameCount,const Rect* dst_rect );
+
+		  virtual void Draw( int x,int y,int w,int h, int angle );
+
+		  virtual void Draw( Rect dst_rect );
+
+	private:
+		CAnimation animator;
+		size_t row_count_;
+		size_t column_count_;
+		size_t animation_col_;
+	};
+}

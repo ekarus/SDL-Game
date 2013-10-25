@@ -5,22 +5,22 @@
 #include <string>
 #include "IGameState.h"
 #include <vector>
+#include "Singleton.h"
+#include "CRender.h"
+#include "CWindow.h"
 
-class CApp: public IEventHandler
+class CApp: public IEventHandler, public Singleton<CApp>
 {
 public:
 
-	static CApp* getInstance(){return &inst;}
-	virtual ~CApp();
-
 	virtual int onExecute();
-	
+
 	bool isRun(){return run;}
 
 	int getScrWidth() const { return SCREEN_WIDTH; }
 	int getScrHeight() const { return SCREEN_HEIGHT; }
-	SDL_Renderer* getRender() const { return render; }
-	SDL_Window* getWindow() const { return win; }
+	SDL_Renderer* getRender() const { return Renderer::Instance(); }
+	SDL_Window* getWindow() const { return Window::Instance(); }
 
 	void PushState(IGameState* state);
 	void PopState();
@@ -36,22 +36,20 @@ public:
 	void logError(std::ostream& os,std::string msg);
 
 private:
+	friend class Singleton<CApp>;
 
 	int SCREEN_WIDTH;
 	int SCREEN_HEIGHT;
 
-	SDL_Window* win;
-	SDL_Renderer* render;
-
 	IGameState* state;
 	bool run;
-	static CApp inst;
-	CApp();
 
 	std::vector<IGameState*> states;
 
 protected:
-
+	CApp();
+	virtual ~CApp();
 	virtual void OnResize( int w,int h );
 
 };
+

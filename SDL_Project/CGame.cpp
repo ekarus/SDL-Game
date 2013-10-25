@@ -13,7 +13,7 @@ CGame::CGame()
 	obj_incr=5;
 	player=nullptr;
 
-	app=CApp::getInstance();
+	app=CApp::Instance();
 }
 
 
@@ -54,9 +54,9 @@ void CGame::Restart()
 		e->OnRestart();
 		e->setSize(Vector2d(s,s));
 		e->setPos(Vector2d(rand()%(app->getScrWidth()-s),rand()%(app->getScrHeight()-s)));
-		e->setColor(Colors(rand()%4));
+		e->setColor(Color::Enum(rand()%4));
 	}
-	player->setColor(red);
+	player->setColor(Color::red);
 	player->setSize(Vector2d(15,15));
 	player->setGoalPoint(player->getCenter());
 
@@ -202,7 +202,7 @@ void CGame::OnKeyDown( SDL_Keysym key )
 	}
 	if(key.scancode==SDL_SCANCODE_ESCAPE)
 	{
-		app->PushState(CGameMenu::getInstance());
+		app->PushState(CGameMenu::Instance());
 	}
 }
 
@@ -235,7 +235,5 @@ void CGame::OnResume()
 {
 	cout<<"GAME --- RESUME"<<endl;
 }
-
-CGame CGame::inst;
 
 

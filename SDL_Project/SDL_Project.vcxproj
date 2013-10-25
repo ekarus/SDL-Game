@@ -18,7 +18,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -76,6 +76,10 @@
     <ClCompile Include="CEntity.cpp" />
     <ClCompile Include="CGameMenu.cpp" />
     <ClCompile Include="CIntroScreen.cpp" />
+    <ClCompile Include="CLogger.cpp" />
+    <ClCompile Include="CRender.cpp" />
+    <ClCompile Include="CTextureManager.cpp" />
+    <ClCompile Include="CWindow.cpp" />
     <ClCompile Include="IEventHandler.cpp" />
     <ClCompile Include="CFPS.cpp" />
     <ClCompile Include="CGame.cpp" />
@@ -86,6 +90,7 @@
     <ClCompile Include="CSurface.cpp" />
     <ClCompile Include="CTexture.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Singleton.cpp" />
     <ClCompile Include="timer.cpp" />
     <ClCompile Include="vector2d.cpp" />
   </ItemGroup>
@@ -96,7 +101,10 @@
     <ClInclude Include="CEntity.h" />
     <ClInclude Include="CGameMenu.h" />
     <ClInclude Include="CIntroScreen.h" />
+    <ClInclude Include="CLogger.h" />
+    <ClInclude Include="CRender.h" />
     <ClInclude Include="CTextureManager.h" />
+    <ClInclude Include="CWindow.h" />
     <ClInclude Include="IEventHandler.h" />
     <ClInclude Include="CFPS.h" />
     <ClInclude Include="CGame.h" />
@@ -106,6 +114,7 @@
     <ClInclude Include="CPlayer.h" />
     <ClInclude Include="CSurface.h" />
     <ClInclude Include="CTexture.h" />
+    <ClInclude Include="Singleton.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="vector2d.h" />
   </ItemGroup>

@@ -5,6 +5,7 @@
 
 enum Colors{ green, blue,gray,orange,red,dark_gray,white,black};
 
+//deprecated
 class CTexture
 {
 public:

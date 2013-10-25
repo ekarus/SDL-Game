@@ -1,18 +1,6 @@
 #include "CFPS.h"
 #include <time.h>
 
-
-CFPS* CFPS::getInstance()
-{
-	if(instance==nullptr)
-	{
-		instance=new CFPS();
-		return instance;
-	}
-	else
-		return instance;
-}
-
 CFPS::CFPS()
 {
 	frameCount=0;
@@ -35,4 +23,8 @@ void CFPS::onUpdate()
 	frameCount++;
 }
 
-CFPS* CFPS::instance;
+CFPS::~CFPS()
+{
+
+}
+

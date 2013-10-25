@@ -28,4 +28,6 @@ protected:
 private:
 	Vector2d goalPoint;
 	bool hasGoal;
+
+	TextureSharedPtr texture_ptr;
 };

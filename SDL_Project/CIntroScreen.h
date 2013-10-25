@@ -1,13 +1,12 @@
 #pragma once
 #include "IGameState.h"
-#include "SDL.h"
-#include "CTexture.h"
 #include "CApp.h"
+#include "Singleton.h"
+#include "CTextureManager.h"
 
-class CIntroScreen: public IGameState
+class CIntroScreen: public IGameState, public Singleton<CIntroScreen>
 {
 public:
-
 	virtual bool OnInit();
 
 	virtual void OnUpdate( float time );
@@ -20,18 +19,16 @@ public:
 
 	virtual void OnResume();
 
-	static CIntroScreen* getInstance(){return &inst;}
-
-
 protected:
-
 	CIntroScreen();
 
-private:
+	virtual ~CIntroScreen();
 
-	static CIntroScreen inst;
+private:
+	friend class Singleton<CIntroScreen>;
+
 	CApp* app;
-	SDL_Texture* bg;
+	TextureSharedPtr back_ground_;
 
 	virtual void OnKeyDown( SDL_Keysym key );
 

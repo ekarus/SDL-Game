@@ -1,10 +1,10 @@
 #pragma once
 #include "IGameState.h"
-#include "SDL.h"
-#include "CTexture.h"
 #include "CApp.h"
+#include "Singleton.h"
+#include "CTextureManager.h"
 
-class CGameMenu: public IGameState
+class CGameMenu: public IGameState, public Singleton<CGameMenu>
 {
 public:
 
@@ -20,20 +20,17 @@ public:
 
 	virtual void OnResume();
 
-	static CGameMenu* getInstance(){return &inst;}
-
 protected:
 
 	CGameMenu();
 
+	virtual ~CGameMenu();
+
 	virtual void OnKeyDown( SDL_Keysym key );
 
 private:
+	friend class Singleton<CGameMenu>;
 
-	static CGameMenu inst;
 	CApp* app;
-	SDL_Texture* bg;
-
-	
-
+	TextureSharedPtr bg;
 };

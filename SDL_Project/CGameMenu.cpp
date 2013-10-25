@@ -4,9 +4,9 @@
 
 bool CGameMenu::OnInit()
 {
-	app=CApp::getInstance();
-	bg=CTexture::onLoad(app->getRender(),"../Res/menu.png");
-	if(bg==nullptr)
+	app = CApp::Instance();
+	bg = CTextureManager::Instance()->LoadTexturePtr("../Res/menu.png");
+	if(!bg)
 	{
 		app->logError(cerr,"CGameMenu::OnInit");
 		return false;
@@ -21,14 +21,13 @@ void CGameMenu::OnUpdate( float time )
 
 void CGameMenu::OnRender()
 {
-	CGame::getInstance()->OnRender();
-	SDL_SetTextureAlphaMod(bg,10);
-	CTexture::onDraw(bg,app->getRender(),50,50,app->getScrWidth()-100,app->getScrHeight()-100);
+	CGame::Instance()->OnRender();
+	bg->Draw(50,50,app->getScrWidth()-100,app->getScrHeight()-100);
 }
 
 void CGameMenu::OnCleanUp()
 {
-	SDL_DestroyTexture(bg);
+	Delete();
 }
 
 void CGameMenu::OnPause()
@@ -43,7 +42,7 @@ void CGameMenu::OnResume()
 
 CGameMenu::CGameMenu()
 {
-	bg=nullptr;
+
 }
 
 void CGameMenu::OnKeyDown( SDL_Keysym key )
@@ -54,4 +53,7 @@ void CGameMenu::OnKeyDown( SDL_Keysym key )
 	}
 }
 
-CGameMenu CGameMenu::inst;
+CGameMenu::~CGameMenu()
+{
+	std::cout<<"~CGameMenu()"<<std::endl;
+}

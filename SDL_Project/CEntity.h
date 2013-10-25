@@ -5,6 +5,7 @@
 #include <SDL.h>
 #include <vector>
 #include <string>
+#include "CTextureManager.h"
 
  class CEntity
  {
@@ -44,8 +45,8 @@
 	 void setSize(Vector2d val) { size = val; }
 	 bool getIsVisible() const { return isVisible; }
 	 void setVisible(bool val) { isVisible = val; }
-	 Colors getColor() const { return color; }
-	 void setColor(Colors val) { color = val; }
+	 Color::Enum getColor() const { return color; }
+	 void setColor(Color::Enum val) { color = val; }
 	 Vector2d getCenter() const;
 	 bool isLive() const { return live; }
 	 void setLive(bool val) { live = val; }
@@ -62,10 +63,11 @@
 	 
 	 Vector2d pos;
 	 Vector2d size;
-	 Colors color;
+	 Color::Enum color;
 	 
-	 SDL_Texture* tex;
-	 CAnimation animator;
+	 //TextureId tex;
+	 TextureSharedPtr tex;
+	 //CAnimation animator;
 	 bool isVisible;
 	 
  };

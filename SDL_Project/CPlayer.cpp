@@ -41,15 +41,33 @@ void CPlayer::OnRender( SDL_Renderer* render )
 	if(live)
 	{
 		CMoveObject::OnRender(render);
-		CTexture::setColor(tex,white);
+		//CTexture::setColor(tex,white);
+		//CTextureManager::Instance()->SetTextureColor(tex,Color::white);
+		texture_ptr->setColor(Color::white);
 		if(hasGoal)
-			CTexture::onDraw(tex,render,goalPoint.x,goalPoint.y,10,10);
+			//CTextureManager::Instance()->Draw(tex,goalPoint.x,goalPoint.y,10,10);
+			//CTexture::onDraw(tex,render,goalPoint.x,goalPoint.y,10,10);
+		texture_ptr->Draw(goalPoint.x,goalPoint.y,10,10);
 	}
 	
 }
 
 bool CPlayer::OnLoad( std::string file,SDL_Renderer* render )
 {
+	texture_ptr = CTextureManager::Instance()->LoadAnimTexturePtr(file);
+	{
+		TextureSharedPtr texture_ptr1 = CTextureManager::Instance()->LoadTexturePtr(file);
+		{
+			TextureSharedPtr texture_ptr2 = CTextureManager::Instance()->LoadTexturePtr(file);
+		}
+	}
+	{
+		TextureSharedPtr texture_ptr;
+		texture_ptr = CTextureManager::Instance()->LoadTexturePtr(file);
+		texture_ptr = CTextureManager::Instance()->LoadTexturePtr(file);
+	}
+	
+
 	return CMoveObject::OnLoad(file,render);
 }
 

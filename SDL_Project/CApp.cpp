@@ -6,27 +6,24 @@
 #include "CCollision.h"
 #include "CIntroScreen.h"
 #include "CGameMenu.h"
+#include "CWindow.h"
+#include "CRender.h"
+#include <exception>
 using namespace std;
-
-CApp CApp::inst;
 
 CApp::CApp()
 {
 	run=false;
-	win=nullptr;
-	render=nullptr;
-	SCREEN_WIDTH=800;
-	SCREEN_HEIGHT=600;
+	SCREEN_WIDTH=300;
+	SCREEN_HEIGHT=300;
 }
 
 CApp::~CApp()
 {
-
 }
 
 int CApp::onExecute()
 {
-	
 	if(OnInit()==false)
 	{
 		logError(cout,"onInit");
@@ -34,7 +31,7 @@ int CApp::onExecute()
 	}
 	run=true;
 	SDL_Event event;
-	CFPS* fps=CFPS::getInstance();
+	CFPS* fps=CFPS::Instance();
 	while(isRun())
 	{
 		while(SDL_PollEvent(&event))
@@ -56,20 +53,17 @@ bool CApp::OnInit()
 		logError(cout,"SDL_Init");
 		return false;
 	}
-	win=SDL_CreateWindow("SDL_Project",100,100,SCREEN_WIDTH,SCREEN_HEIGHT,SDL_WINDOW_SHOWN|SDL_WINDOW_RESIZABLE);
-	if(win==nullptr)
+	try
 	{
-		logError(cout,"SDL_CreateWindow");
-		return false;
+		Window::Instance("SDL - Life Game", SCREEN_WIDTH, SCREEN_HEIGHT);
+		Renderer::Instance();
 	}
-	render=SDL_CreateRenderer(win,-1,SDL_RENDERER_ACCELERATED|SDL_RENDERER_PRESENTVSYNC);
-	if(render==nullptr)
+	catch (std::exception& ex)
 	{
-		logError(cout,"SDL_CreateRenderer");
-		return false;
+		logError(cout,ex.what());
 	}
 
-	PushState(CIntroScreen::getInstance());
+	PushState(CIntroScreen::Instance());
 	return true;
 }
 
@@ -81,29 +75,27 @@ void CApp::OnEvent( SDL_Event* event )
 
 void CApp::OnUpdate( float time )
 {
-
-	states.back()->OnUpdate(CFPS::getInstance()->getSpeedFactor());
+	states.back()->OnUpdate(CFPS::Instance()->getSpeedFactor());
 }
 
 void CApp::OnRender()
 {
-	SDL_RenderClear(render);
+	SDL_RenderClear(Renderer::Instance());
 
 	states.back()->OnRender();
 
-	SDL_RenderPresent(render);
+	SDL_RenderPresent(Renderer::Instance());
 }
 
 void CApp::OnCleanUp()
 {
-
 	while ( !states.empty() ) {
 		states.back()->OnCleanUp();
 		states.pop_back();
 	}
 
-	SDL_DestroyRenderer(render);
-	SDL_DestroyWindow(win);
+	Renderer::Delete();
+	Window::Delete();
 	SDL_Quit();
 }
 
@@ -157,5 +149,3 @@ void CApp::ChangeState( IGameState* state )
 	states.push_back(state);
 	state->OnInit();
 }
-
-

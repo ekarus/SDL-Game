@@ -3,6 +3,6 @@
 
 int main(int argc, char** argv)
 {
-	CApp::getInstance()->onExecute();
+	CApp::Instance()->onExecute();
 	return 0;
 }

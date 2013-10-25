@@ -2,41 +2,38 @@
 #include "CCollision.h"
 #include "CApp.h"
 #include <iostream>
+#include "CTextureManager.h"
 
 std::vector<CEntity*> CEntity::entity_list;
 
 void CEntity::OnUpdate( float time )
 {
-	animator.OnAnimate();
 }
 
 void CEntity::OnRender( SDL_Renderer* render )
 {
-	CTexture::setColor(tex,color);
-	CTexture::onDraw(tex,render,animator.getCurrFrame(),animator.getFrameCount(),&getRect());
+	tex->setColor(color);
+	tex->Draw(getRect());
 }
 
 void CEntity::OnCleanUp()
 {
-	SDL_DestroyTexture(tex);
 }
 
 CEntity::CEntity():pos(0,0),size(20,20)
 {
-	tex=nullptr;
+	tex=0;
 	isVisible=true;
 }
 
 CEntity::~CEntity()
 {
-
 }
 
 bool CEntity::OnLoad( std::string file,SDL_Renderer* render,int frame_count )
 {
-	if((tex=CTexture::onLoad(render,file))!=nullptr)
+	if(tex=CTextureManager::Instance()->LoadAnimTexturePtr(file))
 	{
-		animator.setFrameCount(frame_count);
 		return true;
 	}
 	return false;
@@ -44,13 +41,12 @@ bool CEntity::OnLoad( std::string file,SDL_Renderer* render,int frame_count )
 
 bool CEntity::OnLoad( std::string file,SDL_Renderer* render )
 {
-	if((tex=CTexture::onLoad(render,file))!=nullptr)
+	if(tex=CTextureManager::Instance()->LoadAnimTexturePtr(file))
 	{
-		animator.setFrameCount(CTexture::getFrameCount(tex));
 		return true;
 	}
 	else
-		CApp::getInstance()->logError(std::cerr,"CEntity::OnLoad");
+		CApp::Instance()->logError(std::cerr,"CEntity::OnLoad");
 	return false;
 }
 
@@ -113,7 +109,6 @@ void CEntity::OnRestart()
 
 void CEntity::OnEntityNear(CEntity* entity)
 {
-
 }
 
 bool CEntity::checkMapCollide(CEntity* entity, float x,float y )
@@ -145,6 +140,4 @@ bool CEntity::checkMapCollide(CEntity* entity, float x,float y )
 
 void CEntity::OnMapCollide( float x, float y )
 {
-
 }
-

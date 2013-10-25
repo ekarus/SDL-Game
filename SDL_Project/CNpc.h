@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CMoveObject.h"
+#include "CTextureManager.h"
 
 class CNpc: public CMoveObject
 {
@@ -29,11 +30,8 @@ public:
 
 protected:
 
-	
-
 private:
 
 	CEntity* goal;
-	SDL_Texture* target_tex;
-	
+	TextureSharedPtr target_tex;
 };

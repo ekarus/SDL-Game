@@ -8,17 +8,13 @@
 #include "IGameState.h"
 #include <stdlib.h>
 #include <vector>
+#include "Singleton.h"
 
 using namespace std;
 
-class CGame: public IGameState
+class CGame: public IGameState, public Singleton<CGame>
 {
 public:
-    
-    virtual ~CGame();
-
-	static CGame* getInstance(){return &inst;}
-
 	virtual bool OnInit();
 
 	virtual void OnUpdate(float time);
@@ -35,15 +31,10 @@ public:
 
 	virtual void NextLevel();
 
-protected:
-
-	CGame();
-
 private:
+	friend class Singleton<CGame>;
 
-	static CGame inst;
 	CApp* app;
-
 	CPlayer* player;
 	vector<CMoveObject*> npcs;
 
@@ -57,6 +48,10 @@ private:
 	void ObjectsCheck();
 
 protected:
+
+	CGame();
+
+	virtual ~CGame();
 
 	virtual void OnLButtonDown( int mX, int mY );
 

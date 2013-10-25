@@ -4,104 +4,9 @@
 #include "SDL.h"
 #include "CTexture.h"
 #include <algorithm>
-
-TextureId CTextureManager::LoadTexture( const std::string& file )
-{
-	Texture texture;
-	auto texture_iterator=textures_by_path_.find(file);
-	if(texture_iterator==textures_by_path_.end())
-	{
-		texture.tex=IMG_LoadTexture(Renderer::Instance(),file.c_str());
-		if(texture.tex == nullptr)
-		{
-			return 0;
-		}
-		texture.file=file;
-		texture.id=++last_id;
-
-		SDL_QueryTexture(texture.tex,NULL,NULL,&texture.w,&texture.h);
-
-		InsertTexture(texture);
-
-		return last_id;
-	}
-	else
-	{
-		return texture_iterator->second.id;
-	}
-}
-
-void CTextureManager::DeleteTexture( TextureId id )
-{
-	auto texture_iteretor= textures_by_id_.find(id);
-	if(texture_iteretor != textures_by_id_.end())
-	{
-		SDL_DestroyTexture(texture_iteretor->second.tex);
-		textures_by_path_.erase(textures_by_path_.find(texture_iteretor->second.file));
-		textures_by_id_.erase(texture_iteretor);
-	}
-}
-
-void CTextureManager::DrawTexture( TextureId id,int x,int y,int w,int h, int angle/*=0*/ )
-{
-	SDL_Rect rect;
-	rect.x=x;
-	rect.y=y;
-	rect.w=w;
-	rect.h=h;
-	SDL_RenderCopy(Renderer::Instance(),textures_by_id_[id].tex,NULL,&rect);
-}
-
-void CTextureManager::DrawTexture( TextureId id,int x,int y,int w,int h, int x2,int y2, int w2,int h2 ,int angle/*=0*/ )
-{
-	SDL_Rect src_rect;
-	src_rect.x=x;
-	src_rect.y=y;
-	src_rect.w=w;
-	src_rect.h=h;
-	SDL_Rect dest_rect;
-	dest_rect.x=x2;
-	dest_rect.y=y2;
-	dest_rect.w=w2;
-	dest_rect.h=h2;
-	SDL_RenderCopy(Renderer::Instance(),textures_by_id_[id].tex,&src_rect,&dest_rect);
-}
-
-void CTextureManager::SetTextureColor(TextureId id, Uint8 r,Uint8 g, Uint8 b, Uint8 a )
-{
-	SDL_SetTextureColorMod(textures_by_id_[id].tex,r,g,b);
-	SDL_SetTextureAlphaMod(textures_by_id_[id].tex,a);
-}
-
-void CTextureManager::SetTextureColor(TextureId id, Color::Enum color)
-{
-	auto texture_iteretor= textures_by_id_.find(id);
-	if(texture_iteretor != textures_by_id_.end())
-	{
-		switch(color)
-		{
-		case red:SDL_SetTextureColorMod(texture_iteretor->second.tex,255,0,0);break;
-		case black:SDL_SetTextureColorMod(texture_iteretor->second.tex,0,0,0);break;
-		case green:SDL_SetTextureColorMod(texture_iteretor->second.tex,0,255,0);break;
-		case blue:SDL_SetTextureColorMod(texture_iteretor->second.tex,0,0,255);break;
-		case white:SDL_SetTextureColorMod(texture_iteretor->second.tex,255,255,255);break;
-		case gray:SDL_SetTextureColorMod(texture_iteretor->second.tex,100,100,100);break;
-		case orange:SDL_SetTextureColorMod(texture_iteretor->second.tex,100,100,0);break;
-		default:SDL_SetTextureColorMod(texture_iteretor->second.tex,255,255,255);;
-		}
-		//SDL_SetTextureAlphaMod(textures_by_id_[id].tex,0);
-	}
-}
-
-int CTextureManager::getTextureWidth( TextureId id )
-{
-	return textures_by_id_[id].w;
-}
-
-int CTextureManager::getTextureHeight( TextureId id )
-{
-	return textures_by_id_[id].h;
-}
+#include <iostream>
+#include "CLogger.h"
+#include <fstream>
 
 void CTextureManager::DeleteAllTexture()
 {
@@ -109,6 +14,19 @@ void CTextureManager::DeleteAllTexture()
 	{
 		DeleteTexture(pair.first);
 	});
+}
+
+void CTextureManager::DeleteTexture( TextureId id )
+{
+	LOG_INFO("Delete texture "<<id);
+	auto texture_iteretor= textures_by_id_.find(id);
+	if(texture_iteretor != textures_by_id_.end())
+	{
+		SDL_DestroyTexture(texture_iteretor->second);
+		texture_iteretor->second=nullptr;
+		textures_by_id_.erase(texture_iteretor);
+		LOG_INFO("TextureCache size "<<textures_by_id_.size());
+	}
 }
 
 CTextureManager::CTextureManager():last_id(0)
@@ -120,8 +38,160 @@ CTextureManager::~CTextureManager()
 	DeleteAllTexture();
 }
 
-void CTextureManager::InsertTexture( Texture& texture )
+TextureSharedPtr CTextureManager::LoadTexturePtr( const std::string& file )
 {
-	textures_by_path_[texture.file]=texture;
-	textures_by_id_[texture.id]=texture;
+	auto texture_iterator = textures_.find(file);
+	if(texture_iterator != textures_.end())
+	{
+		if(TextureSharedPtr texture_ptr = texture_iterator->second.lock())
+		{
+			LOG_INFO("Texture has already loaded. Filename = "<<file);
+			return texture_ptr;
+		}
+		else
+			LOG_INFO("Texture has been deleted, loading it again. Filename = "<<file);
+	}
+
+	SDL_Texture* tex = IMG_LoadTexture(Renderer::Instance(),file.c_str());
+
+	int w,h;
+	SDL_QueryTexture(tex,NULL,NULL,&w,&h);
+
+	TextureSharedPtr texture_ptr = std::make_shared<Detail::Texture>(file, tex, ++last_id , w, h);
+
+	if(texture_ptr->isValid())
+	{
+		textures_by_id_[last_id] = tex;
+		textures_[file] = texture_ptr;
+	}
+	else
+		LOG_ERROR("Cannot load texture. Filename = "<<file);
+
+	return texture_ptr;
+}
+
+TextureSharedPtr CTextureManager::LoadAnimTexturePtr( const std::string& file )
+{
+	auto texture_iterator = textures_.find(file);
+	if(texture_iterator != textures_.end())
+	{
+		if(TextureSharedPtr texture_ptr = texture_iterator->second.lock())
+		{
+			LOG_INFO("Texture has already loaded. Filename = "<<file);
+			return texture_ptr;
+		}
+		else
+			LOG_INFO("Texture has been deleted, loading it again. Filename = "<<file);
+	}
+
+	SDL_Texture* tex = IMG_LoadTexture(Renderer::Instance(),file.c_str());
+
+	int w,h;
+	SDL_QueryTexture(tex,NULL,NULL,&w,&h);
+
+	TextureSharedPtr texture_ptr = std::make_shared<Detail::AnimatedTexture>(file, tex, ++last_id, w, h, 4,0);
+
+	if(texture_ptr->isValid())
+	{
+		textures_by_id_[last_id] = tex;
+		textures_[file] = texture_ptr;
+	}
+	else
+		LOG_ERROR("Cannot load texture. Filename = "<<file);
+
+	return texture_ptr;
+}
+
+bool CTextureManager::isAlreadyLoaded( const std::string& file )
+{
+	auto texture_iterator = textures_.find(file);
+	if(texture_iterator != textures_.end())
+	{
+		if(TextureSharedPtr texture_ptr = texture_iterator->second.lock())
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+void Detail::AnimatedTexture::Draw( int x,int y,int w,int h, int angle )
+{
+	animator.OnAnimate();
+	Rect rect;
+	rect.x = x;
+	rect.y = y;
+	rect.w = w;
+	rect.h = h;
+	Draw(animator.getCurrFrame(),animator.getFrameCount(),&rect);
+}
+
+void Detail::AnimatedTexture::Draw( Rect dst_rect )
+{
+	Draw(animator.getCurrFrame(),animator.getFrameCount(),&dst_rect);
+}
+
+void Detail::AnimatedTexture::Draw( size_t currFrame, size_t frameCount,const Rect* dst_rect )
+{
+	Rect rect;
+	rect.w = width_;
+	rect.h = height_;
+	if (frameCount == 0) frameCount=1;
+	int slide_width=rect.w / frameCount;
+	rect.x = slide_width * currFrame;
+	rect.y = 0;
+	rect.w = slide_width;
+	Texture::Draw(&rect,dst_rect);
+}
+
+void Detail::Texture::Draw( int x,int y,int w,int h, int angle /*= 0 */ )
+{
+	SDL_Rect rect;
+	rect.x = x;
+	rect.y = y;
+	rect.w = w;
+	rect.h = h;
+	SDL_RenderCopy(Renderer::Instance(), tex_, NULL, &rect);
+}
+
+void Detail::Texture::Draw( Rect dst_rect )
+{
+	SDL_RenderCopy(Renderer::Instance(), tex_, NULL, &dst_rect);
+}
+
+void Detail::Texture::Draw( int x,int y,int w,int h, int x2,int y2, int w2,int h2 ,int angle/*=0*/ )
+{
+	SDL_Rect src_rect;
+	src_rect.x = x;
+	src_rect.y = y;
+	src_rect.w = w;
+	src_rect.h = h;
+	SDL_Rect dest_rect;
+	dest_rect.x = x2;
+	dest_rect.y = y2;
+	dest_rect.w = w2;
+	dest_rect.h = h2;
+	SDL_RenderCopy(Renderer::Instance(), tex_, &src_rect, &dest_rect);
+}
+
+void Detail::Texture::Draw( const Rect* src_rect,const Rect* dst_rect )
+{
+	SDL_RenderCopy(Renderer::Instance(),tex_,src_rect,dst_rect);
+}
+
+void Detail::Texture::setColor( Color::Enum color )
+{
+	color_ = color;
+
+	switch(color)
+	{
+	case Color::red:SDL_SetTextureColorMod(tex_,255,0,0);break;
+	case Color::black:SDL_SetTextureColorMod(tex_,0,0,0);break;
+	case Color::green:SDL_SetTextureColorMod(tex_,0,255,0);break;
+	case Color::blue:SDL_SetTextureColorMod(tex_,0,0,255);break;
+	case Color::white:SDL_SetTextureColorMod(tex_,255,255,255);break;
+	case Color::gray:SDL_SetTextureColorMod(tex_,100,100,100);break;
+	case Color::orange:SDL_SetTextureColorMod(tex_,100,100,0);break;
+	default:SDL_SetTextureColorMod(tex_,255,255,255);;
+	}
 }
