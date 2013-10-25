@@ -23,7 +23,8 @@ public:
 
 	static void Delete()
 	{
-		Deleter::Delete(inst_);
+		delete inst_;
+		inst_ = nullptr;
 	}
 
 private:
