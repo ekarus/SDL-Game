@@ -3,4 +3,19 @@
 #include <SDL.h>
 #include "Singleton.h"
 
-typedef Singleton<SDL_Renderer> Renderer;
+class Renderer : public Singleton<Renderer>
+{
+public:
+	Renderer();
+
+	~Renderer();
+
+	SDL_Renderer* Get()
+	{
+		return renderer_;
+	}
+
+private:
+	SDL_Renderer* renderer_;
+};
+

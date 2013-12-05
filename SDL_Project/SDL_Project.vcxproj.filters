@@ -110,9 +110,6 @@
     <ClCompile Include="CGame.cpp">
       <Filter>Файлы исходного кода\States\Game</Filter>
     </ClCompile>
-    <ClCompile Include="Singleton.cpp">
-      <Filter>Файлы исходного кода\Utilz</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CTextureManager.h">
