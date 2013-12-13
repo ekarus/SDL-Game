@@ -9,47 +9,47 @@
 #include "CRender.h"
 #include "CWindow.h"
 
-class CApp: public IEventHandler, public Singleton<CApp>
+namespace Detail
 {
-public:
+	class CApp: public IEventHandler
+	{
+	public:
 
-	virtual int onExecute();
+		CApp();
+		virtual ~CApp();
 
-	bool isRun(){return run;}
+		virtual int onExecute();
 
-	int getScrWidth() const { return SCREEN_WIDTH; }
-	int getScrHeight() const { return SCREEN_HEIGHT; }
-	SDL_Renderer* getRender() const { return Renderer::Instance(); }
-	SDL_Window* getWindow() const { return Window::Instance(); }
+		bool isRun(){return is_run_;}
 
-	void PushState(IGameState* state);
-	void PopState();
-	void ChangeState(IGameState* state);
+		int getScrWidth() const { return SCREEN_WIDTH; }
+		int getScrHeight() const { return SCREEN_HEIGHT; }
+		SDL_Renderer* getRender() const { return RendererSingleton::Instance()->Get(); }
+		SDL_Window* getWindow() const { return WindowSingleton::Instance()->Get(); }
 
-	virtual void OnRender();
-	virtual void OnExit();
-	virtual bool OnInit();
-	virtual void OnEvent(SDL_Event* event);
-	virtual void OnUpdate(float time);
-	virtual void OnCleanUp();
+		void PushState(IGameState* state);
+		void PopState();
+		void ChangeState(IGameState* state);
 
-	void logError(std::ostream& os,std::string msg);
+		virtual void OnRender();
+		virtual void OnExit();
+		virtual bool OnInit();
+		virtual void OnEvent(SDL_Event* event);
+		virtual void OnUpdate(float time);
+		virtual void OnCleanUp();
 
-private:
-	friend class Singleton<CApp>;
+	private:
+		int SCREEN_WIDTH;
+		int SCREEN_HEIGHT;
 
-	int SCREEN_WIDTH;
-	int SCREEN_HEIGHT;
+		IGameState* state;
+		bool is_run_;
 
-	IGameState* state;
-	bool run;
+		std::vector<IGameState*> states;
 
-	std::vector<IGameState*> states;
+	protected:
+		virtual void OnResize( int w,int h );
+	};
+}
 
-protected:
-	CApp();
-	virtual ~CApp();
-	virtual void OnResize( int w,int h );
-
-};
-
+typedef Singleton<Detail::CApp> AppSingleton;

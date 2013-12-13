@@ -2,7 +2,7 @@
 #include "CCollision.h"
 #include "CApp.h"
 #include <iostream>
-#include "CTextureManager.h"
+#include "AnimatedTextureManager.h"
 
 std::vector<CEntity*> CEntity::entity_list;
 
@@ -12,8 +12,8 @@ void CEntity::OnUpdate( float time )
 
 void CEntity::OnRender( SDL_Renderer* render )
 {
-	tex->setColor(color);
-	tex->Draw(getRect());
+	anim_tex->setColor(color);
+	anim_tex->Draw(getRect());
 }
 
 void CEntity::OnCleanUp()
@@ -22,7 +22,7 @@ void CEntity::OnCleanUp()
 
 CEntity::CEntity():pos(0,0),size(20,20)
 {
-	tex=0;
+	anim_tex=0;
 	isVisible=true;
 }
 
@@ -32,7 +32,7 @@ CEntity::~CEntity()
 
 bool CEntity::OnLoad( std::string file,SDL_Renderer* render,int frame_count )
 {
-	if(tex=CTextureManager::Instance()->LoadAnimTexturePtr(file))
+	if(anim_tex = AnimatedTextureManagerSingleton::Instance()->Load(file))
 	{
 		return true;
 	}
@@ -41,12 +41,13 @@ bool CEntity::OnLoad( std::string file,SDL_Renderer* render,int frame_count )
 
 bool CEntity::OnLoad( std::string file,SDL_Renderer* render )
 {
-	if(tex=CTextureManager::Instance()->LoadAnimTexturePtr(file))
+	if(anim_tex = AnimatedTextureManagerSingleton::Instance()->Load(file))
 	{
 		return true;
 	}
 	else
-		CApp::Instance()->logError(std::cerr,"CEntity::OnLoad");
+		LOG_ERROR("Could't load " << file);
+
 	return false;
 }
 
@@ -60,9 +61,9 @@ Vector2d CEntity::getCenter() const
 
 bool CEntity::isCollide( CEntity* entity, float x, float y )
 {
-	Vector2d c_c=entity->getCenter()-Vector2d(x+size.x/2,y+size.y/2);
-	float s_s=entity->getSize().X()*0.5+getSize().X()*0.5;
-	return c_c.getLenght()-s_s<=0;
+	Vector2d c_c = entity->getCenter() - Vector2d(x + size.x / 2, y+size.y / 2);
+	float s_s = entity->getSize().X()*0.5 + getSize().X() * 0.5;
+	return c_c.getLenght() - s_s <= 0;
 }
 
 bool CEntity::postValid( float newX, float newY )

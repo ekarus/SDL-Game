@@ -1,18 +1,19 @@
 #include "CPlayer.h"
 #include <iostream>
+#include "TextureManager.h"
+#include "CGame.h"
 
 CPlayer::CPlayer()
 {
-	live=true;
-	speed=500;
-	goalPoint=getCenter();
-	hasGoal=false;
-	maxVel=Vector2d(100,100);
+	live = true;
+	speed = 500;
+	goalPoint = getCenter();
+	hasGoal = false;
+	maxVel = Vector2d(100,100);
 }
 
 CPlayer::~CPlayer()
 {
-
 }
 
 void CPlayer::OnUpdate( float time )
@@ -31,7 +32,7 @@ void CPlayer::OnUpdate( float time )
 		{
 			stopMove();
 		}
-		
+
 		CMoveObject::OnUpdate(time);
 	}
 }
@@ -41,32 +42,15 @@ void CPlayer::OnRender( SDL_Renderer* render )
 	if(live)
 	{
 		CMoveObject::OnRender(render);
-		//CTexture::setColor(tex,white);
-		//CTextureManager::Instance()->SetTextureColor(tex,Color::white);
-		texture_ptr->setColor(Color::white);
+		goal_texture->setColor(Color::white);
 		if(hasGoal)
-			//CTextureManager::Instance()->Draw(tex,goalPoint.x,goalPoint.y,10,10);
-			//CTexture::onDraw(tex,render,goalPoint.x,goalPoint.y,10,10);
-		texture_ptr->Draw(goalPoint.x,goalPoint.y,10,10);
+			goal_texture->Draw(goalPoint.x,goalPoint.y,10,10);
 	}
-	
 }
 
 bool CPlayer::OnLoad( std::string file,SDL_Renderer* render )
 {
-	texture_ptr = CTextureManager::Instance()->LoadAnimTexturePtr(file);
-	{
-		TextureSharedPtr texture_ptr1 = CTextureManager::Instance()->LoadTexturePtr(file);
-		{
-			TextureSharedPtr texture_ptr2 = CTextureManager::Instance()->LoadTexturePtr(file);
-		}
-	}
-	{
-		TextureSharedPtr texture_ptr;
-		texture_ptr = CTextureManager::Instance()->LoadTexturePtr(file);
-		texture_ptr = CTextureManager::Instance()->LoadTexturePtr(file);
-	}
-	
+	goal_texture = TextureManagerSingleton::Instance()->Load(file);
 
 	return CMoveObject::OnLoad(file,render);
 }
@@ -80,7 +64,6 @@ bool CPlayer::OnCollision( CEntity* entity )
 {
 	return CMoveObject::OnCollision(entity);
 }
-
 
 void CPlayer::onMove( Vector2d dir )
 {

@@ -43,7 +43,7 @@ void CNpc::OnRender( SDL_Renderer* render )
 	if(live)
 	{
 		CMoveObject::OnRender(render);
-		tex->setColor(color);
+		anim_tex->setColor(color);
 		if(goal!=nullptr)
 		{
 			target_tex->setColor(color);
@@ -54,7 +54,7 @@ void CNpc::OnRender( SDL_Renderer* render )
 
 bool CNpc::OnLoad( std::string file,SDL_Renderer* render )
 {
-	if(!(target_tex=CTextureManager::Instance()->LoadTexturePtr("../Res/target.png")))
+	if(!(target_tex = TextureManagerSingleton::Instance()->Load("../Res/target.png")))
 		return false;
 	return CMoveObject::OnLoad(file,render);
 }

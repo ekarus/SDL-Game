@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CMoveObject.h"
+#include "Texture.h"
 
 class CPlayer: public CMoveObject
 {
@@ -24,10 +25,10 @@ public:
 	virtual void onMove( Vector2d dir );
 
 protected:
-	
+
 private:
 	Vector2d goalPoint;
 	bool hasGoal;
 
-	TextureSharedPtr texture_ptr;
+	TextureSharedPtr goal_texture;
 };

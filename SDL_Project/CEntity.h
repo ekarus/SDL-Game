@@ -1,11 +1,9 @@
 #pragma once
 #include "vector2d.h"
-#include "CTexture.h"
-#include "CAnimation.h"
+#include "AnimatedTexture.h"
 #include <SDL.h>
 #include <vector>
 #include <string>
-#include "CTextureManager.h"
 
  class CEntity
  {
@@ -34,7 +32,6 @@
 		 return rect;
 	 }
 
-	 
 	 void setX(float val){pos.x=val;}
 	 void setY(float val){pos.y=val;}
 	 void setW(float val){size.x=val;}
@@ -60,14 +57,13 @@
 	 virtual void OnMapCollide(float x, float y);
 
 	 bool live;
-	 
+
 	 Vector2d pos;
 	 Vector2d size;
 	 Color::Enum color;
-	 
+
 	 //TextureId tex;
-	 TextureSharedPtr tex;
+	 AnimatedTextureSharedPtr anim_tex;
 	 //CAnimation animator;
 	 bool isVisible;
-	 
  };

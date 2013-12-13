@@ -9,58 +9,59 @@
 #include <stdlib.h>
 #include <vector>
 #include "Singleton.h"
+#include <boost/signals2.hpp>
 
-using namespace std;
-
-class CGame: public IGameState, public Singleton<CGame>
+namespace Detail
 {
-public:
-	virtual bool OnInit();
+	using namespace std;
 
-	virtual void OnUpdate(float time);
+	class CGame: public IGameState
+	{
+	public:
 
-	virtual void OnRender();
+		CGame();
 
-	virtual void OnCleanUp();
+		virtual ~CGame();
 
-	virtual void OnPause();
+		virtual bool OnInit();
 
-	virtual void OnResume();
+		virtual void OnUpdate(float time);
 
-	virtual void Restart();
+		virtual void OnRender();
 
-	virtual void NextLevel();
+		virtual void OnCleanUp();
 
-private:
-	friend class Singleton<CGame>;
+		virtual void OnPause();
 
-	CApp* app;
-	CPlayer* player;
-	vector<CMoveObject*> npcs;
+		virtual void OnResume();
 
-	bool fail;
-	int live_obj;
-	int obj_count;
-	int obj_incr;
+		virtual void Restart();
 
-	void AddNPC(int count);
+		virtual void NextLevel();
 
-	void ObjectsCheck();
+	private:
+		virtual void AttachOnEvents();
 
-protected:
+		virtual void OnKeyDown(SDL_Keysym key);
 
-	CGame();
+		virtual void OnMouseMove( int mX, int mY, int relX, int relY, bool Left,bool Right,bool Middle );
 
-	virtual ~CGame();
+		void AddNPC(int count);
 
-	virtual void OnLButtonDown( int mX, int mY );
+		void ObjectsCheck();
 
-	virtual void OnLButtonUp( int mX, int mY );
+		CApp* app;
+		CPlayer* player;
+		vector<CMoveObject*> npcs;
 
-	virtual void OnRButtonDown( int mX, int mY );
+		bool fail;
+		int live_obj;
+		int obj_count;
+		int obj_incr;
 
-	virtual void OnKeyDown(SDL_Keysym key);
+		//boost::signals2::connection keyboard_connection_;
+		//boost::signals2::connection mouse_connection_;
+	};
+}
 
-	virtual void OnMouseMove( int mX, int mY, int relX, int relY, bool Left,bool Right,bool Middle );
-
-};
+typedef Singleton<Detail::CGame> GameSingleton;

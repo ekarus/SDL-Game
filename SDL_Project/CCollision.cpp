@@ -1,8 +1,5 @@
 #include "CCollision.h"
 
-
-
-
 CCollision::CCollision()
 {
 	entityA=nullptr;
@@ -11,7 +8,6 @@ CCollision::CCollision()
 
 CCollision::~CCollision()
 {
-
 }
 
 std::vector<CCollision> CCollision::collision_list;

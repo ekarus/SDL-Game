@@ -21,7 +21,7 @@ bool Timer::isEvent()
 			event_time=0;
 			activate=false;
 			return true;
-		}	
+		}
 		else
 			return false;
 	}
@@ -44,4 +44,3 @@ float Timer::Start()
 	start_time=time.GetSec();
 	return start_time;
 }
-

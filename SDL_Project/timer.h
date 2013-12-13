@@ -1,7 +1,6 @@
 #pragma once
 #include <ctime>
 
-
 class Time
 {
 	unsigned int ticks;

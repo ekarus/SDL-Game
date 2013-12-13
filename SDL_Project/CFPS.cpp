@@ -1,30 +1,31 @@
 #include "CFPS.h"
 #include <time.h>
 
-CFPS::CFPS()
+namespace Detail
 {
-	frameCount=0;
-	frameRate=0;
-	speedFactor=0;
-	oldTime=0;
-	lastTime=0;
-}
-
-void CFPS::onUpdate()
-{
-	if((oldTime+CLOCKS_PER_SEC)<clock())
+	CFPS::CFPS()
 	{
-		frameRate=frameCount;
 		frameCount=0;
-		oldTime=clock();
+		frameRate=0;
+		speedFactor=0;
+		oldTime=0;
+		lastTime=0;
 	}
-	speedFactor=(float(clock()-lastTime)/CLOCKS_PER_SEC);
-	lastTime=clock();
-	frameCount++;
+
+	void CFPS::onUpdate()
+	{
+		if ((oldTime + CLOCKS_PER_SEC) < clock())
+		{
+			frameRate = frameCount;
+			frameCount = 0;
+			oldTime = clock();
+		}
+		speedFactor = (float(clock() - lastTime) / CLOCKS_PER_SEC);
+		lastTime = clock();
+		frameCount++;
+	}
+
+	CFPS::~CFPS()
+	{
+	}
 }
-
-CFPS::~CFPS()
-{
-
-}
-

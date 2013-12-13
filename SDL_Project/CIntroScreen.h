@@ -2,34 +2,37 @@
 #include "IGameState.h"
 #include "CApp.h"
 #include "Singleton.h"
-#include "CTextureManager.h"
+#include "TextureManager.h"
+#include <boost/signals2.hpp>
 
-class CIntroScreen: public IGameState, public Singleton<CIntroScreen>
+namespace Detail
 {
-public:
-	virtual bool OnInit();
+	class IntroScreenImpl: public IGameState
+	{
+	public:
+		IntroScreenImpl();
 
-	virtual void OnUpdate( float time );
+		virtual ~IntroScreenImpl();
 
-	virtual void OnRender();
+		virtual bool OnInit();
 
-	virtual void OnCleanUp();
+		virtual void OnUpdate( float time );
 
-	virtual void OnPause();
+		virtual void OnRender();
 
-	virtual void OnResume();
+		virtual void OnCleanUp();
 
-protected:
-	CIntroScreen();
+		virtual void OnPause();
 
-	virtual ~CIntroScreen();
+		virtual void OnResume();
 
-private:
-	friend class Singleton<CIntroScreen>;
+	private:
 
-	CApp* app;
-	TextureSharedPtr back_ground_;
+		virtual void AttachOnEvents();
 
-	virtual void OnKeyDown( SDL_Keysym key );
+		CApp* app;
+		TextureSharedPtr back_ground_;
+	};
+}
 
-};
+typedef Singleton<Detail::IntroScreenImpl> IntroScreen;

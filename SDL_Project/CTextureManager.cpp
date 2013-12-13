@@ -1,4 +1,5 @@
-#include "CTextureManager.h"
+/*
+#include "TextureManager.h"
 #include "CRender.h"
 #include <SDL_image.h>
 #include "SDL.h"
@@ -18,14 +19,14 @@ void CTextureManager::DeleteAllTexture()
 
 void CTextureManager::DeleteTexture( TextureId id )
 {
-	LOG_INFO("Delete texture "<<id);
+	LOG_INFO("Delete texture " << id);
 	auto texture_iteretor= textures_by_id_.find(id);
 	if(texture_iteretor != textures_by_id_.end())
 	{
 		SDL_DestroyTexture(texture_iteretor->second);
 		texture_iteretor->second=nullptr;
 		textures_by_id_.erase(texture_iteretor);
-		LOG_INFO("TextureCache size "<<textures_by_id_.size());
+		LOG_INFO("TextureCache size " << textures_by_id_.size());
 	}
 }
 
@@ -70,15 +71,15 @@ TextureSharedPtr CTextureManager::LoadTexturePtr( const std::string& file )
 	return texture_ptr;
 }
 
-TextureSharedPtr CTextureManager::LoadAnimTexturePtr( const std::string& file )
+AnimTextureSharedPtr CTextureManager::LoadAnimTexturePtr( const std::string& file )
 {
 	auto texture_iterator = textures_.find(file);
 	if(texture_iterator != textures_.end())
 	{
 		if(TextureSharedPtr texture_ptr = texture_iterator->second.lock())
 		{
-			LOG_INFO("Texture has already loaded. Filename = "<<file);
-			return texture_ptr;
+			LOG_INFO("Texture has already loaded. Filename = " << file);
+			return std::make_shared<Detail::AnimatedTexture>((*texture_ptr.get()),4,0);
 		}
 		else
 			LOG_INFO("Texture has been deleted, loading it again. Filename = "<<file);
@@ -89,7 +90,7 @@ TextureSharedPtr CTextureManager::LoadAnimTexturePtr( const std::string& file )
 	int w,h;
 	SDL_QueryTexture(tex,NULL,NULL,&w,&h);
 
-	TextureSharedPtr texture_ptr = std::make_shared<Detail::AnimatedTexture>(file, tex, ++last_id, w, h, 4,0);
+	AnimTextureSharedPtr texture_ptr = std::make_shared<Detail::AnimatedTexture>(file, tex, ++last_id, w, h, 4,0);
 
 	if(texture_ptr->isValid())
 	{
@@ -144,7 +145,7 @@ void Detail::AnimatedTexture::Draw( size_t currFrame, size_t frameCount,const Re
 	Texture::Draw(&rect,dst_rect);
 }
 
-void Detail::Texture::Draw( int x,int y,int w,int h, int angle /*= 0 */ )
+void Detail::Texture::Draw( int x,int y,int w,int h, int angle / *= 0 * / )
 {
 	SDL_Rect rect;
 	rect.x = x;
@@ -159,7 +160,7 @@ void Detail::Texture::Draw( Rect dst_rect )
 	SDL_RenderCopy(Renderer::Instance(), tex_, NULL, &dst_rect);
 }
 
-void Detail::Texture::Draw( int x,int y,int w,int h, int x2,int y2, int w2,int h2 ,int angle/*=0*/ )
+void Detail::Texture::Draw( int x,int y,int w,int h, int x2,int y2, int w2,int h2 ,int angle/ *=0* / )
 {
 	SDL_Rect src_rect;
 	src_rect.x = x;
@@ -194,4 +195,4 @@ void Detail::Texture::setColor( Color::Enum color )
 	case Color::orange:SDL_SetTextureColorMod(tex_,100,100,0);break;
 	default:SDL_SetTextureColorMod(tex_,255,255,255);;
 	}
-}
+}*/

@@ -1,23 +1,27 @@
 #pragma once
 #include "Singleton.h"
 
-class CFPS : public Singleton<CFPS>
+namespace Detail
 {
-public:
-	void onUpdate();
-	int getFPS(){return frameRate;};
-	float getSpeedFactor(){return speedFactor;};
+	class CFPS
+	{
+	public:
+		CFPS();
+		virtual ~CFPS();
 
-private:
-	friend class Singleton<CFPS>;
+		void onUpdate();
+		int getFPS(){return frameRate;};
+		float getSpeedFactor(){return speedFactor;};
 
-	int frameCount;
-	int frameRate;
-	float speedFactor;
-	int oldTime;
-	int lastTime;
+	private:
 
-protected:
-	CFPS();
-	virtual ~CFPS();
-};
+		int frameCount;
+		int frameRate;
+		float speedFactor;
+		int oldTime;
+		int lastTime;
+
+	};
+}
+
+typedef Singleton<Detail::CFPS> FPS;

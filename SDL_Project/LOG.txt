@@ -1,0 +1,157 @@
+INFO : [Detail::CApp::OnInit line 69] - Window created
+INFO : [Detail::CApp::OnInit line 81] - Render created
+INFO : [Detail::CApp::OnInit line 81] - Unable to create Direct3D interface
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Unable to create Direct3D interface
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 1
+INFO : [Detail::CApp::PushState line 157] - Unable to create Direct3D interface
+INFO : [Detail::CGame::OnInit line 28] - GAME --- INIT
+INFO : [Detail::CGame::OnInit line 28] - Unable to create Direct3D interface
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Unable to create Direct3D interface
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 42] - Unable to create Direct3D interface
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/target.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Unable to create Direct3D interface
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Unable to create Direct3D interface
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Unable to create Direct3D interface
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Unable to create Direct3D interface
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Unable to create Direct3D interface
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Unable to create Direct3D interface
+INFO : [Detail::CApp::ChangeState line 192] - ChangeState states.size = 1
+INFO : [Detail::CApp::ChangeState line 192] - Unable to create Direct3D interface
+INFO : [Detail::CApp::OnInit line 69] - Window created
+INFO : [Detail::CApp::OnInit line 81] - Render created
+INFO : [Detail::CApp::OnInit line 81] - Unable to create Direct3D interface
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Unable to create Direct3D interface
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 1
+INFO : [Detail::CApp::PushState line 157] - Unable to create Direct3D interface
+INFO : [Detail::CGame::OnInit line 28] - GAME --- INIT
+INFO : [Detail::CGame::OnInit line 28] - Unable to create Direct3D interface
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Unable to create Direct3D interface
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 42] - Unable to create Direct3D interface
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/target.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Unable to create Direct3D interface
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Unable to create Direct3D interface
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Unable to create Direct3D interface
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Unable to create Direct3D interface
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Unable to create Direct3D interface
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Unable to create Direct3D interface
+INFO : [Detail::CApp::ChangeState line 192] - ChangeState states.size = 1
+INFO : [Detail::CApp::ChangeState line 192] - Unable to create Direct3D interface
+INFO : [Detail::CGame::OnPause line 215] - GAME --- PAUSE
+INFO : [Detail::CGame::OnPause line 215] - Unable to create Direct3D interface
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Unable to create Direct3D interface
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 2
+INFO : [Detail::CApp::PushState line 157] - Unable to create Direct3D interface
+INFO : [Detail::CGameMenu::OnCleanUp line 35] - CleanUp
+INFO : [Detail::CGameMenu::OnCleanUp line 35] - Unable to create Direct3D interface
+INFO : [Detail::CGame::OnResume line 222] - GAME --- RESUME
+INFO : [Detail::CGame::OnResume line 222] - Unable to create Direct3D interface
+INFO : [Detail::CApp::PopState line 175] - PopState states.size = 1
+INFO : [Detail::CApp::PopState line 175] - Unable to create Direct3D interface
+INFO : [Detail::CGame::OnPause line 215] - GAME --- PAUSE
+INFO : [Detail::CGame::OnPause line 215] - Unable to create Direct3D interface
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Unable to create Direct3D interface
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 2
+INFO : [Detail::CApp::PushState line 157] - Unable to create Direct3D interface
+INFO : [Detail::CGameMenu::OnCleanUp line 35] - CleanUp
+INFO : [Detail::CGameMenu::OnCleanUp line 35] - Unable to create Direct3D interface
+INFO : [Detail::CGame::OnResume line 222] - GAME --- RESUME
+INFO : [Detail::CGame::OnResume line 222] - Unable to create Direct3D interface
+INFO : [Detail::CApp::PopState line 175] - PopState states.size = 1
+INFO : [Detail::CApp::PopState line 175] - Unable to create Direct3D interface
+INFO : [Detail::CGame::OnPause line 215] - GAME --- PAUSE
+INFO : [Detail::CGame::OnPause line 215] - Unable to create Direct3D interface
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Unable to create Direct3D interface
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 2
+INFO : [Detail::CApp::PushState line 157] - Unable to create Direct3D interface
+INFO : [Detail::CGameMenu::OnCleanUp line 35] - CleanUp
+INFO : [Detail::CGameMenu::OnCleanUp line 35] - Unable to create Direct3D interface
+INFO : [Detail::CGame::OnResume line 222] - GAME --- RESUME
+INFO : [Detail::CGame::OnResume line 222] - Unable to create Direct3D interface
+INFO : [Detail::CApp::PopState line 175] - PopState states.size = 1
+INFO : [Detail::CApp::PopState line 175] - Unable to create Direct3D interface
+INFO : [Detail::CGame::OnPause line 215] - GAME --- PAUSE
+INFO : [Detail::CGame::OnPause line 215] - Unable to create Direct3D interface
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Unable to create Direct3D interface
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 2
+INFO : [Detail::CApp::PushState line 157] - Unable to create Direct3D interface
+INFO : [Detail::CGameMenu::OnCleanUp line 35] - CleanUp
+INFO : [Detail::CGameMenu::OnCleanUp line 35] - Unable to create Direct3D interface
+INFO : [Detail::CGame::OnResume line 222] - GAME --- RESUME
+INFO : [Detail::CGame::OnResume line 222] - Unable to create Direct3D interface
+INFO : [Detail::CApp::PopState line 175] - PopState states.size = 1
+INFO : [Detail::CApp::PopState line 175] - Unable to create Direct3D interface
+INFO : [Detail::CGame::OnPause line 215] - GAME --- PAUSE
+INFO : [Detail::CGame::OnPause line 215] - Unable to create Direct3D interface
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Unable to create Direct3D interface
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 2
+INFO : [Detail::CApp::PushState line 157] - Unable to create Direct3D interface
+INFO : [Detail::CApp::OnExit line 138] - Exit app (is_run = 0)
+INFO : [Detail::CApp::OnExit line 138] - Unable to create Direct3D interface
+INFO : [Detail::CGameMenu::OnCleanUp line 35] - CleanUp
+INFO : [Detail::CGameMenu::OnCleanUp line 35] - Unable to create Direct3D interface
+INFO : [`anonymous-namespace'::<lambda5>::operator () line 45] - Delete : ../Res/circle_a.png
+INFO : [`anonymous-namespace'::<lambda5>::operator () line 45] - Unable to create Direct3D interface
+INFO : [`anonymous-namespace'::<lambda5>::operator () line 45] - Delete : ../Res/target.png
+INFO : [`anonymous-namespace'::<lambda5>::operator () line 45] - Unable to create Direct3D interface
+INFO : [`anonymous-namespace'::<lambda3>::operator () line 45] - Delete : ../Res/circle_a.png
+INFO : [`anonymous-namespace'::<lambda3>::operator () line 45] - Unable to create Direct3D interface
+INFO : [Detail::CApp::OnInit line 69] - Window created
+INFO : [Detail::CApp::OnInit line 81] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 1
+INFO : [Detail::CGame::OnInit line 28] - GAME --- INIT
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [Detail::CApp::ChangeState line 192] - ChangeState states.size = 1
+INFO : [Detail::CGame::OnPause line 215] - GAME --- PAUSE
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/menu.png
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 2
+INFO : [Detail::CApp::OnExit line 138] - Exit app (is_run = 0)
+INFO : [Detail::CGameMenu::OnCleanUp line 35] - CleanUp
+INFO : [`anonymous-namespace'::<lambda5>::operator () line 45] - Delete : ../Res/circle_a.png
+INFO : [`anonymous-namespace'::<lambda5>::operator () line 45] - Delete : ../Res/target.png
+INFO : [`anonymous-namespace'::<lambda3>::operator () line 45] - Delete : ../Res/circle_a.png
+INFO : [Detail::CApp::OnInit line 69] - Window created
+INFO : [Detail::CApp::OnInit line 81] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 1
+INFO : [Detail::CGame::OnInit line 28] - GAME --- INIT
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [Detail::CApp::ChangeState line 192] - ChangeState states.size = 1
+INFO : [Detail::CGame::OnPause line 215] - GAME --- PAUSE
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/menu.png
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 2

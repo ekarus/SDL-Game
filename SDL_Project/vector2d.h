@@ -8,11 +8,9 @@ public:
 
 	Vector2d():x(0),y(0)
 	{
-
 	}
 	Vector2d(float x,float y):x(x),y(y)
 	{
-
 	}
 	float X() const { return x; }
 	void X(float val) { x = val; }

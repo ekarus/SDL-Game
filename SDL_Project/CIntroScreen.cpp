@@ -2,60 +2,89 @@
 #include <iostream>
 #include "CGameMenu.h"
 #include "CGame.h"
+#include "KeyboardEvent.h"
+#include "CWindow.h"
 
-bool CIntroScreen::OnInit()
+namespace Detail
 {
-	app=CApp::Instance();
-	if(back_ground_ = CTextureManager::Instance()->LoadTexturePtr("../Res/intro.png"))
+	bool IntroScreenImpl::OnInit()
 	{
-		return true;
+		bool result = true;
+
+		AttachOnEvents();
+
+		app = AppSingleton::Instance();
+
+		back_ground_ = TextureManagerSingleton::Instance()->Load("../Res/intro.png");
+
+		if(back_ground_ == nullptr)
+		{
+			LOG_ERROR("Could't load intro screen texture");
+			result = false;
+		}
+
+		return result;
 	}
-	else
+
+	void IntroScreenImpl::OnUpdate( float time )
 	{
-		app->logError(cerr,"CIntroScreen::OnInit");
-		return false;
 	}
-}
 
-void CIntroScreen::OnUpdate( float time )
-{
-}
-
-void CIntroScreen::OnRender()
-{
-	back_ground_->Draw(0,0,app->getScrWidth(),app->getScrHeight());
-}
-
-void CIntroScreen::OnCleanUp()
-{
-	Delete();
-}
-
-void CIntroScreen::OnPause()
-{
-}
-
-void CIntroScreen::OnResume()
-{
-}
-
-void CIntroScreen::OnKeyDown( SDL_Keysym key )
-{
-	if(key.scancode==SDL_SCANCODE_SPACE)
+	void IntroScreenImpl::OnRender()
 	{
-		app->ChangeState(CGame::Instance());
+		WindowSingleton::ObjectPtr window = WindowSingleton::Instance();
+
+		back_ground_->Draw(0, 0, window->GetWidth(), window->GetHeight());
 	}
-	if(key.scancode==SDL_SCANCODE_ESCAPE)
+
+	void IntroScreenImpl::OnCleanUp()
 	{
-		app->OnExit();
+		IGameState::OnCleanUp();
 	}
-}
 
-CIntroScreen::CIntroScreen()
-{
-}
+	void IntroScreenImpl::OnPause()
+	{
+		IGameState::OnPause();
+	}
 
-CIntroScreen::~CIntroScreen()
-{
-	std::cout<<"~CIntroScreen()"<<std::endl;
+	void IntroScreenImpl::OnResume()
+	{
+		IGameState::OnResume();
+	}
+
+	IntroScreenImpl::IntroScreenImpl()
+	{
+	}
+
+	IntroScreenImpl::~IntroScreenImpl()
+	{
+	}
+
+	void IntroScreenImpl::AttachOnEvents()
+	{
+		/*boost::signals2::connection keyboard_connection = Events::Keyboard::Instance()->AttachOnKeyDown([=](const Events::Key& key)
+		{
+			if(key.scancode == SDL_SCANCODE_SPACE)
+			{
+				app->PushState(GameSingleton::Instance());
+			}
+			if(key.scancode == SDL_SCANCODE_ESCAPE)
+			{
+				app->OnExit();
+			}
+		});*/
+
+		AddConnection(Events::Keyboard::Instance()->AttachOnKeyDown(
+		[=](const Events::Key& key)
+		{
+			if(key.scancode == SDL_SCANCODE_SPACE)
+			{
+				app->ChangeState(GameSingleton::Instance());
+			}
+			if(key.scancode == SDL_SCANCODE_ESCAPE)
+			{
+				app->OnExit();
+			}
+		}));
+	}
 }

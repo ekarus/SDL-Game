@@ -2,20 +2,22 @@
 
 #include <SDL.h>
 #include "Singleton.h"
+#include "CWindow.h"
 
-class Renderer : public Singleton<Renderer>
+namespace Detail
 {
-public:
-	Renderer();
-
-	~Renderer();
-
-	SDL_Renderer* Get()
+	class Renderer
 	{
-		return renderer_;
-	}
+	public:
+		Renderer();
 
-private:
-	SDL_Renderer* renderer_;
-};
+		~Renderer();
 
+		SDL_Renderer* Get();
+
+	private:
+		SDL_Renderer* renderer_;
+	};
+}
+
+typedef Singleton<Detail::Renderer> RendererSingleton;

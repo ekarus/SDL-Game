@@ -1,34 +1,65 @@
 #pragma once
 
-#include "IEventHandler.h"
+#include "SignalsManager.h"
 
 //Состояние игры
-class IGameState: public IEventHandler
+class IGameState: public SignalsManager
 {
 public:
-	IGameState();
-	virtual ~IGameState();
+	typedef boost::signals2::signal<void(void)> PauseSignal;
+	typedef boost::signals2::signal<void(void)> ResumeSignal;
+
+	boost::signals2::connection AttachOnPause(const PauseSignal::slot_type& slot)
+	{
+		return pause_signal_.connect(slot);
+	}
+
+	boost::signals2::connection AttachOnResume(const ResumeSignal::slot_type& slot)
+	{
+		return resume_signal_.connect(slot);
+	}
+
+	IGameState()
+	{
+	}
+
+	virtual ~IGameState()
+	{
+	}
 
 	virtual bool OnInit() = 0;
 
 	//************************************
-	// Method:    OnUpdate
-	// FullName:  IGameState::OnUpdate
-	// Access:    virtual public 
-	// Returns:   void
-	// Qualifier:
 	// Parameter: float time-врямя прошедшее после предыдущего апдейта в секундах
 	//************************************
 	virtual void OnUpdate(float time) = 0;
 
 	virtual void OnRender() = 0;
 
-	virtual void OnCleanUp() = 0;
+	virtual void OnCleanUp()
+	{
+		SignalsManager::Disconnect();
+	}
 
-	virtual void OnPause() = 0;
+	virtual void OnPause()
+	{
+		SignalsManager::Block();
 
-	virtual void OnResume() = 0;
+		pause_signal_();
+	}
+
+	virtual void OnResume()
+	{
+		SignalsManager::UnBlock();
+
+		resume_signal_();
+	}
+
+protected:
+
+	virtual void AttachOnEvents() = 0;
 
 private:
-
+	PauseSignal pause_signal_;
+	ResumeSignal resume_signal_;
 };

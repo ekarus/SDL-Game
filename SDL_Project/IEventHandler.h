@@ -4,7 +4,11 @@
 class IEventHandler
 {
 public:
-	void onEvent(SDL_Event* event);
+
+	typedef SDL_Event Event;
+	typedef Event* EventPtr;
+
+	void onEvent(EventPtr event);
 
 	virtual void OnInputFocus();
 

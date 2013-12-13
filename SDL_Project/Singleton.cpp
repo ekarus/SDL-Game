@@ -66,8 +66,8 @@ void Singleton<SDL_Renderer>::Delete()
 
 SDL_Renderer* Singleton<SDL_Renderer>::Create()
 {
-	SDL_Renderer* render=SDL_CreateRenderer(Singleton<SDL_Window>::Instance(), -1, SDL_RENDERER_ACCELERATED|SDL_RENDERER_PRESENTVSYNC);
-	if(render==nullptr)
+	SDL_Renderer* render = SDL_CreateRenderer(Singleton<SDL_Window>::Instance(), -1, SDL_RENDERER_ACCELERATED|SDL_RENDERER_PRESENTVSYNC);
+	if(render == nullptr)
 	{
 		throw std::exception("SDL_CreateRenderer Fails");
 	}

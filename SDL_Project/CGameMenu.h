@@ -2,35 +2,35 @@
 #include "IGameState.h"
 #include "CApp.h"
 #include "Singleton.h"
-#include "CTextureManager.h"
+#include "TextureManager.h"
 
-class CGameMenu: public IGameState, public Singleton<CGameMenu>
+namespace Detail
 {
-public:
+	class CGameMenu: public IGameState
+	{
+	public:
+		CGameMenu();
 
-	virtual bool OnInit();
+		virtual ~CGameMenu();
 
-	virtual void OnUpdate( float time );
+		virtual bool OnInit();
 
-	virtual void OnRender();
+		virtual void OnUpdate( float time );
 
-	virtual void OnCleanUp();
+		virtual void OnRender();
 
-	virtual void OnPause();
+		virtual void OnCleanUp();
 
-	virtual void OnResume();
+		virtual void OnPause();
 
-protected:
+		virtual void OnResume();
 
-	CGameMenu();
+	private:
+		virtual void AttachOnEvents();
 
-	virtual ~CGameMenu();
+		CApp* app;
+		TextureSharedPtr bg;
+	};
+}
 
-	virtual void OnKeyDown( SDL_Keysym key );
-
-private:
-	friend class Singleton<CGameMenu>;
-
-	CApp* app;
-	TextureSharedPtr bg;
-};
+typedef Singleton<Detail::CGameMenu> GameMenuSingleton;

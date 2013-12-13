@@ -1,45 +1,43 @@
 #include "IEventHandler.h"
 
-void IEventHandler::onEvent( SDL_Event* Event )
+void IEventHandler::onEvent( EventPtr event )
 {
-	switch(Event->type) {
+	switch(event->type) {
 	case SDL_WINDOWEVENT: {
-		switch (Event->window.event) {
-
+		switch (event->window.event) {
 		case SDL_WINDOWEVENT_RESIZED:
-			OnResize(Event->window.data1,Event->window.data2);
+			OnResize(event->window.data1,event->window.data2);
 			break;
 		}
 						  }
 
-
 	case SDL_KEYDOWN: {
-		OnKeyDown(Event->key.keysym);
+		OnKeyDown(event->key.keysym);
 		break;
 					  }
 
 	case SDL_KEYUP: {
-		OnKeyUp(Event->key.keysym);
+		OnKeyUp(event->key.keysym);
 		break;
 					}
 
 	case SDL_MOUSEMOTION: {
-		OnMouseMove(Event->motion.x,Event->motion.y,Event->motion.xrel,Event->motion.yrel,(Event->motion.state&SDL_BUTTON(SDL_BUTTON_LEFT))!=0,(Event->motion.state&SDL_BUTTON(SDL_BUTTON_RIGHT))!=0,(Event->motion.state&SDL_BUTTON(SDL_BUTTON_MIDDLE))!=0);
+		OnMouseMove(event->motion.x,event->motion.y,event->motion.xrel,event->motion.yrel,(event->motion.state&SDL_BUTTON(SDL_BUTTON_LEFT))!=0,(event->motion.state&SDL_BUTTON(SDL_BUTTON_RIGHT))!=0,(event->motion.state&SDL_BUTTON(SDL_BUTTON_MIDDLE))!=0);
 		break;
 						  }
 
 	case SDL_MOUSEBUTTONDOWN: {
-		switch(Event->button.button) {
+		switch(event->button.button) {
 		case SDL_BUTTON_LEFT: {
-			OnLButtonDown(Event->button.x,Event->button.y);
+			OnLButtonDown(event->button.x,event->button.y);
 			break;
 							  }
 		case SDL_BUTTON_RIGHT: {
-			OnRButtonDown(Event->button.x,Event->button.y);
+			OnRButtonDown(event->button.x,event->button.y);
 			break;
 							   }
 		case SDL_BUTTON_MIDDLE: {
-			OnMButtonDown(Event->button.x,Event->button.y);
+			OnMButtonDown(event->button.x,event->button.y);
 			break;
 								}
 		}
@@ -47,17 +45,17 @@ void IEventHandler::onEvent( SDL_Event* Event )
 							  }
 
 	case SDL_MOUSEBUTTONUP:    {
-		switch(Event->button.button) {
+		switch(event->button.button) {
 		case SDL_BUTTON_LEFT: {
-			OnLButtonUp(Event->button.x,Event->button.y);
+			OnLButtonUp(event->button.x,event->button.y);
 			break;
 							  }
 		case SDL_BUTTON_RIGHT: {
-			OnRButtonUp(Event->button.x,Event->button.y);
+			OnRButtonUp(event->button.x,event->button.y);
 			break;
 							   }
 		case SDL_BUTTON_MIDDLE: {
-			OnMButtonUp(Event->button.x,Event->button.y);
+			OnMButtonUp(event->button.x,event->button.y);
 			break;
 								}
 		}
@@ -75,7 +73,7 @@ void IEventHandler::onEvent( SDL_Event* Event )
 						 }
 
 	default: {
-		OnUser(Event->user.type,Event->user.code,Event->user.data1,Event->user.data2);
+		OnUser(event->user.type,event->user.code,event->user.data1,event->user.data2);
 		break;
 			 }
 	}
@@ -83,100 +81,80 @@ void IEventHandler::onEvent( SDL_Event* Event )
 
 void IEventHandler::OnInputFocus()
 {
-
 }
 
 void IEventHandler::OnInputBlur()
 {
-
 }
 
 void IEventHandler::OnKeyDown( SDL_Keysym key )
 {
-
 }
 
 void IEventHandler::OnKeyUp( SDL_Keysym key )
 {
-
 }
 
 void IEventHandler::OnMouseFocus()
 {
-
 }
 
 void IEventHandler::OnMouseBlur()
 {
-
 }
 
 void IEventHandler::OnMouseMove( int mX, int mY, int relX, int relY, bool Left,bool Right,bool Middle )
 {
-
 }
 
 void IEventHandler::OnMouseWheel( bool Up, bool Down )
 {
-
 }
 
 void IEventHandler::OnLButtonDown( int mX, int mY )
 {
-
 }
 
 void IEventHandler::OnLButtonUp( int mX, int mY )
 {
-
 }
 
 void IEventHandler::OnRButtonDown( int mX, int mY )
 {
-
 }
 
 void IEventHandler::OnRButtonUp( int mX, int mY )
 {
-
 }
 
 void IEventHandler::OnMButtonDown( int mX, int mY )
 {
-
 }
 
 void IEventHandler::OnMButtonUp( int mX, int mY )
 {
-
 }
 
 void IEventHandler::OnMinimize()
 {
-
 }
 
 void IEventHandler::OnRestore()
 {
-
 }
 
 void IEventHandler::OnResize( int w,int h )
 {
-
 }
 
 void IEventHandler::OnExpose()
 {
-
 }
 
 void IEventHandler::OnExit()
 {
-
 }
 
 void IEventHandler::OnUser( Uint8 type, int code, void* data1, void* data2 )
 {
-
 }

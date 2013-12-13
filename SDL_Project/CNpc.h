@@ -1,7 +1,7 @@
 #pragma once
 
 #include "CMoveObject.h"
-#include "CTextureManager.h"
+#include "TextureManager.h"
 
 class CNpc: public CMoveObject
 {

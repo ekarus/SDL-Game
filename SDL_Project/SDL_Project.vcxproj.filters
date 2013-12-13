@@ -9,9 +9,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Файлы исходного кода\TextureManager">
-      <UniqueIdentifier>{cae92692-d615-41f8-88c9-2601f8544e71}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Файлы исходного кода\States">
       <UniqueIdentifier>{9f1f5737-cef8-43f1-adc9-4fa4c13f55dc}</UniqueIdentifier>
     </Filter>
@@ -42,22 +39,25 @@
     <Filter Include="Файлы исходного кода\States\Game">
       <UniqueIdentifier>{ff9e580e-0334-4923-8942-393542e5b544}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы исходного кода\Texture">
+      <UniqueIdentifier>{a7c2e837-6d02-4109-9270-7200fc14aed1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\AnimatedTexture">
+      <UniqueIdentifier>{30393268-27c3-4f41-a00b-0621778bb164}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\MemoryManager">
+      <UniqueIdentifier>{cae92692-d615-41f8-88c9-2601f8544e71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\EventManager">
+      <UniqueIdentifier>{89f90ad8-e092-47e5-bb64-1aa1c773db48}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CTextureManager.cpp">
-      <Filter>Файлы исходного кода\TextureManager</Filter>
-    </ClCompile>
-    <ClCompile Include="CTexture.cpp">
-      <Filter>Файлы исходного кода\TextureManager</Filter>
-    </ClCompile>
     <ClCompile Include="CGameMenu.cpp">
       <Filter>Файлы исходного кода\States\GameMenuState</Filter>
     </ClCompile>
     <ClCompile Include="CIntroScreen.cpp">
       <Filter>Файлы исходного кода\States\IntroScreenState</Filter>
-    </ClCompile>
-    <ClCompile Include="IGameState.cpp">
-      <Filter>Файлы исходного кода\States</Filter>
     </ClCompile>
     <ClCompile Include="CEntity.cpp">
       <Filter>Файлы исходного кода\Objects</Filter>
@@ -89,13 +89,7 @@
     <ClCompile Include="CApp.cpp">
       <Filter>Файлы исходного кода\Application</Filter>
     </ClCompile>
-    <ClCompile Include="CLogger.cpp">
-      <Filter>Файлы исходного кода\Application</Filter>
-    </ClCompile>
     <ClCompile Include="CFPS.cpp">
-      <Filter>Файлы исходного кода\Application</Filter>
-    </ClCompile>
-    <ClCompile Include="IEventHandler.cpp">
       <Filter>Файлы исходного кода\Application</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
@@ -104,20 +98,29 @@
     <ClCompile Include="CAnimation.cpp">
       <Filter>Файлы исходного кода\Animation</Filter>
     </ClCompile>
-    <ClCompile Include="CSurface.cpp">
-      <Filter>Файлы исходного кода\TextureManager</Filter>
-    </ClCompile>
     <ClCompile Include="CGame.cpp">
       <Filter>Файлы исходного кода\States\Game</Filter>
     </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Файлы исходного кода\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimatedTexture.cpp">
+      <Filter>Файлы исходного кода\AnimatedTexture</Filter>
+    </ClCompile>
+    <ClCompile Include="CSurface.cpp">
+      <Filter>Файлы исходного кода\SDL</Filter>
+    </ClCompile>
+    <ClCompile Include="EventManager.cpp">
+      <Filter>Файлы исходного кода\EventManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CLogger.cpp">
+      <Filter>Файлы исходного кода\Utilz</Filter>
+    </ClCompile>
+    <ClCompile Include="IEventHandler.cpp">
+      <Filter>Файлы исходного кода\EventManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CTextureManager.h">
-      <Filter>Файлы исходного кода\TextureManager</Filter>
-    </ClInclude>
-    <ClInclude Include="CTexture.h">
-      <Filter>Файлы исходного кода\TextureManager</Filter>
-    </ClInclude>
     <ClInclude Include="CGameMenu.h">
       <Filter>Файлы исходного кода\States\GameMenuState</Filter>
     </ClInclude>
@@ -154,29 +157,71 @@
     <ClInclude Include="CCollision.h">
       <Filter>Файлы исходного кода\Phisics</Filter>
     </ClInclude>
-    <ClInclude Include="CLogger.h">
-      <Filter>Файлы исходного кода\Application</Filter>
-    </ClInclude>
     <ClInclude Include="CApp.h">
       <Filter>Файлы исходного кода\Application</Filter>
     </ClInclude>
     <ClInclude Include="CFPS.h">
       <Filter>Файлы исходного кода\Application</Filter>
     </ClInclude>
-    <ClInclude Include="IEventHandler.h">
-      <Filter>Файлы исходного кода\Application</Filter>
-    </ClInclude>
     <ClInclude Include="CAnimation.h">
       <Filter>Файлы исходного кода\Animation</Filter>
-    </ClInclude>
-    <ClInclude Include="CSurface.h">
-      <Filter>Файлы исходного кода\TextureManager</Filter>
     </ClInclude>
     <ClInclude Include="CGame.h">
       <Filter>Файлы исходного кода\States\Game</Filter>
     </ClInclude>
     <ClInclude Include="Singleton.h">
       <Filter>Файлы исходного кода\Utilz</Filter>
+    </ClInclude>
+    <ClInclude Include="CacheManager.h">
+      <Filter>Файлы исходного кода\MemoryManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Allocator.h">
+      <Filter>Файлы исходного кода\MemoryManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Файлы исходного кода\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureAllocator.h">
+      <Filter>Файлы исходного кода\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Файлы исходного кода\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimatedTexture.h">
+      <Filter>Файлы исходного кода\AnimatedTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimatedTextureAllocator.h">
+      <Filter>Файлы исходного кода\AnimatedTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimatedTextureManager.h">
+      <Filter>Файлы исходного кода\AnimatedTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="CSurface.h">
+      <Filter>Файлы исходного кода\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="StringHelper.h">
+      <Filter>Файлы исходного кода\Utilz</Filter>
+    </ClInclude>
+    <ClInclude Include="EventManager.h">
+      <Filter>Файлы исходного кода\EventManager</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowEvent.h">
+      <Filter>Файлы исходного кода\EventManager</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyboardEvent.h">
+      <Filter>Файлы исходного кода\EventManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CLogger.h">
+      <Filter>Файлы исходного кода\Utilz</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseEvent.h">
+      <Filter>Файлы исходного кода\EventManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SignalsManager.h">
+      <Filter>Файлы исходного кода\Utilz</Filter>
+    </ClInclude>
+    <ClInclude Include="IEventHandler.h">
+      <Filter>Файлы исходного кода\EventManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

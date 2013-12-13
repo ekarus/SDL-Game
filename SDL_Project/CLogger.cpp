@@ -1,47 +1,52 @@
 #include "CLogger.h"
 #include <iostream>
 
-void logError( std::ostream& os,std::string msg )
+namespace Detail
 {
-	os<<"ERROR - "<<msg<<" : "<<SDL_GetError()<<std::endl;
-}
-
-void logInfo( std::ostream& os,std::string msg )
-{
-	os<<"INFO - "<<msg<<std::endl;
-}
-
-void Logger::Write( const std::string level, const std::string function, size_t line, const std::string message )
-{
-	if ( Output::COUT == output_scenario_)
+	void LoggerImpl::Write( const std::string& level, const std::string& function, size_t line, const std::string& message )
 	{
-		std::cout<<level<<" : "<<"["<<function<<" line "<<line<<"] - "<<message<<std::endl;
-	}
-	else if ( Output::CERR == output_scenario_)
-	{
-		std::cerr<<level<<" : "<<"["<<function<<" line "<<line<<"] - "<<message<<std::endl;
-	}
-	else if ( Output::FILE == output_scenario_)
-	{
-		if(out_stream_.is_open())
+		if ( LogOutput::COUT == (LogOutput::COUT & output_scenario_))
 		{
-			out_stream_<<level<<" : "<<"["<<function<<" line "<<line<<"] - "<<message<<std::endl;
+			WriteShortInternal(std::cout, level, function, line, message);
 		}
-		else
+
+		if ( LogOutput::CERR == (LogOutput::CERR & output_scenario_))
 		{
-			setOutput(COUT);
-			LOG_ERROR("Cannot open log file to write");
+			WriteShortInternal(std::cerr, level, function, line, message);
+		}
+
+		if ( LogOutput::FILE == (LogOutput::FILE & output_scenario_))
+		{
+			if(out_stream_.is_open())
+			{
+				WriteInternal(out_stream_, level, function, line, message);
+			}
 		}
 	}
-	
-}
 
-Logger::Logger():output_scenario_(Output::COUT)
-{
-	out_stream_.open("LOG.txt", std::fstream::out| std::ofstream::app);
-}
+	LoggerImpl::LoggerImpl():output_scenario_(LogOutput::COUT)
+	{
+		out_stream_.open("LOG.txt", std::fstream::out | std::ofstream::app);
+	}
 
-Logger::~Logger()
-{
-	out_stream_.close();
+	LoggerImpl::~LoggerImpl()
+	{
+		out_stream_.close();
+	}
+
+	void LoggerImpl::WriteInternal(std::ostream& stream, const std::string& level, const std::string& function, size_t line, const std::string& message )
+	{
+		stream << level << " : " << "[" << function << " line " << line << "] - " << message << std::endl;
+	}
+
+	void LoggerImpl::WriteShortInternal( std::ostream& stream, const std::string& level, const std::string& function, size_t line, const std::string& message )
+	{
+		stream << level << " : " << message << std::endl;
+	}
+
+	void LoggerImpl::setOutput( unsigned int flag )
+	{
+		output_scenario_ = flag;
+	}
+
 }

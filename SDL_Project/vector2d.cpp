@@ -2,7 +2,6 @@
 
 #include <math.h>
 
-
 float Vector2d::getLenght() const
 {
 	return sqrt(x*x+y*y);
@@ -33,7 +32,6 @@ Vector2d Vector2d::operator*(float c)
 
 Vector2d Vector2d::normalize()
 {
-	
 	Vector2d res(0,0);
 	if(this->getLenght()>0)
 	{

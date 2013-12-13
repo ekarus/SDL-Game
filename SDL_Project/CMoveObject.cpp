@@ -41,7 +41,6 @@ CMoveObject::CMoveObject():vel(0,0),acc(0,0),speed(0),maxVel(150,150)
 
 CMoveObject::~CMoveObject()
 {
-
 }
 
 void CMoveObject::onMove( Vector2d dir )
@@ -67,7 +66,7 @@ bool CMoveObject::onEat( CEntity* entity )
 	if(entity->isLive())
 	{
 		entity->setLive(false);
-		this->size=this->size+entity->getSize()*0.5; 
+		this->size=this->size+entity->getSize()*0.5;
 		return true;
 	}
 	return false;
