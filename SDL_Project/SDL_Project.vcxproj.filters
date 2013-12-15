@@ -51,6 +51,12 @@
     <Filter Include="Файлы исходного кода\EventManager">
       <UniqueIdentifier>{89f90ad8-e092-47e5-bb64-1aa1c773db48}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы исходного кода\Objects\Pawn">
+      <UniqueIdentifier>{53afd4d4-2a1b-4a6d-aec7-7246aa239413}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Objects\EnemyPawn">
+      <UniqueIdentifier>{5e406baf-684d-472d-a2fd-2bc2d516b970}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CGameMenu.cpp">
@@ -118,6 +124,18 @@
     </ClCompile>
     <ClCompile Include="IEventHandler.cpp">
       <Filter>Файлы исходного кода\EventManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Pawn.cpp">
+      <Filter>Файлы исходного кода\Objects\Pawn</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyPawn.cpp">
+      <Filter>Файлы исходного кода\Objects\EnemyPawn</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Файлы исходного кода\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="NpcController.cpp">
+      <Filter>Файлы исходного кода\Objects\EnemyPawn</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -222,6 +240,27 @@
     </ClInclude>
     <ClInclude Include="IEventHandler.h">
       <Filter>Файлы исходного кода\EventManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Types.h">
+      <Filter>Файлы исходного кода\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="Factory.h">
+      <Filter>Файлы исходного кода\MemoryManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Файлы исходного кода\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Pawn.h">
+      <Filter>Файлы исходного кода\Objects\Pawn</Filter>
+    </ClInclude>
+    <ClInclude Include="PawnController.h">
+      <Filter>Файлы исходного кода\Objects\Pawn</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyPawn.h">
+      <Filter>Файлы исходного кода\Objects\EnemyPawn</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcController.h">
+      <Filter>Файлы исходного кода\Objects\EnemyPawn</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -42,13 +42,13 @@ void Detail::Texture::setColor( Color::Enum color )
 
 	switch(color)
 	{
-	case Color::red:SDL_SetTextureColorMod(tex_,255,0,0);break;
-	case Color::black:SDL_SetTextureColorMod(tex_,0,0,0);break;
-	case Color::green:SDL_SetTextureColorMod(tex_,0,255,0);break;
-	case Color::blue:SDL_SetTextureColorMod(tex_,0,0,255);break;
-	case Color::white:SDL_SetTextureColorMod(tex_,255,255,255);break;
-	case Color::gray:SDL_SetTextureColorMod(tex_,100,100,100);break;
-	case Color::orange:SDL_SetTextureColorMod(tex_,100,100,0);break;
-	default:SDL_SetTextureColorMod(tex_,255,255,255);;
+	case Color::red : SDL_SetTextureColorMod(tex_,255,0,0);break;
+	case Color::black : SDL_SetTextureColorMod(tex_,0,0,0);break;
+	case Color::green : SDL_SetTextureColorMod(tex_,0,255,0);break;
+	case Color::blue : SDL_SetTextureColorMod(tex_,0,0,255);break;
+	case Color::white : SDL_SetTextureColorMod(tex_,255,255,255);break;
+	case Color::gray : SDL_SetTextureColorMod(tex_,100,100,100);break;
+	case Color::orange : SDL_SetTextureColorMod(tex_,100,100,0);break;
+	default : SDL_SetTextureColorMod(tex_,255,255,255);;
 	}
 }

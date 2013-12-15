@@ -1,5 +1,4 @@
 #include "vector2d.h"
-
 #include <math.h>
 
 float Vector2d::getLenght() const

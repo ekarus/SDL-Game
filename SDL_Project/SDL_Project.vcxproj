@@ -18,7 +18,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v100</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -84,6 +84,7 @@
     <ClCompile Include="CLogger.cpp" />
     <ClCompile Include="CRender.cpp" />
     <ClCompile Include="CWindow.cpp" />
+    <ClCompile Include="EnemyPawn.cpp" />
     <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="IEventHandler.cpp" />
     <ClCompile Include="CFPS.cpp" />
@@ -93,6 +94,9 @@
     <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="CSurface.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NpcController.cpp" />
+    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Pawn.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="timer.cpp" />
     <ClCompile Include="vector2d.cpp" />
@@ -110,9 +114,13 @@
     <ClInclude Include="CGameMenu.h" />
     <ClInclude Include="CIntroScreen.h" />
     <ClInclude Include="CLogger.h" />
+    <ClInclude Include="EnemyPawn.h" />
+    <ClInclude Include="NpcController.h" />
+    <ClInclude Include="PawnController.h" />
     <ClInclude Include="CRender.h" />
     <ClInclude Include="CWindow.h" />
     <ClInclude Include="EventManager.h" />
+    <ClInclude Include="Factory.h" />
     <ClInclude Include="IEventHandler.h" />
     <ClInclude Include="CFPS.h" />
     <ClInclude Include="CGame.h" />
@@ -123,6 +131,8 @@
     <ClInclude Include="CSurface.h" />
     <ClInclude Include="KeyboardEvent.h" />
     <ClInclude Include="MouseEvent.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="Pawn.h" />
     <ClInclude Include="SignalsManager.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="StringHelper.h" />
@@ -130,6 +140,7 @@
     <ClInclude Include="TextureAllocator.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="timer.h" />
+    <ClInclude Include="Types.h" />
     <ClInclude Include="vector2d.h" />
     <ClInclude Include="WindowEvent.h" />
   </ItemGroup>
