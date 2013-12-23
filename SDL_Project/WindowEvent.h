@@ -35,7 +35,7 @@ namespace Events
 
 			void OnEvent(const Event& event)
 			{
-				if(event.type == SDL_WINDOWEVENT) 
+				if(event.type == SDL_WINDOWEVENT)
 				{
 					if(event.window.event == SDL_WINDOWEVENT_RESIZED)
 					{

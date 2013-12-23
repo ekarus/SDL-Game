@@ -1,7 +1,8 @@
 #include "NpcController.h"
 #include "EnemyPawn.h"
+#include "PawnFactory.h"
 
-void NpcController::OnCollide( Pawn::PawnPtr pawn )
+void NpcController::OnCollide( Pawn::PawnSharedPtr pawn )
 {
 	GetPawn()->StopMove();
 }
@@ -19,15 +20,4 @@ void NpcController::OnUpdate( Game::FrameTime time )
 		GetPawn()->SetAcceleration(Physics::Acceleration(10,10));
 	else
 		GetPawn()->StopMove();
-	
-}
-
-Pawn::PawnPtr NpcController::CreatePawn()
-{
-	return EnemyPawn::EnemyPawnFactory::Create();
-}
-
-void NpcController::OnInit()
-{
-	PawnController::OnInit();
 }

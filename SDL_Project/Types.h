@@ -1,5 +1,6 @@
 #include <SDL.h>
 #include "vector2d.h"
+#include "Rectangle.h"
 
 namespace Geometry
 {
@@ -7,6 +8,7 @@ namespace Geometry
 	typedef Rect* RectPtr;
 	typedef Vector2D<float> Size;
 	typedef Vector2D<float> Position;
+//	typedef Rectangle<float> Rectangle;
 }
 
 namespace Physics

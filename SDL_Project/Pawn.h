@@ -3,16 +3,15 @@
 #include "Factory.h"
 #include <vector>
 #include "AnimatedTexture.h"
+#include <boost/shared_ptr.hpp>
 
 class Pawn : public Object
 {
 public:
+	typedef boost::shared_ptr<Pawn> PawnSharedPtr;
+	//typedef std::vector<PawnSharedPtr> PawnsList;
 
-	typedef Factory<Pawn> PawnFactory;
-	typedef PawnFactory::ObjectPtr PawnPtr;
-	typedef std::vector<PawnFactory::ObjectPtr> PawnsList;
-
-	static PawnsList list_;
+	//static PawnsList list_;
 
 	Pawn();
 	virtual ~Pawn();
@@ -44,6 +43,8 @@ public:
 	void SetMaxVelocity(Physics::Velocity val) { max_velocity_ = val; }
 
 	virtual void StopMove();
+
+	virtual Geometry::Position GetNextPosition(Game::FrameTime) override;
 
 protected:
 	bool is_live_;

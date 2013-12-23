@@ -4,11 +4,11 @@
 #include <vector>
 #include "AnimatedTexture.h"
 
-class EnemyPawn : public Pawn
+class PlayerPawn : public Pawn
 {
 public:
-	EnemyPawn();
-	virtual ~EnemyPawn();
+	PlayerPawn();
+	virtual ~PlayerPawn();
 
 	virtual void OnUpdate(Game::FrameTime) override;
 	virtual void OnRender() override;

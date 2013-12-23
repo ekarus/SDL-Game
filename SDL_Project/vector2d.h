@@ -25,7 +25,6 @@ public:
 	Vector2d normalize();
 };
 
-
 template<typename Type>
 class Vector2D
 {

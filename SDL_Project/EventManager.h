@@ -6,7 +6,6 @@
 
 namespace Events
 {
-
 	typedef SDL_Event Event;
 	typedef Event* EventPtr;
 

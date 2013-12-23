@@ -7,7 +7,7 @@ template
 	template <class> class CreatorT = NewCreator,
 	template <class> class DeleterT = NewDeleter
 	>
-class Singleton : public CreatorT<ObjectT>, public DeleterT<ObjectT>
+class Singleton
 {
 public:
 	typedef ObjectT ObjectType;
@@ -21,7 +21,7 @@ public:
 		}
 		else
 		{
-			return inst_ = Create();
+			return inst_ = CreatorT<ObjectT>::Create();
 		}
 	}
 
@@ -34,7 +34,7 @@ public:
 		}
 		else
 		{
-			return inst_ = Create(arg0);
+			return inst_ = CreatorT<ObjectT>::Create(arg0);
 		}
 	}
 
@@ -47,7 +47,7 @@ public:
 		}
 		else
 		{
-			return inst_ = Create(arg0, arg1);
+			return inst_ = CreatorT<ObjectT>::Create(arg0, arg1);
 		}
 	}
 
@@ -60,7 +60,7 @@ public:
 		}
 		else
 		{
-			return inst_ = Create(arg0, arg1, arg2);
+			return inst_ = CreatorT<ObjectT>::Create(arg0, arg1, arg2);
 		}
 	}
 

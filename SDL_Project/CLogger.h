@@ -38,7 +38,6 @@ namespace Detail
 
 typedef Singleton<Detail::LoggerImpl> Logger;
 
-
 #define WRITE_LOG(level, operators)\
 	do{\
 	std::stringstream string_stream;\

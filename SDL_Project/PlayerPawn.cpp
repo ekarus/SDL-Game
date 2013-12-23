@@ -1,25 +1,25 @@
-#include "EnemyPawn.h"
+#include "PlayerPawn.h"
 #include "AnimatedTextureManager.h"
 
-EnemyPawn::EnemyPawn()
+PlayerPawn::PlayerPawn()
 {
 }
 
-EnemyPawn::~EnemyPawn()
+PlayerPawn::~PlayerPawn()
 {
 }
 
-void EnemyPawn::OnUpdate( Game::FrameTime time)
+void PlayerPawn::OnUpdate( Game::FrameTime time)
 {
 	Pawn::OnUpdate(time);
 }
 
-void EnemyPawn::OnRender()
+void PlayerPawn::OnRender()
 {
 	Pawn::OnRender();
 }
 
-bool EnemyPawn::OnInit()
+bool PlayerPawn::OnInit()
 {
 	Pawn::OnInit();
 
@@ -37,12 +37,12 @@ bool EnemyPawn::OnInit()
 	return texture_;
 }
 
-void EnemyPawn::OnCleanUp()
+void PlayerPawn::OnCleanUp()
 {
 	Pawn::OnCleanUp();
 }
 
-void EnemyPawn::OnRestart()
+void PlayerPawn::OnRestart()
 {
 	Pawn::OnRestart();
 }

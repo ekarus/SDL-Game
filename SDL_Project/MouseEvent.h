@@ -85,27 +85,27 @@ namespace Events
 			{
 				switch(event.type)
 				{
-				case SDL_MOUSEMOTION: 
+				case SDL_MOUSEMOTION:
 					{
 						mouse_move_signal_(event.motion.x,event.motion.y,event.motion.xrel,event.motion.yrel,(event.motion.state&SDL_BUTTON(SDL_BUTTON_LEFT))!=0,(event.motion.state&SDL_BUTTON(SDL_BUTTON_RIGHT))!=0,(event.motion.state&SDL_BUTTON(SDL_BUTTON_MIDDLE))!=0);
 						break;
 					}
 
-				case SDL_MOUSEBUTTONDOWN: 
+				case SDL_MOUSEBUTTONDOWN:
 					{
-						switch(event.button.button) 
+						switch(event.button.button)
 						{
-						case SDL_BUTTON_LEFT: 
+						case SDL_BUTTON_LEFT:
 							{
 								left_key_down_signal_(event.button.x,event.button.y);
 								break;
 							}
-						case SDL_BUTTON_RIGHT: 
+						case SDL_BUTTON_RIGHT:
 							{
 								right_key_down_signal_(event.button.x,event.button.y);
 								break;
 							}
-						case SDL_BUTTON_MIDDLE: 
+						case SDL_BUTTON_MIDDLE:
 							{
 								middle_key_down_signal_(event.button.x,event.button.y);
 								break;
@@ -114,21 +114,21 @@ namespace Events
 						break;
 					}
 
-				case SDL_MOUSEBUTTONUP:    
+				case SDL_MOUSEBUTTONUP:
 					{
-						switch(event.button.button) 
+						switch(event.button.button)
 						{
-						case SDL_BUTTON_LEFT: 
+						case SDL_BUTTON_LEFT:
 							{
 								left_key_up_signal_(event.button.x,event.button.y);
 								break;
 							}
-						case SDL_BUTTON_RIGHT: 
+						case SDL_BUTTON_RIGHT:
 							{
 								right_key_up_signal_(event.button.x,event.button.y);
 								break;
 							}
-						case SDL_BUTTON_MIDDLE: 
+						case SDL_BUTTON_MIDDLE:
 							{
 								middle_key_up_signal_(event.button.x,event.button.y);
 								break;

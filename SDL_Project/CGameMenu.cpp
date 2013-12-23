@@ -33,21 +33,21 @@ namespace Detail
 	void CGameMenu::OnCleanUp()
 	{
 		LOG_INFO("CleanUp");
-		
+
 		IGameState::OnCleanUp();
 	}
 
 	void CGameMenu::OnPause()
 	{
 		LOG_INFO("Pause");
-		
+
 		IGameState::OnPause();
 	}
 
 	void CGameMenu::OnResume()
 	{
 		LOG_INFO("Resume");
-		
+
 		IGameState::OnResume();
 	}
 
@@ -84,5 +84,4 @@ namespace Detail
 			}
 		}));
 	}
-
 }

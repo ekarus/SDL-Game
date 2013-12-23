@@ -48,5 +48,4 @@ namespace Detail
 	{
 		output_scenario_ = flag;
 	}
-
 }

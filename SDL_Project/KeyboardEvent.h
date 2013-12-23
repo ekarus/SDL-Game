@@ -45,13 +45,13 @@ namespace Events
 			{
 				switch(event.type)
 				{
-				case SDL_KEYDOWN: 
+				case SDL_KEYDOWN:
 					{
 						key_down_signal_(event.key.keysym);
 						break;
 					}
 
-				case SDL_KEYUP: 
+				case SDL_KEYUP:
 					{
 						key_up_signal_(event.key.keysym);
 						break;

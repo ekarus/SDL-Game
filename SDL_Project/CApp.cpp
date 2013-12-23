@@ -158,7 +158,7 @@ namespace Detail
 	}
 
 	void CApp::PopState()
-	{	
+	{
 		if(!states.empty())
 		{
 			IGameState* state;

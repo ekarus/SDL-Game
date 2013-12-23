@@ -50,7 +50,6 @@ protected:
 
 	SignalsManager()
 	{
-
 	}
 
 	virtual ~SignalsManager()

@@ -57,6 +57,12 @@
     <Filter Include="Файлы исходного кода\Objects\EnemyPawn">
       <UniqueIdentifier>{5e406baf-684d-472d-a2fd-2bc2d516b970}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы исходного кода\Objects\PlayerPawn">
+      <UniqueIdentifier>{c5532d55-df4b-482c-8319-71168fcadf17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Objects\PawnControllers">
+      <UniqueIdentifier>{1f2bb5d0-2239-4920-b22f-5c74250401da}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CGameMenu.cpp">
@@ -134,8 +140,17 @@
     <ClCompile Include="Object.cpp">
       <Filter>Файлы исходного кода\Objects</Filter>
     </ClCompile>
+    <ClCompile Include="PawnFactory.cpp">
+      <Filter>Файлы исходного кода\Objects\Pawn</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerPawn.cpp">
+      <Filter>Файлы исходного кода\Objects\PlayerPawn</Filter>
+    </ClCompile>
     <ClCompile Include="NpcController.cpp">
-      <Filter>Файлы исходного кода\Objects\EnemyPawn</Filter>
+      <Filter>Файлы исходного кода\Objects\PawnControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="ControllerFactory.cpp">
+      <Filter>Файлы исходного кода\Objects\PawnControllers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -253,14 +268,35 @@
     <ClInclude Include="Pawn.h">
       <Filter>Файлы исходного кода\Objects\Pawn</Filter>
     </ClInclude>
-    <ClInclude Include="PawnController.h">
-      <Filter>Файлы исходного кода\Objects\Pawn</Filter>
-    </ClInclude>
     <ClInclude Include="EnemyPawn.h">
       <Filter>Файлы исходного кода\Objects\EnemyPawn</Filter>
     </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Файлы исходного кода\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Block.h">
+      <Filter>Файлы исходного кода\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>Файлы исходного кода\Utilz</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle.h">
+      <Filter>Файлы исходного кода\Utilz</Filter>
+    </ClInclude>
+    <ClInclude Include="PawnFactory.h">
+      <Filter>Файлы исходного кода\Objects\Pawn</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerPawn.h">
+      <Filter>Файлы исходного кода\Objects\PlayerPawn</Filter>
+    </ClInclude>
     <ClInclude Include="NpcController.h">
-      <Filter>Файлы исходного кода\Objects\EnemyPawn</Filter>
+      <Filter>Файлы исходного кода\Objects\PawnControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="PawnController.h">
+      <Filter>Файлы исходного кода\Objects\PawnControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="ControllerFactory.h">
+      <Filter>Файлы исходного кода\Objects\PawnControllers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

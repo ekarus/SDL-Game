@@ -20,7 +20,6 @@ namespace Detail
 		float speedFactor;
 		int oldTime;
 		int lastTime;
-
 	};
 }
 

@@ -46,9 +46,16 @@ public:
 			Delete(object);
 		});
 
-		container[file_path] = ptr;
-
-		return ptr;
+		if(ptr)
+		{
+			container[file_path] = ptr;
+			return ptr;
+		}
+		else
+		{
+			LOG_ERROR("Could't load " << file_path);
+			return nullptr;
+		}
 	}
 
 protected:

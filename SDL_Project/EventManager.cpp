@@ -3,7 +3,6 @@
 
 namespace Events
 {
-
 	void Detail::EventManagerImpl::Update()
 	{
 		Event event;
@@ -18,5 +17,4 @@ namespace Events
 	{
 		return event_signal_.connect(slot);
 	}
-
 }

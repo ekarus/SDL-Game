@@ -3,6 +3,7 @@
 #include "Types.h"
 #include "Factory.h"
 #include <vector>
+#include "Collision.h"
 
 class Object
 {
@@ -15,12 +16,10 @@ public:
 
 	Object():is_visible_(true), position_(Geometry::Position(0,0)), size_(Geometry::Size(10,10))
 	{
-
 	}
 
 	virtual ~Object()
 	{
-
 	}
 
 	virtual void OnUpdate(Game::FrameTime) = 0;
@@ -49,6 +48,17 @@ public:
 	virtual bool IsVisible() const { return is_visible_; }
 
 	virtual void setVisible(bool val) { is_visible_ = val; }
+
+	virtual bool isCollide(const Object& object);
+
+	template<typename ObjectType>
+	bool isCollide(const ObjectType& object)
+	{
+		Geometry::Rectangle next_rect = Geometry::Rectangle(GetNextPosition(), size_);
+		return CollisinCheck::isRectCollide(next_rect, object.getRect());
+	}
+
+	virtual Geometry::Position GetNextPosition(Game::FrameTime) = 0;
 
 protected:
 	bool is_visible_;

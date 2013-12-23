@@ -33,10 +33,10 @@ bool Pawn::OnInit()
 
 void Pawn::OnUpdate(Game::FrameTime time)
 {
-	Geometry::Position new_position = position_ + velocity_ * time;
+	//Geometry::Position new_position = position_ + velocity_ * time;
 
-	position_ = new_position;
-	
+	position_ = GetNextPosition(time);
+
 	Physics::Velocity new_velocity = velocity_ + acceleration_ * time;
 
 	if (new_velocity < max_velocity_)
@@ -57,7 +57,6 @@ void Pawn::OnRender()
 
 void Pawn::OnCleanUp()
 {
-
 }
 
 void Pawn::OnRestart()
@@ -79,4 +78,11 @@ void Pawn::StopMove()
 	}
 }
 
-Pawn::PawnsList Pawn::list_;
+Geometry::Position Pawn::GetNextPosition(Game::FrameTime time)
+{
+	Geometry::Position new_position = position_ + velocity_ * time;
+
+	return new_position;
+}
+
+//Pawn::PawnsList Pawn::list_;

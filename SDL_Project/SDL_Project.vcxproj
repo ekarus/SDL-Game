@@ -18,7 +18,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -82,6 +82,7 @@
     <ClCompile Include="CGameMenu.cpp" />
     <ClCompile Include="CIntroScreen.cpp" />
     <ClCompile Include="CLogger.cpp" />
+    <ClCompile Include="ControllerFactory.cpp" />
     <ClCompile Include="CRender.cpp" />
     <ClCompile Include="CWindow.cpp" />
     <ClCompile Include="EnemyPawn.cpp" />
@@ -97,6 +98,8 @@
     <ClCompile Include="NpcController.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Pawn.cpp" />
+    <ClCompile Include="PawnFactory.cpp" />
+    <ClCompile Include="PlayerPawn.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="timer.cpp" />
     <ClCompile Include="vector2d.cpp" />
@@ -106,6 +109,7 @@
     <ClInclude Include="AnimatedTexture.h" />
     <ClInclude Include="AnimatedTextureAllocator.h" />
     <ClInclude Include="AnimatedTextureManager.h" />
+    <ClInclude Include="Block.h" />
     <ClInclude Include="CacheManager.h" />
     <ClInclude Include="CAnimation.h" />
     <ClInclude Include="CApp.h" />
@@ -114,7 +118,9 @@
     <ClInclude Include="CGameMenu.h" />
     <ClInclude Include="CIntroScreen.h" />
     <ClInclude Include="CLogger.h" />
+    <ClInclude Include="Collision.h" />
     <ClInclude Include="EnemyPawn.h" />
+    <ClInclude Include="ControllerFactory.h" />
     <ClInclude Include="NpcController.h" />
     <ClInclude Include="PawnController.h" />
     <ClInclude Include="CRender.h" />
@@ -133,6 +139,9 @@
     <ClInclude Include="MouseEvent.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Pawn.h" />
+    <ClInclude Include="PawnFactory.h" />
+    <ClInclude Include="PlayerPawn.h" />
+    <ClInclude Include="Rectangle.h" />
     <ClInclude Include="SignalsManager.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="StringHelper.h" />
@@ -143,6 +152,7 @@
     <ClInclude Include="Types.h" />
     <ClInclude Include="vector2d.h" />
     <ClInclude Include="WindowEvent.h" />
+    <ClInclude Include="World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
