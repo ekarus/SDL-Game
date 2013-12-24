@@ -256,9 +256,6 @@
     <ClInclude Include="IEventHandler.h">
       <Filter>Файлы исходного кода\EventManager</Filter>
     </ClInclude>
-    <ClInclude Include="Types.h">
-      <Filter>Файлы исходного кода\SDL</Filter>
-    </ClInclude>
     <ClInclude Include="Factory.h">
       <Filter>Файлы исходного кода\MemoryManager</Filter>
     </ClInclude>
@@ -297,6 +294,9 @@
     </ClInclude>
     <ClInclude Include="ControllerFactory.h">
       <Filter>Файлы исходного кода\Objects\PawnControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="Types.h">
+      <Filter>Файлы исходного кода\Utilz</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
