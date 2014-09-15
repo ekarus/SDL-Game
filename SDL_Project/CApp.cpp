@@ -12,6 +12,7 @@
 #include "CLogger.h"
 #include "StringHelper.h"
 #include "EventManager.h"
+#include "ContentManager.h"
 using namespace std;
 
 namespace Detail
@@ -29,11 +30,12 @@ namespace Detail
 
 	int CApp::onExecute()
 	{
-		if(OnInit()==false)
+		if (OnInit() == false)
 		{
 			LOG_ERROR("Could't start application");
 			return -1;
 		}
+
 		is_run_ = true;
 		SDL_Event event;
 		FPS::ObjectPtr fps = FPS::Instance();
@@ -45,10 +47,13 @@ namespace Detail
 			{
 				OnEvent(&event);
 			}*/
-			fps->onUpdate();
+
+			/*fps->onUpdate();
 			OnUpdate(fps->getSpeedFactor());
-			WindowSingleton::Instance()->SetTitle(StringHelper::String::ToString(fps->getFPS()));
+			WindowSingleton::Instance()->SetTitle(StringHelper::String::ToString(fps->getFPS()));*/
 			OnRender();
+
+			
 		}
 
 		OnCleanUp();
@@ -59,7 +64,7 @@ namespace Detail
 	{
 		Logger::Instance()->setOutput(LogOutput::COUT | LogOutput::FILE);
 
-		if(SDL_Init(SDL_INIT_EVERYTHING) == -1)
+		if (SDL_Init(SDL_INIT_EVERYTHING) == -1)
 		{
 			LOG_ERROR("Could't init SDL");
 			return false;
@@ -116,7 +121,21 @@ namespace Detail
 			states.back()->OnRender();
 		}
 
+		/*Content content("Res.zip");
+		SDL_Texture* texture = content.LoadTexture("Res/menu.png");
+
+		static int i=100;
+		Texture tex("", texture, 100, 100);
+
+		tex.Draw(0, 0, i, i);
+		i++;*/
+		//SDL_RenderCopy(RendererSingleton::Instance()->Get(), tex_, NULL, &rect);
+
+		//CTexture::onDraw(texture, RendererSingleton::Instance()->Get(),0,0,100,100);
+
 		SDL_RenderPresent(RendererSingleton::Instance()->Get());
+
+		//SDL_DestroyTexture(texture);
 	}
 
 	void CApp::OnCleanUp()

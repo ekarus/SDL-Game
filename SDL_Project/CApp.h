@@ -1,7 +1,7 @@
 #pragma once
 #include "IEventHandler.h"
 #include "CEntity.h"
-#include <SDL.h>
+#include <SDL2/SDL.h>
 #include <string>
 #include "IGameState.h"
 #include <vector>

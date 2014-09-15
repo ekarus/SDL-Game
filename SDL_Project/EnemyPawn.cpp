@@ -34,7 +34,7 @@ bool EnemyPawn::OnInit()
 		LOG_ERROR("Could not load texture");
 	}
 
-	return texture_;
+	return texture_ != nullptr;
 }
 
 void EnemyPawn::OnCleanUp()

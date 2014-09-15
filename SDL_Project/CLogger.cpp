@@ -1,5 +1,7 @@
 #include "CLogger.h"
 #include <iostream>
+#include <boost/date_time/posix_time/ptime.hpp>
+#include <boost/date_time.hpp>
 
 namespace Detail
 {
@@ -24,7 +26,7 @@ namespace Detail
 		}
 	}
 
-	LoggerImpl::LoggerImpl():output_scenario_(LogOutput::COUT)
+	LoggerImpl::LoggerImpl() : output_scenario_(LogOutput::COUT)
 	{
 		out_stream_.open("LOG.txt", std::fstream::out | std::ofstream::app);
 	}
@@ -36,16 +38,23 @@ namespace Detail
 
 	void LoggerImpl::WriteInternal(std::ostream& stream, const std::string& level, const std::string& function, size_t line, const std::string& message )
 	{
-		stream << level << " : " << "[" << function << " line " << line << "] - " << message << std::endl;
+		stream << level << " : " << TimeString() << " [" << function << " line " << line << "] - " << message << std::endl;
 	}
 
 	void LoggerImpl::WriteShortInternal( std::ostream& stream, const std::string& level, const std::string& function, size_t line, const std::string& message )
 	{
-		stream << level << " : " << message << std::endl;
+		stream << level << " : " << TimeString() << " - " << message << std::endl;
 	}
 
 	void LoggerImpl::setOutput( unsigned int flag )
 	{
 		output_scenario_ = flag;
+	}
+
+	std::string LoggerImpl::TimeString() const
+	{
+		boost::posix_time::ptime now = boost::posix_time::microsec_clock::local_time();
+		std::string time_string = boost::posix_time::to_simple_string(now);
+		return time_string;
 	}
 }

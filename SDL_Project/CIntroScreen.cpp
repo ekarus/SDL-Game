@@ -75,7 +75,7 @@ namespace Detail
 		});*/
 
 		AddConnection(Events::Keyboard::Instance()->AttachOnKeyDown(
-		[=](const Events::Key& key)
+		[this](const Events::Key& key)
 		{
 			if(key.scancode == SDL_SCANCODE_SPACE)
 			{

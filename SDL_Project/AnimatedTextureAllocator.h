@@ -2,7 +2,7 @@
 
 #include "Allocator.h"
 #include "CRender.h"
-#include <SDL_image.h>
+#include <SDL2/SDL_image.h>
 #include <assert.h>
 
 template<typename Texture>
@@ -29,12 +29,11 @@ class AnimatedTextureDeleter
 public:
 	static void Delete(Texture* texture)
 	{
-		assert(texture->GetRaw() != nullptr);
-
-		SDL_DestroyTexture(texture->GetRaw());
-
-		if(texture)
+		if(texture != nullptr)
 		{
+			if(texture->GetRaw() != nullptr)
+				SDL_DestroyTexture(texture->GetRaw());
+
 			delete texture;
 			texture = nullptr;
 		}

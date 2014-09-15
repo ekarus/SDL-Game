@@ -2,7 +2,7 @@
 
 #include "Singleton.h"
 #include <boost/signals2.hpp>
-#include <SDL.h>
+#include <SDL2/SDL.h>
 
 namespace Events
 {

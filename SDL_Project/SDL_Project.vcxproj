@@ -18,8 +18,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v100</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -33,13 +33,15 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\Properties\BoostStatic.props" />
-    <Import Project="..\Properties\SDL2.props" />
+    <Import Project="..\..\..\..\Libs\boost_1_55_0\props\boost-lib-mt.props" />
+    <Import Project="..\..\..\..\Libs\sdl_2\props\SDL2-lib-md.props" />
+    <Import Project="..\..\..\..\Libs\zlib_1_28\props\Zlib-lib-mt.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\Properties\BoostStatic.props" />
-    <Import Project="..\Properties\SDL2.props" />
+    <Import Project="..\..\..\..\Libs\boost_1_55_0\props\boost-lib-mt.props" />
+    <Import Project="..\..\..\..\Libs\sdl_2\props\SDL2-lib-md.props" />
+    <Import Project="..\..\..\..\Libs\zlib_1_28\props\Zlib-lib-mt.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup />
@@ -49,7 +51,9 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>-D_SCL_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -102,7 +106,9 @@
     <ClCompile Include="PlayerPawn.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="timer.cpp" />
+    <ClCompile Include="UnZip.cpp" />
     <ClCompile Include="vector2d.cpp" />
+    <ClCompile Include="Zip.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Allocator.h" />
@@ -119,6 +125,7 @@
     <ClInclude Include="CIntroScreen.h" />
     <ClInclude Include="CLogger.h" />
     <ClInclude Include="Collision.h" />
+    <ClInclude Include="ContentManager.h" />
     <ClInclude Include="EnemyPawn.h" />
     <ClInclude Include="ControllerFactory.h" />
     <ClInclude Include="NpcController.h" />
@@ -150,9 +157,11 @@
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="Types.h" />
+    <ClInclude Include="UnZip.h" />
     <ClInclude Include="vector2d.h" />
     <ClInclude Include="WindowEvent.h" />
     <ClInclude Include="World.h" />
+    <ClInclude Include="Zip.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -3,7 +3,7 @@
 #include <string>
 #include <sstream>
 #include <fstream>
-#include <SDL.h>
+#include <SDL2/SDL.h>
 #include "Singleton.h"
 
 struct LogOutput
@@ -31,6 +31,7 @@ namespace Detail
 	private:
 		void WriteInternal(std::ostream& stream, const std::string& level, const std::string& function, size_t line, const std::string& message);
 		void WriteShortInternal(std::ostream& stream, const std::string& level, const std::string& function, size_t line, const std::string& message);
+		std::string TimeString() const;
 		std::ofstream out_stream_;
 		unsigned int output_scenario_;
 	};

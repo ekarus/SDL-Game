@@ -1,5 +1,5 @@
 #include "CAnimation.h"
-#include <SDL.h>
+#include <SDL2/SDL.h>
 void CAnimation::OnAnimate()
 {
 	if((old_time + frame_rate) < SDL_GetTicks())

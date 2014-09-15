@@ -1,302 +1,319 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Файлы исходного кода">
+    <Filter Include="Src">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Файлы ресурсов">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Файлы исходного кода\States">
+    <Filter Include="Src\States">
       <UniqueIdentifier>{9f1f5737-cef8-43f1-adc9-4fa4c13f55dc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы исходного кода\States\GameMenuState">
+    <Filter Include="Src\States\GameMenuState">
       <UniqueIdentifier>{d0738056-ecef-4de5-8952-638ab035aa5b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы исходного кода\States\IntroScreenState">
+    <Filter Include="Src\States\IntroScreenState">
       <UniqueIdentifier>{68fcce3d-4597-4d94-872f-e68e19e11869}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы исходного кода\Objects">
-      <UniqueIdentifier>{5e98574b-6131-4ad2-a648-3b701ae7f83d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы исходного кода\SDL">
-      <UniqueIdentifier>{288267e4-a37e-413c-a689-6a2377f300da}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы исходного кода\Utilz">
-      <UniqueIdentifier>{e424832c-ee97-4f83-b7a4-49b41c94fd6f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы исходного кода\Phisics">
-      <UniqueIdentifier>{827cb30f-1267-4051-a7ff-72b7f0d6f656}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы исходного кода\Application">
-      <UniqueIdentifier>{7e64c993-e7db-4ac7-8d52-d1a8e4a62140}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы исходного кода\Animation">
-      <UniqueIdentifier>{3020914e-7618-4939-a07c-bb9673c8cbad}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы исходного кода\States\Game">
+    <Filter Include="Src\States\Game">
       <UniqueIdentifier>{ff9e580e-0334-4923-8942-393542e5b544}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы исходного кода\Texture">
-      <UniqueIdentifier>{a7c2e837-6d02-4109-9270-7200fc14aed1}</UniqueIdentifier>
+    <Filter Include="Src\Objects">
+      <UniqueIdentifier>{5e98574b-6131-4ad2-a648-3b701ae7f83d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы исходного кода\AnimatedTexture">
-      <UniqueIdentifier>{30393268-27c3-4f41-a00b-0621778bb164}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы исходного кода\MemoryManager">
-      <UniqueIdentifier>{cae92692-d615-41f8-88c9-2601f8544e71}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы исходного кода\EventManager">
-      <UniqueIdentifier>{89f90ad8-e092-47e5-bb64-1aa1c773db48}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы исходного кода\Objects\Pawn">
+    <Filter Include="Src\Objects\Pawn">
       <UniqueIdentifier>{53afd4d4-2a1b-4a6d-aec7-7246aa239413}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы исходного кода\Objects\EnemyPawn">
+    <Filter Include="Src\Objects\EnemyPawn">
       <UniqueIdentifier>{5e406baf-684d-472d-a2fd-2bc2d516b970}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы исходного кода\Objects\PlayerPawn">
+    <Filter Include="Src\Objects\PlayerPawn">
       <UniqueIdentifier>{c5532d55-df4b-482c-8319-71168fcadf17}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы исходного кода\Objects\PawnControllers">
+    <Filter Include="Src\Objects\PawnControllers">
       <UniqueIdentifier>{1f2bb5d0-2239-4920-b22f-5c74250401da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\SDL">
+      <UniqueIdentifier>{288267e4-a37e-413c-a689-6a2377f300da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Utilz">
+      <UniqueIdentifier>{e424832c-ee97-4f83-b7a4-49b41c94fd6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Utilz\Zip">
+      <UniqueIdentifier>{05053b2e-1e9c-4f76-8426-af378ed7c0ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Phisics">
+      <UniqueIdentifier>{827cb30f-1267-4051-a7ff-72b7f0d6f656}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Application">
+      <UniqueIdentifier>{7e64c993-e7db-4ac7-8d52-d1a8e4a62140}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Animation">
+      <UniqueIdentifier>{3020914e-7618-4939-a07c-bb9673c8cbad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Texture">
+      <UniqueIdentifier>{a7c2e837-6d02-4109-9270-7200fc14aed1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\AnimatedTexture">
+      <UniqueIdentifier>{30393268-27c3-4f41-a00b-0621778bb164}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MemoryManager">
+      <UniqueIdentifier>{cae92692-d615-41f8-88c9-2601f8544e71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\EventManager">
+      <UniqueIdentifier>{89f90ad8-e092-47e5-bb64-1aa1c773db48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\ContentManager">
+      <UniqueIdentifier>{be324cc6-decd-4bf6-9ccb-7e4f277cc909}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CGameMenu.cpp">
-      <Filter>Файлы исходного кода\States\GameMenuState</Filter>
+      <Filter>Src\States\GameMenuState</Filter>
     </ClCompile>
     <ClCompile Include="CIntroScreen.cpp">
-      <Filter>Файлы исходного кода\States\IntroScreenState</Filter>
+      <Filter>Src\States\IntroScreenState</Filter>
     </ClCompile>
     <ClCompile Include="CEntity.cpp">
-      <Filter>Файлы исходного кода\Objects</Filter>
+      <Filter>Src\Objects</Filter>
     </ClCompile>
     <ClCompile Include="CNpc.cpp">
-      <Filter>Файлы исходного кода\Objects</Filter>
+      <Filter>Src\Objects</Filter>
     </ClCompile>
     <ClCompile Include="CPlayer.cpp">
-      <Filter>Файлы исходного кода\Objects</Filter>
+      <Filter>Src\Objects</Filter>
     </ClCompile>
     <ClCompile Include="CRender.cpp">
-      <Filter>Файлы исходного кода\SDL</Filter>
+      <Filter>Src\SDL</Filter>
     </ClCompile>
     <ClCompile Include="CWindow.cpp">
-      <Filter>Файлы исходного кода\SDL</Filter>
+      <Filter>Src\SDL</Filter>
     </ClCompile>
     <ClCompile Include="timer.cpp">
-      <Filter>Файлы исходного кода\Utilz</Filter>
+      <Filter>Src\Utilz</Filter>
     </ClCompile>
     <ClCompile Include="vector2d.cpp">
-      <Filter>Файлы исходного кода\Utilz</Filter>
+      <Filter>Src\Utilz</Filter>
     </ClCompile>
     <ClCompile Include="CMoveObject.cpp">
-      <Filter>Файлы исходного кода\Objects</Filter>
+      <Filter>Src\Objects</Filter>
     </ClCompile>
     <ClCompile Include="CCollision.cpp">
-      <Filter>Файлы исходного кода\Phisics</Filter>
+      <Filter>Src\Phisics</Filter>
     </ClCompile>
     <ClCompile Include="CApp.cpp">
-      <Filter>Файлы исходного кода\Application</Filter>
+      <Filter>Src\Application</Filter>
     </ClCompile>
     <ClCompile Include="CFPS.cpp">
-      <Filter>Файлы исходного кода\Application</Filter>
+      <Filter>Src\Application</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
-      <Filter>Файлы исходного кода\Application</Filter>
+      <Filter>Src\Application</Filter>
     </ClCompile>
     <ClCompile Include="CAnimation.cpp">
-      <Filter>Файлы исходного кода\Animation</Filter>
+      <Filter>Src\Animation</Filter>
     </ClCompile>
     <ClCompile Include="CGame.cpp">
-      <Filter>Файлы исходного кода\States\Game</Filter>
+      <Filter>Src\States\Game</Filter>
     </ClCompile>
     <ClCompile Include="Texture.cpp">
-      <Filter>Файлы исходного кода\Texture</Filter>
+      <Filter>Src\Texture</Filter>
     </ClCompile>
     <ClCompile Include="AnimatedTexture.cpp">
-      <Filter>Файлы исходного кода\AnimatedTexture</Filter>
+      <Filter>Src\AnimatedTexture</Filter>
     </ClCompile>
     <ClCompile Include="CSurface.cpp">
-      <Filter>Файлы исходного кода\SDL</Filter>
+      <Filter>Src\SDL</Filter>
     </ClCompile>
     <ClCompile Include="EventManager.cpp">
-      <Filter>Файлы исходного кода\EventManager</Filter>
+      <Filter>Src\EventManager</Filter>
     </ClCompile>
     <ClCompile Include="CLogger.cpp">
-      <Filter>Файлы исходного кода\Utilz</Filter>
+      <Filter>Src\Utilz</Filter>
     </ClCompile>
     <ClCompile Include="IEventHandler.cpp">
-      <Filter>Файлы исходного кода\EventManager</Filter>
+      <Filter>Src\EventManager</Filter>
     </ClCompile>
     <ClCompile Include="Pawn.cpp">
-      <Filter>Файлы исходного кода\Objects\Pawn</Filter>
+      <Filter>Src\Objects\Pawn</Filter>
     </ClCompile>
     <ClCompile Include="EnemyPawn.cpp">
-      <Filter>Файлы исходного кода\Objects\EnemyPawn</Filter>
+      <Filter>Src\Objects\EnemyPawn</Filter>
     </ClCompile>
     <ClCompile Include="Object.cpp">
-      <Filter>Файлы исходного кода\Objects</Filter>
+      <Filter>Src\Objects</Filter>
     </ClCompile>
     <ClCompile Include="PawnFactory.cpp">
-      <Filter>Файлы исходного кода\Objects\Pawn</Filter>
+      <Filter>Src\Objects\Pawn</Filter>
     </ClCompile>
     <ClCompile Include="PlayerPawn.cpp">
-      <Filter>Файлы исходного кода\Objects\PlayerPawn</Filter>
+      <Filter>Src\Objects\PlayerPawn</Filter>
     </ClCompile>
     <ClCompile Include="NpcController.cpp">
-      <Filter>Файлы исходного кода\Objects\PawnControllers</Filter>
+      <Filter>Src\Objects\PawnControllers</Filter>
     </ClCompile>
     <ClCompile Include="ControllerFactory.cpp">
-      <Filter>Файлы исходного кода\Objects\PawnControllers</Filter>
+      <Filter>Src\Objects\PawnControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="UnZip.cpp">
+      <Filter>Src\Utilz\Zip</Filter>
+    </ClCompile>
+    <ClCompile Include="Zip.cpp">
+      <Filter>Src\Utilz\Zip</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CGameMenu.h">
-      <Filter>Файлы исходного кода\States\GameMenuState</Filter>
+      <Filter>Src\States\GameMenuState</Filter>
     </ClInclude>
     <ClInclude Include="CIntroScreen.h">
-      <Filter>Файлы исходного кода\States\IntroScreenState</Filter>
+      <Filter>Src\States\IntroScreenState</Filter>
     </ClInclude>
     <ClInclude Include="IGameState.h">
-      <Filter>Файлы исходного кода\States</Filter>
+      <Filter>Src\States</Filter>
     </ClInclude>
     <ClInclude Include="CNpc.h">
-      <Filter>Файлы исходного кода\Objects</Filter>
+      <Filter>Src\Objects</Filter>
     </ClInclude>
     <ClInclude Include="CPlayer.h">
-      <Filter>Файлы исходного кода\Objects</Filter>
+      <Filter>Src\Objects</Filter>
     </ClInclude>
     <ClInclude Include="CMoveObject.h">
-      <Filter>Файлы исходного кода\Objects</Filter>
+      <Filter>Src\Objects</Filter>
     </ClInclude>
     <ClInclude Include="CEntity.h">
-      <Filter>Файлы исходного кода\Objects</Filter>
+      <Filter>Src\Objects</Filter>
     </ClInclude>
     <ClInclude Include="CRender.h">
-      <Filter>Файлы исходного кода\SDL</Filter>
+      <Filter>Src\SDL</Filter>
     </ClInclude>
     <ClInclude Include="CWindow.h">
-      <Filter>Файлы исходного кода\SDL</Filter>
+      <Filter>Src\SDL</Filter>
     </ClInclude>
     <ClInclude Include="timer.h">
-      <Filter>Файлы исходного кода\Utilz</Filter>
+      <Filter>Src\Utilz</Filter>
     </ClInclude>
     <ClInclude Include="vector2d.h">
-      <Filter>Файлы исходного кода\Utilz</Filter>
+      <Filter>Src\Utilz</Filter>
     </ClInclude>
     <ClInclude Include="CCollision.h">
-      <Filter>Файлы исходного кода\Phisics</Filter>
+      <Filter>Src\Phisics</Filter>
     </ClInclude>
     <ClInclude Include="CApp.h">
-      <Filter>Файлы исходного кода\Application</Filter>
+      <Filter>Src\Application</Filter>
     </ClInclude>
     <ClInclude Include="CFPS.h">
-      <Filter>Файлы исходного кода\Application</Filter>
+      <Filter>Src\Application</Filter>
     </ClInclude>
     <ClInclude Include="CAnimation.h">
-      <Filter>Файлы исходного кода\Animation</Filter>
+      <Filter>Src\Animation</Filter>
     </ClInclude>
     <ClInclude Include="CGame.h">
-      <Filter>Файлы исходного кода\States\Game</Filter>
+      <Filter>Src\States\Game</Filter>
     </ClInclude>
     <ClInclude Include="Singleton.h">
-      <Filter>Файлы исходного кода\Utilz</Filter>
+      <Filter>Src\Utilz</Filter>
     </ClInclude>
     <ClInclude Include="CacheManager.h">
-      <Filter>Файлы исходного кода\MemoryManager</Filter>
+      <Filter>Src\MemoryManager</Filter>
     </ClInclude>
     <ClInclude Include="Allocator.h">
-      <Filter>Файлы исходного кода\MemoryManager</Filter>
+      <Filter>Src\MemoryManager</Filter>
     </ClInclude>
     <ClInclude Include="Texture.h">
-      <Filter>Файлы исходного кода\Texture</Filter>
+      <Filter>Src\Texture</Filter>
     </ClInclude>
     <ClInclude Include="TextureAllocator.h">
-      <Filter>Файлы исходного кода\Texture</Filter>
+      <Filter>Src\Texture</Filter>
     </ClInclude>
     <ClInclude Include="TextureManager.h">
-      <Filter>Файлы исходного кода\Texture</Filter>
+      <Filter>Src\Texture</Filter>
     </ClInclude>
     <ClInclude Include="AnimatedTexture.h">
-      <Filter>Файлы исходного кода\AnimatedTexture</Filter>
+      <Filter>Src\AnimatedTexture</Filter>
     </ClInclude>
     <ClInclude Include="AnimatedTextureAllocator.h">
-      <Filter>Файлы исходного кода\AnimatedTexture</Filter>
+      <Filter>Src\AnimatedTexture</Filter>
     </ClInclude>
     <ClInclude Include="AnimatedTextureManager.h">
-      <Filter>Файлы исходного кода\AnimatedTexture</Filter>
+      <Filter>Src\AnimatedTexture</Filter>
     </ClInclude>
     <ClInclude Include="CSurface.h">
-      <Filter>Файлы исходного кода\SDL</Filter>
+      <Filter>Src\SDL</Filter>
     </ClInclude>
     <ClInclude Include="StringHelper.h">
-      <Filter>Файлы исходного кода\Utilz</Filter>
+      <Filter>Src\Utilz</Filter>
     </ClInclude>
     <ClInclude Include="EventManager.h">
-      <Filter>Файлы исходного кода\EventManager</Filter>
+      <Filter>Src\EventManager</Filter>
     </ClInclude>
     <ClInclude Include="WindowEvent.h">
-      <Filter>Файлы исходного кода\EventManager</Filter>
+      <Filter>Src\EventManager</Filter>
     </ClInclude>
     <ClInclude Include="KeyboardEvent.h">
-      <Filter>Файлы исходного кода\EventManager</Filter>
+      <Filter>Src\EventManager</Filter>
     </ClInclude>
     <ClInclude Include="CLogger.h">
-      <Filter>Файлы исходного кода\Utilz</Filter>
+      <Filter>Src\Utilz</Filter>
     </ClInclude>
     <ClInclude Include="MouseEvent.h">
-      <Filter>Файлы исходного кода\EventManager</Filter>
+      <Filter>Src\EventManager</Filter>
     </ClInclude>
     <ClInclude Include="SignalsManager.h">
-      <Filter>Файлы исходного кода\Utilz</Filter>
+      <Filter>Src\Utilz</Filter>
     </ClInclude>
     <ClInclude Include="IEventHandler.h">
-      <Filter>Файлы исходного кода\EventManager</Filter>
+      <Filter>Src\EventManager</Filter>
     </ClInclude>
     <ClInclude Include="Factory.h">
-      <Filter>Файлы исходного кода\MemoryManager</Filter>
+      <Filter>Src\MemoryManager</Filter>
     </ClInclude>
     <ClInclude Include="Object.h">
-      <Filter>Файлы исходного кода\Objects</Filter>
+      <Filter>Src\Objects</Filter>
     </ClInclude>
     <ClInclude Include="Pawn.h">
-      <Filter>Файлы исходного кода\Objects\Pawn</Filter>
+      <Filter>Src\Objects\Pawn</Filter>
     </ClInclude>
     <ClInclude Include="EnemyPawn.h">
-      <Filter>Файлы исходного кода\Objects\EnemyPawn</Filter>
+      <Filter>Src\Objects\EnemyPawn</Filter>
     </ClInclude>
     <ClInclude Include="World.h">
-      <Filter>Файлы исходного кода\Objects</Filter>
+      <Filter>Src\Objects</Filter>
     </ClInclude>
     <ClInclude Include="Block.h">
-      <Filter>Файлы исходного кода\Objects</Filter>
+      <Filter>Src\Objects</Filter>
     </ClInclude>
     <ClInclude Include="Collision.h">
-      <Filter>Файлы исходного кода\Utilz</Filter>
+      <Filter>Src\Utilz</Filter>
     </ClInclude>
     <ClInclude Include="Rectangle.h">
-      <Filter>Файлы исходного кода\Utilz</Filter>
+      <Filter>Src\Utilz</Filter>
     </ClInclude>
     <ClInclude Include="PawnFactory.h">
-      <Filter>Файлы исходного кода\Objects\Pawn</Filter>
+      <Filter>Src\Objects\Pawn</Filter>
     </ClInclude>
     <ClInclude Include="PlayerPawn.h">
-      <Filter>Файлы исходного кода\Objects\PlayerPawn</Filter>
+      <Filter>Src\Objects\PlayerPawn</Filter>
     </ClInclude>
     <ClInclude Include="NpcController.h">
-      <Filter>Файлы исходного кода\Objects\PawnControllers</Filter>
+      <Filter>Src\Objects\PawnControllers</Filter>
     </ClInclude>
     <ClInclude Include="PawnController.h">
-      <Filter>Файлы исходного кода\Objects\PawnControllers</Filter>
+      <Filter>Src\Objects\PawnControllers</Filter>
     </ClInclude>
     <ClInclude Include="ControllerFactory.h">
-      <Filter>Файлы исходного кода\Objects\PawnControllers</Filter>
+      <Filter>Src\Objects\PawnControllers</Filter>
     </ClInclude>
     <ClInclude Include="Types.h">
-      <Filter>Файлы исходного кода\Utilz</Filter>
+      <Filter>Src\Utilz</Filter>
+    </ClInclude>
+    <ClInclude Include="UnZip.h">
+      <Filter>Src\Utilz\Zip</Filter>
+    </ClInclude>
+    <ClInclude Include="Zip.h">
+      <Filter>Src\Utilz\Zip</Filter>
+    </ClInclude>
+    <ClInclude Include="ContentManager.h">
+      <Filter>Src\ContentManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

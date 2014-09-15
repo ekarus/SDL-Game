@@ -5,6 +5,8 @@
 #include "CCollision.h"
 #include "KeyboardEvent.h"
 #include "MouseEvent.h"
+#include "ControllerFactory.h"
+#include "PawnFactory.h"
 
 namespace Detail
 {
@@ -34,6 +36,12 @@ namespace Detail
 		CEntity::entity_list.push_back(player);
 		srand(time(nullptr));
 		AddNPC(3);
+		world_.OnInit();
+		ControllerFactory* controller_factory = new NpcControllerFactory();
+		PawnFactory* pawn_factory = new EnemyFactory();
+
+		pawn_controller_ = controller_factory->CreateController(pawn_factory->CreatePawn());
+
 		Restart();
 		return true;
 	}
@@ -59,6 +67,7 @@ namespace Detail
 
 	void CGame::Restart()
 	{
+		world_.OnRestart();
 		for(int i=0;i<CEntity::entity_list.size();i++)
 		{
 			CEntity* e=CEntity::entity_list[i];
@@ -81,6 +90,7 @@ namespace Detail
 
 	void CGame::OnUpdate(float time)
 	{
+		world_.OnUpdate(time);
 		for(int i=0;i<CEntity::entity_list.size();++i)
 		{
 			if(CEntity::entity_list[i]!=nullptr)
@@ -127,6 +137,7 @@ namespace Detail
 
 	void CGame::OnRender()
 	{
+		world_.OnRender();
 		for(int i=0;i<CEntity::entity_list.size();++i)
 		{
 			if(CEntity::entity_list[i]!=nullptr)
@@ -199,14 +210,15 @@ namespace Detail
 	{
 		IGameState::OnCleanUp();
 
-		for(auto i=CEntity::entity_list.begin();i!=CEntity::entity_list.end();++i)
+		for (auto entity = CEntity::entity_list.begin(), end = CEntity::entity_list.end(); entity != end; ++entity)
 		{
-			if(*i!=nullptr)
+			if (*entity != nullptr)
 			{
-				(*i)->OnCleanUp();
-				delete *i;
+				(*entity)->OnCleanUp();
+				delete *entity;
 			}
 		}
+
 		CEntity::entity_list.clear();
 	}
 
@@ -237,13 +249,13 @@ namespace Detail
 		});*/
 
 		AddConnection(Events::Keyboard::Instance()->AttachOnKeyDown(
-		[=](const Events::Key& key)
+		[this](const Events::Key& key)
 		{
 			OnKeyDown(key);
 		}));
 
 		AddConnection(Events::Mouse::Instance()->AttachOnMouseMove(
-		[=](int x, int y, int relX, int relY, bool Left,bool Right,bool Middle)
+		[this](int x, int y, int relX, int relY, bool Left, bool Right, bool Middle)
 		{
 			OnMouseMove(x, y , relX, relY, Left, Right, Middle);
 		}));

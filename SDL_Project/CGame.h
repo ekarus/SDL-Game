@@ -10,6 +10,8 @@
 #include <vector>
 #include "Singleton.h"
 #include <boost/signals2.hpp>
+#include "World.h"
+#include "PawnController.h"
 
 namespace Detail
 {
@@ -53,6 +55,8 @@ namespace Detail
 		CApp* app;
 		CPlayer* player;
 		vector<CMoveObject*> npcs;
+		World world_;
+		PawnController::ControllerSharedPtr pawn_controller_;
 
 		bool fail;
 		int live_obj;

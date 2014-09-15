@@ -9,7 +9,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)lib\SDL2\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-	  <AdditionalDependencies> SDL2main.lib; SDL2.lib; SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+	  <AdditionalDependencies>SDL2main.lib; SDL2.lib; SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup />

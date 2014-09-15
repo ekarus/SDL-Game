@@ -155,3 +155,385 @@ INFO : [Detail::CApp::ChangeState line 192] - ChangeState states.size = 1
 INFO : [Detail::CGame::OnPause line 215] - GAME --- PAUSE
 INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/menu.png
 INFO : [Detail::CApp::PushState line 157] - PushState states.size = 2
+INFO : [Detail::CApp::OnInit line 69] - Window created
+INFO : [Detail::CApp::OnInit line 81] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 1
+INFO : [Detail::CGame::OnInit line 28] - GAME --- INIT
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [Detail::CApp::ChangeState line 192] - ChangeState states.size = 1
+INFO : [Detail::CApp::OnInit line 69] - Window created
+INFO : [Detail::CApp::OnInit line 81] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 1
+INFO : [Detail::CGame::OnInit line 28] - GAME --- INIT
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ..//Res//menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ..//Res//menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ..//Res//menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ..//Res//menu.png
+INFO : [Detail::CApp::ChangeState line 192] - ChangeState states.size = 1
+INFO : [Detail::CApp::OnInit line 69] - Window created
+INFO : [Detail::CApp::OnInit line 81] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 1
+INFO : [Detail::CGame::OnInit line 28] - GAME --- INIT
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ..//Res//menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ..//Res//menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ..//Res//menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ..//Res//menu.png
+INFO : [Detail::CApp::ChangeState line 192] - ChangeState states.size = 1
+INFO : [Detail::CApp::OnInit line 69] - Window created
+INFO : [Detail::CApp::OnInit line 81] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 1
+INFO : [Detail::CGame::OnInit line 28] - GAME --- INIT
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ..//Res//menu.png
+INFO : [Detail::CApp::OnInit line 69] - Window created
+INFO : [Detail::CApp::OnInit line 81] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 1
+INFO : [Detail::CGame::OnInit line 28] - GAME --- INIT
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ..//Res//menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ..//Res//menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ..//Res//menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ..//Res//menu.png
+INFO : [Detail::CApp::ChangeState line 192] - ChangeState states.size = 1
+INFO : [Detail::CApp::OnInit line 69] - Window created
+INFO : [Detail::CApp::OnInit line 81] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 1
+INFO : [Detail::CGame::OnInit line 28] - GAME --- INIT
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ..//Res//menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ..//Res//menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ..//Res//menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ..//Res//menu.png
+INFO : [Detail::CApp::ChangeState line 192] - ChangeState states.size = 1
+INFO : [Detail::CApp::OnInit line 69] - Window created
+INFO : [Detail::CApp::OnInit line 81] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 1
+INFO : [Detail::CGame::OnInit line 28] - GAME --- INIT
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ..//Res//menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ..//Res//menu.png
+INFO : [Detail::CApp::OnInit line 69] - Window created
+INFO : [Detail::CApp::OnInit line 81] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 1
+INFO : [Detail::CGame::OnInit line 28] - GAME --- INIT
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ..//Res//menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ..//Res//menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ..//Res//menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ..//Res//menu.png
+INFO : [Detail::CApp::ChangeState line 192] - ChangeState states.size = 1
+INFO : [Detail::CApp::OnInit line 69] - Window created
+INFO : [Detail::CApp::OnInit line 81] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 1
+INFO : [Detail::CGame::OnInit line 28] - GAME --- INIT
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ..//Res//menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ..//Res//menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ..//Res//menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ..//Res//menu.png
+INFO : [Detail::CApp::ChangeState line 192] - ChangeState states.size = 1
+INFO : [Detail::`anonymous-namespace'::<lambda1>::operator () line 58] - Window w=919 h=663
+INFO : [Detail::`anonymous-namespace'::<lambda1>::operator () line 58] - Window w=1027 h=821
+INFO : [Detail::`anonymous-namespace'::<lambda1>::operator () line 58] - Window w=1197 h=798
+INFO : [Detail::`anonymous-namespace'::<lambda1>::operator () line 58] - Window w=993 h=258
+INFO : [Detail::`anonymous-namespace'::<lambda1>::operator () line 58] - Window w=446 h=718
+INFO : [Detail::`anonymous-namespace'::<lambda1>::operator () line 58] - Window w=916 h=829
+INFO : [Detail::`anonymous-namespace'::<lambda1>::operator () line 58] - Window w=1187 h=753
+INFO : [Detail::CApp::OnInit line 69] - Window created
+INFO : [Detail::CApp::OnInit line 81] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 1
+INFO : [Detail::CGame::OnInit line 28] - GAME --- INIT
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ..//Res//menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ..//Res//menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ..//Res//menu.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ..//Res//menu.png
+INFO : [Detail::CApp::ChangeState line 192] - ChangeState states.size = 1
+INFO : [Detail::CGame::OnPause line 219] - GAME --- PAUSE
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/menu.png
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 2
+INFO : [Detail::CApp::OnExit line 138] - Exit app (is_run = 0)
+INFO : [Detail::CGameMenu::OnCleanUp line 35] - CleanUp
+INFO : [`anonymous-namespace'::<lambda9>::operator () line 45] - Delete : ../Res/circle_a.png
+INFO : [`anonymous-namespace'::<lambda9>::operator () line 45] - Delete : ../Res/target.png
+INFO : [`anonymous-namespace'::<lambda3>::operator () line 45] - Delete : ../Res/circle_a.png
+INFO : [Detail::CApp::OnInit line 69] - Window created
+INFO : [Detail::CApp::OnInit line 81] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 1
+INFO : [Detail::CGame::OnInit line 30] - GAME --- INIT
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [Detail::CApp::ChangeState line 192] - ChangeState states.size = 1
+INFO : [Detail::CApp::OnInit line 69] - Window created
+INFO : [Detail::CApp::OnInit line 81] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 1
+INFO : [Detail::CGame::OnInit line 30] - GAME --- INIT
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [Detail::CApp::ChangeState line 192] - ChangeState states.size = 1
+INFO : [Detail::CGame::OnPause line 226] - GAME --- PAUSE
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/menu.png
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 2
+INFO : [Detail::CApp::OnExit line 138] - Exit app (is_run = 0)
+INFO : [Detail::CGameMenu::OnCleanUp line 35] - CleanUp
+INFO : [`anonymous-namespace'::<lambda9>::operator () line 45] - Delete : ../Res/circle_a.png
+INFO : [`anonymous-namespace'::<lambda9>::operator () line 45] - Delete : ../Res/target.png
+INFO : [`anonymous-namespace'::<lambda3>::operator () line 45] - Delete : ../Res/circle_a.png
+INFO : [Detail::CApp::OnInit line 69] - Window created
+INFO : [Detail::CApp::OnInit line 81] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 157] - PushState states.size = 1
+INFO : [Detail::CGame::OnInit line 30] - GAME --- INIT
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [Detail::CApp::ChangeState line 192] - ChangeState states.size = 1
+INFO : [Detail::CApp::OnInit line 73] - Window created
+INFO : [Detail::CApp::OnInit line 85] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 170] - PushState states.size = 1
+INFO : [Detail::CApp::OnInit line 73] - Window created
+INFO : [Detail::CApp::OnInit line 85] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 170] - PushState states.size = 1
+INFO : [Detail::CApp::OnInit line 73] - Window created
+INFO : [Detail::CApp::OnInit line 85] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 170] - PushState states.size = 1
+INFO : [Detail::CApp::OnInit line 73] - Window created
+INFO : [Detail::CApp::OnInit line 85] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 170] - PushState states.size = 1
+INFO : [Detail::CApp::OnInit line 73] - Window created
+INFO : [Detail::CApp::OnInit line 85] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 170] - PushState states.size = 1
+INFO : [Detail::CApp::OnInit line 73] - Window created
+INFO : [Detail::CApp::OnInit line 85] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 172] - PushState states.size = 1
+INFO : [Detail::`anonymous-namespace'::<lambda1>::operator () line 58] - Window w=1250 h=865
+INFO : [Detail::CApp::OnInit line 73] - Window created
+INFO : [Detail::CApp::OnInit line 85] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 173] - PushState states.size = 1
+INFO : [Detail::CApp::OnInit line 73] - Window created
+INFO : [Detail::CApp::OnInit line 85] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 173] - PushState states.size = 1
+INFO : [Detail::CApp::OnInit line 73] - Window created
+INFO : [Detail::CApp::OnInit line 85] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 173] - PushState states.size = 1
+INFO : [Detail::CApp::OnInit line 73] - Window created
+INFO : [Detail::CApp::OnInit line 85] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 173] - PushState states.size = 1
+INFO : [Detail::CApp::OnInit line 73] - Window created
+INFO : [Detail::CApp::OnInit line 85] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 173] - PushState states.size = 1
+INFO : [Detail::CApp::OnInit line 73] - Window created
+INFO : [Detail::CApp::OnInit line 85] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 173] - PushState states.size = 1
+INFO : [Detail::CApp::OnInit line 73] - Window created
+INFO : [Detail::CApp::OnInit line 85] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 173] - PushState states.size = 1
+ERROR : [SDL_main line 14] - Couldn't locale file in zip.
+INFO : [Detail::CApp::OnInit line 73] - Window created
+INFO : [Detail::CApp::OnInit line 85] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 173] - PushState states.size = 1
+INFO : [Detail::CApp::OnInit line 73] - Window created
+INFO : [Detail::CApp::OnInit line 85] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 173] - PushState states.size = 1
+INFO : [Detail::CApp::OnInit line 73] - Window created
+INFO : [Detail::CApp::OnInit line 85] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 173] - PushState states.size = 1
+INFO : [Detail::CApp::OnInit line 73] - Window created
+INFO : [Detail::CApp::OnInit line 85] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 175] - PushState states.size = 1
+INFO : [Detail::`anonymous-namespace'::<lambda1>::operator () line 58] - Window w=1394 h=600
+INFO : [Detail::`anonymous-namespace'::<lambda1>::operator () line 58] - Window w=1591 h=600
+INFO : [Detail::CApp::OnInit line 73] - Window created
+INFO : [Detail::CApp::OnInit line 85] - Render created
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : [Detail::CApp::PushState line 175] - PushState states.size = 1
+INFO : [Detail::Window::AttachEvents::<lambda_8786dd22d8c85d66dd3197a1a0134776>::operator () line 58] - Window w=1027 h=600
+INFO : [Detail::Window::AttachEvents::<lambda_8786dd22d8c85d66dd3197a1a0134776>::operator () line 58] - Window w=1027 h=689
+INFO : [Detail::CGame::OnInit line 30] - GAME --- INIT
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : [Detail::CApp::ChangeState line 210] - ChangeState states.size = 1
+INFO : [Detail::Window::AttachEvents::<lambda_8786dd22d8c85d66dd3197a1a0134776>::operator () line 58] - Window w=1027 h=600
+INFO : [Detail::Window::AttachEvents::<lambda_8786dd22d8c85d66dd3197a1a0134776>::operator () line 58] - Window w=1071 h=600
+INFO : [Detail::CGame::OnPause line 226] - GAME --- PAUSE
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/menu.png
+INFO : [Detail::CApp::PushState line 175] - PushState states.size = 2
+INFO : [Detail::CGameMenu::OnCleanUp line 35] - CleanUp
+INFO : [Detail::CGame::OnResume line 233] - GAME --- RESUME
+INFO : [Detail::CApp::PopState line 193] - PopState states.size = 1
+INFO : [Detail::CGame::OnPause line 226] - GAME --- PAUSE
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/menu.png
+INFO : [Detail::CApp::PushState line 175] - PushState states.size = 2
+INFO : [Detail::CGameMenu::OnCleanUp line 35] - CleanUp
+INFO : [Detail::CGame::OnResume line 233] - GAME --- RESUME
+INFO : [Detail::CApp::PopState line 193] - PopState states.size = 1
+INFO : [Detail::CGame::OnPause line 226] - GAME --- PAUSE
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/menu.png
+INFO : [Detail::CApp::PushState line 175] - PushState states.size = 2
+INFO : [Detail::CGameMenu::OnCleanUp line 35] - CleanUp
+INFO : [Detail::CGame::OnResume line 233] - GAME --- RESUME
+INFO : [Detail::CApp::PopState line 193] - PopState states.size = 1
+INFO : [Detail::CGame::OnPause line 226] - GAME --- PAUSE
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/menu.png
+INFO : [Detail::CApp::PushState line 175] - PushState states.size = 2
+INFO : [Detail::CGameMenu::OnCleanUp line 35] - CleanUp
+INFO : [Detail::CGame::OnResume line 233] - GAME --- RESUME
+INFO : [Detail::CApp::PopState line 193] - PopState states.size = 1
+INFO : [Detail::CGame::OnPause line 226] - GAME --- PAUSE
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/menu.png
+INFO : [Detail::CApp::PushState line 175] - PushState states.size = 2
+INFO : [Detail::CGameMenu::OnCleanUp line 35] - CleanUp
+INFO : [Detail::CGame::OnResume line 233] - GAME --- RESUME
+INFO : [Detail::CApp::PopState line 193] - PopState states.size = 1
+INFO : [Detail::CGame::OnPause line 226] - GAME --- PAUSE
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/menu.png
+INFO : [Detail::CApp::PushState line 175] - PushState states.size = 2
+INFO : [Detail::CGameMenu::OnCleanUp line 35] - CleanUp
+INFO : [Detail::CGame::OnResume line 233] - GAME --- RESUME
+INFO : [Detail::CApp::PopState line 193] - PopState states.size = 1
+INFO : [Detail::CGame::OnPause line 226] - GAME --- PAUSE
+INFO : [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/menu.png
+INFO : [Detail::CApp::PushState line 175] - PushState states.size = 2
+INFO : [Detail::Window::AttachEvents::<lambda_8786dd22d8c85d66dd3197a1a0134776>::operator () line 58] - Window w=1071 h=549
+INFO : 2014-Sep-14 21:00:31.377534 [Detail::CApp::OnInit line 73] - Window created
+INFO : 2014-Sep-14 21:00:31.455571 [Detail::CApp::OnInit line 85] - Render created
+INFO : 2014-Sep-14 21:00:31.469580 [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : 2014-Sep-14 21:00:31.515621 [Detail::CApp::PushState line 175] - PushState states.size = 1
+INFO : 2014-Sep-14 21:20:44.200189 [Detail::CApp::OnInit line 74] - Window created
+INFO : 2014-Sep-14 21:20:44.306264 [Detail::CApp::OnInit line 86] - Render created
+INFO : 2014-Sep-14 21:20:44.319274 [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/intro.png
+INFO : 2014-Sep-14 21:20:44.374317 [Detail::CApp::PushState line 176] - PushState states.size = 1
+INFO : 2014-Sep-14 21:20:48.794464 [Detail::CGame::OnInit line 30] - GAME --- INIT
+INFO : 2014-Sep-14 21:20:48.807474 [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : 2014-Sep-14 21:20:48.827482 [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 42] - Loading : ../Res/circle_a.png
+INFO : 2014-Sep-14 21:20:48.846495 [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 42] - Loading : ../Res/target.png
+INFO : 2014-Sep-14 21:20:48.860505 [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : 2014-Sep-14 21:20:48.872513 [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : 2014-Sep-14 21:20:48.883521 [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : 2014-Sep-14 21:20:48.895530 [CacheManager<class Detail::Texture,class TextureCreator,class TextureDeleter>::Load line 37] - Already loaded : ../Res/target.png
+INFO : 2014-Sep-14 21:20:48.907539 [CacheManager<class Detail::AnimatedTexture,class AnimatedTextureCreator,class AnimatedTextureDeleter>::Load line 37] - Already loaded : ../Res/circle_a.png
+INFO : 2014-Sep-14 21:20:48.918546 [Detail::CApp::ChangeState line 211] - ChangeState states.size = 1
